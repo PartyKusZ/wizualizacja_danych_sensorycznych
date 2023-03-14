@@ -13,7 +13,7 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{multirow}
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{24pt}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
@@ -24,19 +24,24 @@
 \usepackage{multicol}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
+\usepackage{units}
 
 \usepackage[figurename=Wykres]{caption}
 
+\pdfpageheight  297mm
+\pdfpagewidth   210mm
 
 
 \newgeometry{tmargin=1.8cm,bmargin=1.8cm,lmargin =1.8cm,rmargin=1.8cm}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Overleaf}
+\rhead{\textit{Raport}}
 \cfoot{ \thepage}
-\lhead{Guides and tutorials}
+\lhead{\textit{Wizualizacja silosów zbożowych}}
 \begin{document}
     \input{strona_tytulowa.tex}
-
+    \tableofcontents
+    \newpage
+    \input{1_charakterystyka_tematu_projektu.tex}
 
 \end{document}

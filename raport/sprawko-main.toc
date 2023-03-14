@@ -1,0 +1,4 @@
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Charakterystyka tematu projektu}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Główne cele aplikacji}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Realizacja projektu}{2}{subsection.1.2}%
