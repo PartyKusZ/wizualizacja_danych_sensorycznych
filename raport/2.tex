@@ -1,0 +1,44 @@
+\section{Specyfikacja finalnego produktu}
+    Finalnym efektem projektu będzie aplikacja pozwalająca na monitorowanie parametrów
+    wymienionych w pkt. \ref{ch: 1} i system czujników zastępujący prawdziwe silosy zbożowe.
+    \subsection{Aplikacja} 
+        \subsubsection{Wymagania funkcjonalne}
+            Wymagania funkcjonalne są to wymagania które określają działanie systemu i zaspokajają potrzeby użytkownika.
+            Poniżej znajduje się lista wymagań funkcjonalnych, które finalna wersja aplikacji powinna spełniać:
+            \begin{itemize}
+                \item Możliwość przeglądu monitorowanych na bieżąco parametrów stanu silosów:
+                \begin{itemize}
+                    \item każdego z parametrów osobno,
+                    \item wszystkich parametrów razem.
+                \end{itemize}
+                \item prowadzenie rejestru pomiarów,
+                \item wizualizacja pomiarów historycznych z określonego okresu czasu,
+                \item ostrzeganie o zbliżaniu się do wartości niebezpiecznych,
+                \item alarmowanie po przekroczeniu wartości niebezpiecznych.
+            \end{itemize}
+        \subsubsection{Wymagania niefunkcjonalne}
+        Wymagania niefunkcjonalne określają przede wszystkim oczekiwania co do samej jakości działania 
+        aplikacji oraz pożądanego zachowania tworzonego systemu.Poniżej znajduje się lista wymagań 
+        niefunkcjonalnych, które finalna wersja aplikacji powinna spełniać:
+
+        \begin{itemize}
+            \item Użyte technologie: 
+            \begin{itemize}
+                \item C++ 17,
+                \item Qt 6,
+            \end{itemize}
+            \item możliwość zmiany rozmiaru ekranu i responsywność elementów GUI,
+            \item wielojęzyczność,
+            \item komunikacja z układem sensorów za pomocą portu szeregowego,
+            \item przechowywanie danych historycznych w pliku CSV.
+        \end{itemize}
+
+    \subsection{System czujników}
+        W celu realizowania odczytu z czujników zostanie skonstruowana prosta, niewielkich rozmiarów makieta silosów zbożowych, na której 
+        zostaną osadzone odpowiednie czujniki:
+        \begin{itemize}
+            \item pomiary temperatury i wilgotności: DHT11,
+            \item pomiar wypełniania: HC SR04.
+        \end{itemize}
+    
+    

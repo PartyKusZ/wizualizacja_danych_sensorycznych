@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.6)  14 MAR 2023 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.6)  21 MAR 2023 23:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -857,7 +857,7 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 
 Package newfloat Info: `float' package detected.
 (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/strona_tytulowa.tex
-<//home/kubus/Obrazy/logo-Pwr.png, id=19, 540.0978pt x 135.8676pt>
+<//home/kubus/Obrazy/logo-Pwr.png, id=43, 540.0978pt x 135.8676pt>
 File: //home/kubus/Obrazy/logo-Pwr.png Graphic file (type png)
 <use //home/kubus/Obrazy/logo-Pwr.png>
 Package pdftex.def Info: //home/kubus/Obrazy/logo-Pwr.png  used on input line 4.
@@ -880,29 +880,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.44     \newpage
-                  [1] (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/1_charakterystyka_tematu_projektu.tex) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+                  [1] (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/1.tex) (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/2.tex [2]) (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/3.tex [3]
+<obrazy/wsd_gantt.png, id=84, 1866.975pt x 678.535pt>
+File: obrazy/wsd_gantt.png Graphic file (type png)
+<use obrazy/wsd_gantt.png>
+Package pdftex.def Info: obrazy/wsd_gantt.png  used on input line 38.
+(pdftex.def)             Requested size: 692.5399pt x 251.69594pt.
+
+
+LaTeX Warning: Float too large for page by 24.49998pt on input line 41.
+
+) [4] [5 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/wsd_gantt.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
  (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Jakub_Kusz_raport.out' has not changed.
-(rerunfilecheck)             Checksum: 3E57F4281A30F6251090A4FDD842DF2D;210.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
+(rerunfilecheck)             Checksum: 7E0E96ED4CAB83078847471FD1E03107;652.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 30917 strings out of 481239
- 713901 string characters out of 5920378
+ 30955 strings out of 481239
+ 714536 string characters out of 5920378
  1178287 words of memory out of 5100000
- 45604 multiletter control sequences out of 15000+600000
+ 45624 multiletter control sequences out of 15000+600000
  544394 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,11n,98p,799b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.pdf (3 pages, 179313 bytes).
+Output written on /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.pdf (6 pages, 289461 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 137 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 17 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

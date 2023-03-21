@@ -2,3 +2,9 @@
 \contentsline {section}{\numberline {1}Charakterystyka tematu projektu}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Główne cele aplikacji}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Realizacja projektu}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Specyfikacja finalnego produktu}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Aplikacja}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Wymagania funkcjonalne}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Wymagania niefunkcjonalne}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}System czujników}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Terminarz realizacji poszczególnych podcelów}{3}{section.3}%
