@@ -8,3 +8,9 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Wymagania niefunkcjonalne}{3}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}System czujników}{3}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Terminarz realizacji poszczególnych podcelów}{3}{section.3}%
+\contentsline {section}{\numberline {4}Projekt graficznego interfejsu użytkownika}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Widok wszystkich parametrów}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Widok wypełnienia}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Widok temperatury}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Wilgotność}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Dane historyczne}{10}{subsection.4.5}%
