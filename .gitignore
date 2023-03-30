@@ -1,3 +1,8 @@
-raport/*
-!raport/*.tex
+raport/*.aux
+raport/*.fls
+raport/*.fdb_latexmk
+raport/*.log
+raport/*.out
+raport/*.toc
+raport/*.pdf
 raport/Jakub_Kusz_raport.synctex.gz
