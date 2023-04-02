@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_window</class>
+ <widget class="QWidget" name="main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>576</width>
+    <height>492</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+  background-color: #F5E7E2;
+  border-radius: 15px;
+  border: 2px solid #CDB2AB;
+  color: #8B5F57;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+QPushButton:hover {
+  background-color: #CDB2AB;
+  color: #F5E7E2;
+  cursor: pointer;
+}
+
+QPushButton:pressed {
+  background-color: #8B5F57;
+  color: #F5E7E2;
+}
+
+
+
+QSlider {
+  background-color: #F5E7E2;
+  border: none;
+  border-radius: 10px;
+}
+
+QSlider::groove:horizontal {
+  background-color: #CDB2AB;
+  border-radius: 10px;
+  height: 8px;
+}
+
+QSlider::handle:horizontal {
+  background-color: #8B5F57;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin: -6px 0px;
+  border-radius: 10px;
+}
+
+QSlider::handle:horizontal:hover {
+  background-color: #CDB2AB;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin: -6px 0px;
+  border-radius: 10px;
+}
+
+QSlider::handle:horizontal:pressed {
+  background-color: #F5E7E2;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin: -6px 0px;
+  border-radius: 10px;
+}
+
+QWidget {
+    background-color: #00000;
+	border-radius: 15px;
+	 padding: 10px 20px;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QLCDNumber" name="lcdNumber">
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>inkrement</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>dekrement</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QSlider" name="horizontalSlider">
+     <property name="baseSize">
+      <size>
+       <width>0</width>
+       <height>5</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
