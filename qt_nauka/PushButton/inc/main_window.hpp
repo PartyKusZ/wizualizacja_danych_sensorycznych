@@ -5,6 +5,7 @@ class Main_window: public QWidget, private Ui::main_window{
     Q_OBJECT
     private: 
         int var;
+        Main_window *m;
 
     public:
         Main_window(QWidget *parent = nullptr);
