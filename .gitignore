@@ -6,3 +6,5 @@ raport/*.out
 raport/*.toc
 raport/*.pdf
 raport/Jakub_Kusz_raport.synctex.gz
+uklad_czujnikow/.vscode
+test_uart/a.out

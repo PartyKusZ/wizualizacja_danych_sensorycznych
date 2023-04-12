@@ -21,32 +21,37 @@ int main(int argc, char *argv[]) {
 
     usleep(2000000);
 
-    serial.WriteByte('s');
+    //serial.WriteByte('s');
     //usleep(2000000);
 
-
+     char start;  
       DataBuffer data;
 
+
      while(true){
-         serial.Read(data,13);
+         serial.ReadByte(start);
+         if(start == 0xFF){
+            serial.Read(data,12);
 
-        uint16_t data1 = (data[1] << 8) | data[2];
-        uint16_t data2 = (data[3] << 8) | data[4];
-        uint16_t data3 = (data[5] << 8) | data[6];
-        uint16_t data4 = (data[7] << 8) | data[8];
-        uint16_t data5 = (data[9] << 8) | data[10];
-        uint16_t start = data[0];
-        uint16_t crc = data[11];
-        uint16_t stop = data[12];
+            uint16_t data1 = (data[0] << 8) | data[1];
+            uint16_t data2 = (data[2] << 8) | data[3];
+            uint16_t data3 = (data[4] << 8) | data[5];
+            uint16_t data4 = (data[6] << 8) | data[7];
+            uint16_t data5 = (data[8] << 8) | data[9];
+            uint16_t crc = data[10];
+            uint16_t stop = data[11];
 
-        std::cout << "start: " << start << std::endl;
-        std::cout << "Data1: " << data1 << ", Data2: " << data2
-                              << ", Data3: " << data3 << ", Data4: " << data4
-                              << ", Data5: " << data5 << std::endl;
-        
-        std::cout <<((crc8.smbus(data.data() + 1, 10 )) ? "sumy konrtolne OK" : "sumy konrtolne NIE OK") << std::endl;
-        std::cout <<"stop"<< stop<<std::endl;
-        usleep(1500000);
+            std::cout << "start: " << start << std::endl;
+            std::cout << "Data1: " << data1 << ", Data2: " << data2
+                                << ", Data3: " << data3 << ", Data4: " << data4
+                                << ", Data5: " << data5 << std::endl;
+            
+            std::cout <<((crc8.smbus(data.data(), 10 )) ? "sumy konrtolne OK" : "sumy konrtolne NIE OK") << std::endl;
+            std::cout <<"stop"<< stop<<std::endl;
+         }
+
+         
+        //usleep(1500000);
      }
     
 

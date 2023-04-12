@@ -20,7 +20,7 @@ void loop()
 {
 
 
-  //Serial.println("Objetość[\%]: ");
+  // Serial.println("Objetość[\%]: ");
   // Serial.println(silos.get_volume());
 
   // Serial.println("Temperatura_0[C]: ");
@@ -45,10 +45,10 @@ void loop()
     //   Serial.println(data_test[i]);
     // }
     Serial.write(data_test,13);
-    Serial.flush();
+    //Serial.flush();
     //Serial.println(sizeof(data.get_data_frame()));
     
-    delay(2000);
+    delay(500);
   
  
 
