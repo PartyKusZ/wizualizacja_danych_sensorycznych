@@ -23,6 +23,4 @@ void Main_window::decrement_var(){
 void Main_window::slider_var(){
     this->var = this->horizontalSlider->value();
     this->lcdNumber->display(var);
-    m = new Main_window;
-    m->show();
 }

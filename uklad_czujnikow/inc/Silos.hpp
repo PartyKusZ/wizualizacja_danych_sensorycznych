@@ -1,18 +1,22 @@
 #pragma once
-
-#include "DHT.hpp"
-#include "HCSR04.hpp"
+#include "../inc/DHT.hpp"
+#include "../inc/HCSR04.hpp"
 
 class Silos{
 
     private:
-        int num_of_dht;
-        int num_of_hcsr04;
-        DHT *dht_tab;
-        HCSR04 *hcsr04_tab;
+        DHT dht_0;
+        DHT dht_1;
+        HCSR04 hcsr04;
+        int  height_of_silos;
     public:
-        Silos(const int &_num_of_dht,const int &_num_of_hcsr04);
-        void set_gpio(int *dht_pins, int *hcsr04_pins);
 
-        
+        uint16_t  get_volume();
+        uint16_t  get_temperature_0();
+        uint16_t  get_temperature_1();
+        uint16_t  get_humidity_0();
+        uint16_t  get_humidity_1();
+        Silos();
+        void setup(int *dht_pins, int *hcsr04_pins,int _height_of_silos);
+        uint16_t *get_data();
 };
