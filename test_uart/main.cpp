@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     //serial.WriteByte('s');
     //usleep(2000000);
 
-     char start;  
+      uint8_t start;  
       DataBuffer data;
 
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
             uint16_t crc = data[10];
             uint16_t stop = data[11];
 
-            std::cout << "start: " << start << std::endl;
+            std::cout << "start: " << static_cast<uint16_t>(start) << std::endl;
             std::cout << "Data1: " << data1 << ", Data2: " << data2
                                 << ", Data3: " << data3 << ", Data4: " << data4
                                 << ", Data5: " << data5 << std::endl;
