@@ -25,12 +25,12 @@ DESTDIR = .
 OBJECTS_DIR = obj
 MOC_DIR = moc
 UI_DIR = ui
-INCLUDEPATH += inc
+INCLUDEPATH += inc inc/x
 
 
 
 SOURCES += src/*.cpp
-HEADERS += inc/*.hpp
+HEADERS += inc/*.hpp inc/x/*.hpp
 FORMS   += ui/*.ui
 
 # Katalogi wyjściowe

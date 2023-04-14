@@ -104,7 +104,7 @@ QTabBar::tab:selected {
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="all_param_silos_1" native="true">
+        <widget class="All_param_silos_1" name="all_param_silos_1" native="true">
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -149,6 +149,14 @@ QTabBar::tab:selected {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>All_param_silos_1</class>
+   <extends>QWidget</extends>
+   <header>All_param_silos_1.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

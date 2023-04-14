@@ -15,6 +15,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
+#include "All_param_silos_1.hpp"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +28,7 @@ public:
     QGridLayout *gridLayout_2;
     QWidget *all_param_alarms_silos_2;
     QWidget *all_param_silos_2;
-    QWidget *all_param_silos_1;
+    All_param_silos_1 *all_param_silos_1;
     QWidget *all_param_alarms_silos_1;
     QWidget *tab_temp;
     QWidget *tab_humidity;
@@ -110,7 +111,7 @@ public:
 
         gridLayout_2->addWidget(all_param_silos_2, 1, 2, 1, 1);
 
-        all_param_silos_1 = new QWidget(tab_all_param);
+        all_param_silos_1 = new All_param_silos_1(tab_all_param);
         all_param_silos_1->setObjectName(QString::fromUtf8("all_param_silos_1"));
         all_param_silos_1->setStyleSheet(QString::fromUtf8(""));
 

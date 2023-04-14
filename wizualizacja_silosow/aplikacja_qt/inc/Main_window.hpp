@@ -10,6 +10,5 @@ class Main_window : public QWidget, public Ui::Main_window{
     public:
         explicit Main_window(QWidget *parent = nullptr);
         ~Main_window();
-        void paintEvent(QPaintEvent *event) override;
 
 };
