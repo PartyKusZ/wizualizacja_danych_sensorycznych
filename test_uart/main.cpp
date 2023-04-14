@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
                                 << ", Data3: " << data3 << ", Data4: " << data4
                                 << ", Data5: " << data5 << std::endl;
             
-            std::cout <<((crc8.smbus(data.data(), 10 )) ? "sumy konrtolne OK" : "sumy konrtolne NIE OK") << std::endl;
+            std::cout <<((crc8.smbus(data.data(), 10 ) ==  crc) ? "sumy konrtolne OK" : "sumy konrtolne NIE OK") << std::endl;
             std::cout <<"stop"<< stop<<std::endl;
          }
 

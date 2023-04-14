@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Main_window</class>
+ <widget class="QWidget" name="Main_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>975</width>
+    <height>831</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Wizualizacja Silosów</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../obrazy/data-silo-icon-300x300-1-300x300.png</normaloff>../../../obrazy/data-silo-icon-300x300-1-300x300.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#Main_window {
+background: #010101;
+}
+#tabs {
+background: #010101;
+}
+QTabBar::tab{
+background: #26292e;
+color: white;
+border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+ min-width: 80px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+QTabBar::tab:last {
+    margin-right: 0px;
+}
+
+QTabBar::tab:selected {
+    background-color: #9b9a9f;
+    color: white;
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabs">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_all_param">
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background: #26292e;
+	border-radius: 20px;
+	margin: 10px;
+}
+
+#tab_all_param{
+	background: #010101;
+}</string>
+      </property>
+      <attribute name="title">
+       <string>Wszystkie parametry</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="2">
+        <widget class="QWidget" name="all_param_alarms_silos_2" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>110</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QWidget" name="all_param_silos_2" native="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="all_param_silos_1" native="true">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QWidget" name="all_param_alarms_silos_1" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>110</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_temp">
+      <attribute name="title">
+       <string>Temperatura</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_humidity">
+      <attribute name="title">
+       <string>Wilgotność</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_volume">
+      <attribute name="title">
+       <string>Wypełnienie</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_old_data">
+      <attribute name="title">
+       <string>Dane historyczne</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
