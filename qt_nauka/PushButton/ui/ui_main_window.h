@@ -16,6 +16,7 @@
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,15 +28,16 @@ public:
     QGridLayout *gridLayout;
     QLCDNumber *lcdNumber;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton;
     QSlider *horizontalSlider;
 
     void setupUi(QWidget *main_window)
     {
         if (main_window->objectName().isEmpty())
             main_window->setObjectName(QString::fromUtf8("main_window"));
-        main_window->resize(576, 492);
+        main_window->resize(541, 436);
         main_window->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "  background-color: #F5E7E2;\n"
 "  border-radius: 15px;\n"
@@ -113,23 +115,27 @@ public:
         lcdNumber->setSmallDecimalPoint(false);
         lcdNumber->setSegmentStyle(QLCDNumber::Flat);
 
-        gridLayout->addWidget(lcdNumber, 1, 0, 1, 1);
+        gridLayout->addWidget(lcdNumber, 1, 1, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        pushButton = new QPushButton(main_window);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        horizontalLayout->addWidget(pushButton);
-
         pushButton_2 = new QPushButton(main_window);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setStyleSheet(QString::fromUtf8(""));
 
         horizontalLayout->addWidget(pushButton_2);
 
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
+        horizontalLayout->addItem(horizontalSpacer);
+
+        pushButton = new QPushButton(main_window);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout->addWidget(pushButton);
+
+
+        gridLayout->addLayout(horizontalLayout, 2, 1, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
@@ -150,8 +156,8 @@ public:
     void retranslateUi(QWidget *main_window)
     {
         main_window->setWindowTitle(QApplication::translate("main_window", "Form", nullptr));
-        pushButton->setText(QApplication::translate("main_window", "inkrement", nullptr));
         pushButton_2->setText(QApplication::translate("main_window", "dekrement", nullptr));
+        pushButton->setText(QApplication::translate("main_window", "inkrement", nullptr));
     } // retranslateUi
 
 };
