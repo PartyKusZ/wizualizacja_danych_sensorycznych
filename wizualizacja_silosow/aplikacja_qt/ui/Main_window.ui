@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>831</height>
+    <width>1132</width>
+    <height>732</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,11 +21,11 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../obrazy/data-silo-icon-300x300-1-300x300.png</normaloff>../../../obrazy/data-silo-icon-300x300-1-300x300.png</iconset>
+    <normaloff>../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png</normaloff>../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#Main_window {
-background: #010101;
+background: #171a1e;
 }
 #tabs {
 background: #010101;
@@ -77,6 +77,44 @@ QTabBar::tab:selected {
        <string>Wszystkie parametry</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <widget class="QWidget" name="all_param_alarms_silos_1" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>140</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="All_param_silos_2" name="all_param_silos_2" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>263</width>
+           <height>446</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="2">
         <widget class="QWidget" name="all_param_alarms_silos_2" native="true">
          <property name="sizePolicy">
@@ -88,7 +126,7 @@ QTabBar::tab:selected {
          <property name="minimumSize">
           <size>
            <width>50</width>
-           <height>110</height>
+           <height>140</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -96,26 +134,18 @@ QTabBar::tab:selected {
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QWidget" name="all_param_silos_2" native="true">
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="All_param_silos_1" name="all_param_silos_1" native="true">
-         <property name="styleSheet">
-          <string notr="true"/>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QWidget" name="all_param_alarms_silos_1" native="true">
          <property name="minimumSize">
           <size>
-           <width>50</width>
-           <height>110</height>
+           <width>262</width>
+           <height>446</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -154,6 +184,12 @@ QTabBar::tab:selected {
    <class>All_param_silos_1</class>
    <extends>QWidget</extends>
    <header>All_param_silos_1.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>All_param_silos_2</class>
+   <extends>QWidget</extends>
+   <header>All_param_silos_2.hpp</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

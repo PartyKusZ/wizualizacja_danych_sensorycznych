@@ -16,6 +16,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 #include "All_param_silos_1.hpp"
+#include "All_param_silos_2.hpp"
 
 QT_BEGIN_NAMESPACE
 
@@ -26,10 +27,10 @@ public:
     QTabWidget *tabs;
     QWidget *tab_all_param;
     QGridLayout *gridLayout_2;
-    QWidget *all_param_alarms_silos_2;
-    QWidget *all_param_silos_2;
-    All_param_silos_1 *all_param_silos_1;
     QWidget *all_param_alarms_silos_1;
+    All_param_silos_2 *all_param_silos_2;
+    QWidget *all_param_alarms_silos_2;
+    All_param_silos_1 *all_param_silos_1;
     QWidget *tab_temp;
     QWidget *tab_humidity;
     QWidget *tab_volume;
@@ -39,17 +40,17 @@ public:
     {
         if (Main_window->objectName().isEmpty())
             Main_window->setObjectName(QString::fromUtf8("Main_window"));
-        Main_window->resize(975, 831);
+        Main_window->resize(858, 735);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Main_window->sizePolicy().hasHeightForWidth());
         Main_window->setSizePolicy(sizePolicy);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("../../../obrazy/data-silo-icon-300x300-1-300x300.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png"), QSize(), QIcon::Normal, QIcon::Off);
         Main_window->setWindowIcon(icon);
         Main_window->setStyleSheet(QString::fromUtf8("#Main_window {\n"
-"background: #010101;\n"
+"background: #171a1e;\n"
 "}\n"
 "#tabs {\n"
 "background: #010101;\n"
@@ -93,36 +94,47 @@ public:
 "}"));
         gridLayout_2 = new QGridLayout(tab_all_param);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        all_param_alarms_silos_2 = new QWidget(tab_all_param);
-        all_param_alarms_silos_2->setObjectName(QString::fromUtf8("all_param_alarms_silos_2"));
+        all_param_alarms_silos_1 = new QWidget(tab_all_param);
+        all_param_alarms_silos_1->setObjectName(QString::fromUtf8("all_param_alarms_silos_1"));
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(all_param_alarms_silos_2->sizePolicy().hasHeightForWidth());
-        all_param_alarms_silos_2->setSizePolicy(sizePolicy1);
-        all_param_alarms_silos_2->setMinimumSize(QSize(50, 110));
-        all_param_alarms_silos_2->setStyleSheet(QString::fromUtf8(""));
+        sizePolicy1.setHeightForWidth(all_param_alarms_silos_1->sizePolicy().hasHeightForWidth());
+        all_param_alarms_silos_1->setSizePolicy(sizePolicy1);
+        all_param_alarms_silos_1->setMinimumSize(QSize(50, 140));
+        all_param_alarms_silos_1->setStyleSheet(QString::fromUtf8(""));
 
-        gridLayout_2->addWidget(all_param_alarms_silos_2, 2, 2, 1, 1);
+        gridLayout_2->addWidget(all_param_alarms_silos_1, 2, 0, 1, 1);
 
-        all_param_silos_2 = new QWidget(tab_all_param);
+        all_param_silos_2 = new All_param_silos_2(tab_all_param);
         all_param_silos_2->setObjectName(QString::fromUtf8("all_param_silos_2"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(all_param_silos_2->sizePolicy().hasHeightForWidth());
+        all_param_silos_2->setSizePolicy(sizePolicy2);
+        all_param_silos_2->setMinimumSize(QSize(263, 446));
         all_param_silos_2->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_2->addWidget(all_param_silos_2, 1, 2, 1, 1);
 
+        all_param_alarms_silos_2 = new QWidget(tab_all_param);
+        all_param_alarms_silos_2->setObjectName(QString::fromUtf8("all_param_alarms_silos_2"));
+        sizePolicy1.setHeightForWidth(all_param_alarms_silos_2->sizePolicy().hasHeightForWidth());
+        all_param_alarms_silos_2->setSizePolicy(sizePolicy1);
+        all_param_alarms_silos_2->setMinimumSize(QSize(50, 140));
+        all_param_alarms_silos_2->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_2->addWidget(all_param_alarms_silos_2, 2, 2, 1, 1);
+
         all_param_silos_1 = new All_param_silos_1(tab_all_param);
         all_param_silos_1->setObjectName(QString::fromUtf8("all_param_silos_1"));
+        sizePolicy2.setHeightForWidth(all_param_silos_1->sizePolicy().hasHeightForWidth());
+        all_param_silos_1->setSizePolicy(sizePolicy2);
+        all_param_silos_1->setMinimumSize(QSize(262, 446));
         all_param_silos_1->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_2->addWidget(all_param_silos_1, 1, 0, 1, 1);
-
-        all_param_alarms_silos_1 = new QWidget(tab_all_param);
-        all_param_alarms_silos_1->setObjectName(QString::fromUtf8("all_param_alarms_silos_1"));
-        all_param_alarms_silos_1->setMinimumSize(QSize(50, 110));
-        all_param_alarms_silos_1->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout_2->addWidget(all_param_alarms_silos_1, 2, 0, 1, 1);
 
         tabs->addTab(tab_all_param, QString());
         tab_temp = new QWidget();

@@ -11,7 +11,7 @@
  * 
  */
 
-class Serial_port: public LibSerial::SerialPort, public FastCRC8{
+class Serial_port: private LibSerial::SerialPort, public FastCRC8{
 
     private:
         constexpr static uint16_t START = 0xFF; // data frame start byte value 

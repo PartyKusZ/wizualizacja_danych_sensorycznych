@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -Iinc -Iinc/x -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -Iui -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -Iinc -Iinc/custom_widgets_designer -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -Iui -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -55,11 +55,17 @@ OBJECTS_DIR   = obj/
 SOURCES       = src/FastCRCsw.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
-		src/Serial_port.cpp moc/moc_Main_window.cpp
+		src/Serial_port.cpp \
+		src/custom_widgets_designer/All_param_silos_1.cpp \
+		src/custom_widgets_designer/All_param_silos_2.cpp \
+		src/custom_widgets_designer/Silos_position.cpp moc/moc_Main_window.cpp
 OBJECTS       = obj/FastCRCsw.o \
 		obj/main.o \
 		obj/Main_window.o \
 		obj/Serial_port.o \
+		obj/All_param_silos_1.o \
+		obj/All_param_silos_2.o \
+		obj/Silos_position.o \
 		obj/moc_Main_window.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -140,10 +146,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/FastCRC_tables.hpp \
 		inc/Main_window.hpp \
 		inc/Serial_port.hpp \
-		inc/x/All_param_silos_1.hpp src/FastCRCsw.cpp \
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp src/FastCRCsw.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
-		src/Serial_port.cpp
+		src/Serial_port.cpp \
+		src/custom_widgets_designer/All_param_silos_1.cpp \
+		src/custom_widgets_designer/All_param_silos_2.cpp \
+		src/custom_widgets_designer/Silos_position.cpp
 QMAKE_TARGET  = wizualizacja
 DESTDIR       = 
 TARGET        = wizualizacja
@@ -323,8 +334,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/x/All_param_silos_1.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/custom_widgets_designer/All_param_silos_1.hpp inc/custom_widgets_designer/All_param_silos_2.hpp inc/custom_widgets_designer/Silos_position.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/custom_widgets_designer/All_param_silos_1.cpp src/custom_widgets_designer/All_param_silos_2.cpp src/custom_widgets_designer/Silos_position.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Main_window.ui $(DISTDIR)/
 
 
@@ -362,10 +373,12 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc/moc_Main_window.cpp
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/x/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/x -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -376,7 +389,10 @@ compiler_uic_clean:
 	-$(DEL_FILE) ui/ui_Main_window.h
 ui/ui_Main_window.h: ui/Main_window.ui \
 		/usr/lib/qt5/bin/uic \
-		inc/x/All_param_silos_1.hpp
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp
 	/usr/lib/qt5/bin/uic ui/Main_window.ui -o ui/ui_Main_window.h
 
 compiler_yacc_decl_make_all:
@@ -395,17 +411,32 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/x/All_param_silos_1.hpp
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/x/All_param_silos_1.hpp
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
 		inc/FastCRC.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Serial_port.o src/Serial_port.cpp
+
+obj/All_param_silos_1.o: src/custom_widgets_designer/All_param_silos_1.cpp inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_silos_1.o src/custom_widgets_designer/All_param_silos_1.cpp
+
+obj/All_param_silos_2.o: src/custom_widgets_designer/All_param_silos_2.cpp inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_silos_2.o src/custom_widgets_designer/All_param_silos_2.cpp
+
+obj/Silos_position.o: src/custom_widgets_designer/Silos_position.cpp inc/custom_widgets_designer/Silos_position.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Silos_position.o src/custom_widgets_designer/Silos_position.cpp
 
 obj/moc_Main_window.o: moc/moc_Main_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Main_window.o moc/moc_Main_window.cpp

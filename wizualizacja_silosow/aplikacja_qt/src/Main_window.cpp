@@ -5,7 +5,4 @@ Main_window::Main_window(QWidget *parent): QWidget(parent), Ui::Main_window(){
 }   
 
 
-
-
-
 Main_window::~Main_window(){}

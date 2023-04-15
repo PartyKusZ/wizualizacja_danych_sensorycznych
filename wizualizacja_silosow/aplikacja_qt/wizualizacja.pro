@@ -25,12 +25,12 @@ DESTDIR = .
 OBJECTS_DIR = obj
 MOC_DIR = moc
 UI_DIR = ui
-INCLUDEPATH += inc inc/x
+INCLUDEPATH += inc inc/custom_widgets_designer
 
 
 
-SOURCES += src/*.cpp
-HEADERS += inc/*.hpp inc/x/*.hpp
+SOURCES += src/*.cpp src/custom_widgets_designer/*.cpp
+HEADERS += inc/*.hpp inc/custom_widgets_designer/*.hpp
 FORMS   += ui/*.ui
 
 # Katalogi wyjściowe
