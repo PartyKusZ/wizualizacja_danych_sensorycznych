@@ -40,14 +40,14 @@ public:
     {
         if (Main_window->objectName().isEmpty())
             Main_window->setObjectName(QString::fromUtf8("Main_window"));
-        Main_window->resize(858, 735);
+        Main_window->resize(1131, 659);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Main_window->sizePolicy().hasHeightForWidth());
         Main_window->setSizePolicy(sizePolicy);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("../../../obrazy/ikonka.ico"), QSize(), QIcon::Normal, QIcon::Off);
         Main_window->setWindowIcon(icon);
         Main_window->setStyleSheet(QString::fromUtf8("#Main_window {\n"
 "background: #171a1e;\n"

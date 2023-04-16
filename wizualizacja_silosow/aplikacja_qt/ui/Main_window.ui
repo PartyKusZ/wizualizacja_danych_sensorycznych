@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1132</width>
-    <height>732</height>
+    <width>1131</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png</normaloff>../../../../../../../obrazy/data-silo-icon-300x300-1-300x300.png</iconset>
+    <normaloff>../../../obrazy/ikonka.ico</normaloff>../../../obrazy/ikonka.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#Main_window {
