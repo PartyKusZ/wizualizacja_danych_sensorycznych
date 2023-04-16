@@ -32,6 +32,8 @@ INCLUDEPATH += inc inc/custom_widgets_designer
 SOURCES += src/*.cpp src/custom_widgets_designer/*.cpp
 HEADERS += inc/*.hpp inc/custom_widgets_designer/*.hpp
 FORMS   += ui/*.ui
+RESOURCES += res/*.qrc   
+
 
 # Katalogi wyjściowe
 
@@ -39,6 +41,7 @@ FORMS   += ui/*.ui
 # Ustawienia Automoc i Autouic
 AUTOMOC_DIR = moc
 AUTOUIC_DIR = ui
+RCC_DIR = res/res_output
 
 # Biblioteki 
 
