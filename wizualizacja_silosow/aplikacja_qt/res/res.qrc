@@ -2,5 +2,7 @@
 <qresource>
     <file>ikona_stop.png</file>
     <file>ikona_warning.png</file>
+    <file>ikona_stop_tło.png</file>
+    <file>ikona_warning_tło.png</file>
 </qresource>
 </RCC>

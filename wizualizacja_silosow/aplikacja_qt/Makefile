@@ -371,7 +371,9 @@ compiler_rcc_clean:
 res/res_output/qrc_res.cpp: res/res.qrc \
 		/usr/lib/qt5/bin/rcc \
 		res/ikona_warning.png \
-		res/ikona_stop.png
+		res/ikona_stop_tło.png \
+		res/ikona_stop.png \
+		res/ikona_warning_tło.png
 	/usr/lib/qt5/bin/rcc -name res res/res.qrc -o res/res_output/qrc_res.cpp
 
 compiler_moc_predefs_make_all: moc/moc_predefs.h
@@ -385,6 +387,9 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc/moc_Main_window.cpp
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
@@ -419,11 +424,17 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/FastCRCsw.o src/FastCRCsw.cpp
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
-		ui/ui_Main_window.h
+		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
-		ui/ui_Main_window.h
+		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
