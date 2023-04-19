@@ -1,5 +1,10 @@
 #include "Serial_port.hpp"
 
+/**
+ * @brief Construct a new Serial_port object
+ *  
+ */
+
 Serial_port::Serial_port(): LibSerial::SerialPort(path), FastCRC8(){
 
     this->SetBaudRate(LibSerial::BaudRate::BAUD_9600);
@@ -9,6 +14,14 @@ Serial_port::Serial_port(): LibSerial::SerialPort(path), FastCRC8(){
     this->SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE);
 
 };
+
+
+  
+/**
+ * @brief Returns the ready data received from the serial port
+ * 
+ * @return std::vector<uint16_t>. If vector is empty, calculated control sum is differend from the sum sent  
+ */
 
 std::vector<uint16_t> Serial_port::get_data() {
     uint16_t crc;

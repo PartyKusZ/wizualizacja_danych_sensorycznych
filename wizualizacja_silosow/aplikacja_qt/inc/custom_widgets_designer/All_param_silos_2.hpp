@@ -16,20 +16,7 @@ private:
  
 public:
 
-    /**
-     * @brief Construct a new All_param_silos_2 object
-     * 
-     * @param parent parent widget
-     */
-
     All_param_silos_2(QWidget *parent);
-
-
-    /**
-     * @brief Drawing a silo
-     * 
-     * @param event 
-     */
 
     void paintEvent(QPaintEvent *event) override;
 

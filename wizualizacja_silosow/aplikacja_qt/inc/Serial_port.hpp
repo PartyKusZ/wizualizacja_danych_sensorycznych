@@ -22,22 +22,8 @@ class Serial_port: private LibSerial::SerialPort, public FastCRC8{
         std::vector<uint8_t> data; // for 12 bytes after start byte
         std::vector<uint16_t> ready_data; // for ready data 
     public:
-        /**
-         * @brief Construct a new Serial_port object
-         *  
-         */
-
 
         Serial_port();
-
-        
-        /**
-         * @brief Returns the ready data received from the serial port
-         * 
-         * @return std::vector<uint16_t>. If vector is empty, calculated control sum is differend from the sum sent  
-         */
-
-
         std::vector<uint16_t> get_data(); // returns vector of read data : filling, temp1, temp2, humidity1, humidity2
 
 };

@@ -1,8 +1,22 @@
 #include "All_param_silos_1.hpp"
 
- All_param_silos_1::All_param_silos_1(QWidget *parent): QWidget(parent), Silos_position() {};
+/**
+* @brief Construct a new All_param_silos_1 object
+* 
+* @param parent parent widget
+ */
 
- void All_param_silos_1::paintEvent(QPaintEvent *event){
+All_param_silos_1::All_param_silos_1(QWidget *parent): QWidget(parent), Silos_position() {};
+
+
+
+/**
+ * @brief Drawing a silo
+ * 
+ * @param event 
+ */
+
+void All_param_silos_1::paintEvent(QPaintEvent *event){
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     auto c_size = this->size();
@@ -23,5 +37,9 @@
  }
 
 
+/**
+ * @brief Destroy the All_param_silos_1::All_param_silos_1 object
+ * 
+ */
 All_param_silos_1::~All_param_silos_1(){};
  
