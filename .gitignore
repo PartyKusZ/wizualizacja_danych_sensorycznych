@@ -11,11 +11,11 @@ test_uart/a.out
 test_uart/.vscode
 wizualizacja_silosow/aplikacja_qt_doc
 wizualizacja_silosow/aplikacja_qt/.vscode
-wizualizacja_silosow/aplikacja_qt/obj
+wizualizacja_silosow/aplikacja_qt/obj/*.o
 wizualizacja_silosow/aplikacja_qt/moc
 wizualizacja_silosow/aplikacja_qt/Makefile
 wizualizacja_silosow/aplikacja_qt/.qmake.stash
 wizualizacja_silosow/aplikacja_qt/wizualizacja
-wizualizacja_silosow/aplikacja_qt/res/res_outputcd
+wizualizacja_silosow/aplikacja_qt/res/res_output
 
 

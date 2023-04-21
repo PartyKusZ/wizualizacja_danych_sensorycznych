@@ -4,5 +4,7 @@
     <file>ikona_warning.png</file>
     <file>ikona_stop_tło.png</file>
     <file>ikona_warning_tło.png</file>
+    <file>termometr.png</file>
+    <file>krople.png</file>
 </qresource>
 </RCC>

@@ -56,6 +56,7 @@ SOURCES       = src/FastCRCsw.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
 		src/Serial_port.cpp \
+		src/custom_widgets_designer/All_param_draw.cpp \
 		src/custom_widgets_designer/All_param_silos_1.cpp \
 		src/custom_widgets_designer/All_param_silos_2.cpp \
 		src/custom_widgets_designer/Silos_position.cpp res/res_output/qrc_res.cpp \
@@ -64,6 +65,7 @@ OBJECTS       = obj/FastCRCsw.o \
 		obj/main.o \
 		obj/Main_window.o \
 		obj/Serial_port.o \
+		obj/All_param_draw.o \
 		obj/All_param_silos_1.o \
 		obj/All_param_silos_2.o \
 		obj/Silos_position.o \
@@ -148,12 +150,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/FastCRC_tables.hpp \
 		inc/Main_window.hpp \
 		inc/Serial_port.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
 		inc/custom_widgets_designer/All_param_silos_2.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp src/FastCRCsw.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
 		src/Serial_port.cpp \
+		src/custom_widgets_designer/All_param_draw.cpp \
 		src/custom_widgets_designer/All_param_silos_1.cpp \
 		src/custom_widgets_designer/All_param_silos_2.cpp \
 		src/custom_widgets_designer/Silos_position.cpp
@@ -339,8 +343,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/custom_widgets_designer/All_param_silos_1.hpp inc/custom_widgets_designer/All_param_silos_2.hpp inc/custom_widgets_designer/Silos_position.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/custom_widgets_designer/All_param_silos_1.cpp src/custom_widgets_designer/All_param_silos_2.cpp src/custom_widgets_designer/Silos_position.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos_1.hpp inc/custom_widgets_designer/All_param_silos_2.hpp inc/custom_widgets_designer/Silos_position.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos_1.cpp src/custom_widgets_designer/All_param_silos_2.cpp src/custom_widgets_designer/Silos_position.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Main_window.ui $(DISTDIR)/
 
 
@@ -372,7 +376,9 @@ res/res_output/qrc_res.cpp: res/res.qrc \
 		/usr/lib/qt5/bin/rcc \
 		res/ikona_warning.png \
 		res/ikona_stop_tło.png \
+		res/krople.png \
 		res/ikona_stop.png \
+		res/termometr.png \
 		res/ikona_warning_tło.png
 	/usr/lib/qt5/bin/rcc -name res res/res.qrc -o res/res_output/qrc_res.cpp
 
@@ -388,6 +394,7 @@ compiler_moc_header_clean:
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/custom_widgets_designer/All_param_silos_2.hpp \
 		moc/moc_predefs.h \
@@ -405,7 +412,9 @@ ui/ui_Main_window.h: ui/Main_window.ui \
 		/usr/lib/qt5/bin/uic \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
 		inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp
 	/usr/lib/qt5/bin/uic ui/Main_window.ui -o ui/ui_Main_window.h
 
@@ -426,6 +435,7 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
@@ -433,6 +443,7 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/custom_widgets_designer/All_param_silos_2.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
@@ -441,11 +452,17 @@ obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
 		inc/FastCRC.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Serial_port.o src/Serial_port.cpp
 
+obj/All_param_draw.o: src/custom_widgets_designer/All_param_draw.cpp inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_draw.o src/custom_widgets_designer/All_param_draw.cpp
+
 obj/All_param_silos_1.o: src/custom_widgets_designer/All_param_silos_1.cpp inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_silos_1.o src/custom_widgets_designer/All_param_silos_1.cpp
 
 obj/All_param_silos_2.o: src/custom_widgets_designer/All_param_silos_2.cpp inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_silos_2.o src/custom_widgets_designer/All_param_silos_2.cpp
 

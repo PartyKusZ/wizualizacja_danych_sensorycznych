@@ -2,7 +2,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <iostream>
-#include "Silos_position.hpp"
+#include "All_param_draw.hpp"
 
 
 /**
@@ -11,15 +11,14 @@
  */
 
 
-class All_param_silos_2: public QWidget, public Silos_position{
-private:
-    void draw_fulfilment(QPainter &painter,QSize size, int fulfilment );
+class All_param_silos_2: public QWidget, public All_param_draw{
+    private:
     
-public:
+    public:
 
-    All_param_silos_2(QWidget *parent);
+        All_param_silos_2(QWidget *parent);
 
-    void paintEvent(QPaintEvent *event) override;
+        void paintEvent(QPaintEvent *event) override;
 
-     ~All_param_silos_2();
+        ~All_param_silos_2();
 };

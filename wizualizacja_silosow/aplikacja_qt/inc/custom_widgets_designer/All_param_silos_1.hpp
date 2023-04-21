@@ -2,21 +2,22 @@
 #include <QWidget>
 #include <QPainter>
 #include <iostream>
-#include "Silos_position.hpp"
+#include "All_param_draw.hpp"
 
 /**
  * @brief The class responsible for drawing the silo in the "All parameters" tab.
  * 
  */
 
-class All_param_silos_1: public QWidget, public Silos_position{
-private:
-    void draw_fulfilment(QPainter &painter,QSize size, int fulfilment );
-public:
+class All_param_silos_1: public QWidget, public All_param_draw{
+    private:
+
+    public:
+
    
-    All_param_silos_1(QWidget *parent);
+        All_param_silos_1(QWidget *parent);
 
-    void paintEvent(QPaintEvent *event) override;
+        void paintEvent(QPaintEvent *event) override;
 
-     ~All_param_silos_1();
+         ~All_param_silos_1();
 };
