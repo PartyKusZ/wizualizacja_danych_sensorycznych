@@ -1,6 +1,7 @@
 #pragma once
 #include <QVector>
 #include <QPoint>
+#include <QPainter>
 /**
  * @brief A class describing the dimensions and location of a silo.
  * 
@@ -13,6 +14,8 @@ class Silos_position{
         constexpr static double HEIGHT_OFFSET = 0.62;
         constexpr static double X_OFFSET = 0.31;
         constexpr static double Y_OFFSET = 0.20;
+        
+
     
     protected:
         /**
@@ -27,6 +30,8 @@ class Silos_position{
         int get_height(int height);
         
         QVector<QPoint> get_trapezium(int width, int height);
+
+        void draw_outline(QPainter &painter, QSize size);
 
         ~Silos_position(){};
 };

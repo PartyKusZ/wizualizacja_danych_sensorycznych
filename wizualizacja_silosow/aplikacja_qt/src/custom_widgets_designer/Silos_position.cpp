@@ -61,3 +61,21 @@ QVector<QPoint> Silos_position::get_trapezium(int width,int height){
     points.push_back({get_x_offset(width),get_y_offset(height)});
     return points;
 }
+
+/**
+ * @brief Draws outline of silo
+ * 
+ * @param painter Painter object
+ * @param size current size of the widget on which the silo is drawn
+ */
+
+void Silos_position::draw_outline(QPainter &painter,QSize size){
+    painter.setRenderHint(QPainter::Antialiasing);
+    auto c_size = size;
+    QRect rect(this->get_x_offset(c_size.width()),this->get_y_offset(c_size.height()),this->get_width(c_size.width()),this->get_height(c_size.height())); // Pozycja i rozmiar prostokąta
+    // Rysuj kontur prostokąta
+    painter.setPen(QColor(255, 255, 255));
+    painter.setBrush(Qt::NoBrush);
+    painter.drawPolygon(this->get_trapezium(c_size.width(),c_size.height()));
+    painter.drawRect(rect);
+}

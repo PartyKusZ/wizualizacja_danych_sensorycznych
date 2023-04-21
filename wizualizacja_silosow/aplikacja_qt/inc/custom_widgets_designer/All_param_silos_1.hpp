@@ -11,7 +11,7 @@
 
 class All_param_silos_1: public QWidget, public Silos_position{
 private:
- 
+    void draw_fulfilment(QPainter &painter,QSize size, int fulfilment );
 public:
    
     All_param_silos_1(QWidget *parent);
