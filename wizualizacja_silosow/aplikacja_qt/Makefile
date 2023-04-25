@@ -60,7 +60,9 @@ SOURCES       = src/FastCRCsw.cpp \
 		src/custom_widgets_designer/All_param_silos_1.cpp \
 		src/custom_widgets_designer/All_param_silos_2.cpp \
 		src/custom_widgets_designer/Silos_position.cpp res/res_output/qrc_res.cpp \
-		moc/moc_Main_window.cpp
+		moc/moc_Main_window.cpp \
+		moc/moc_All_param_silos_1.cpp \
+		moc/moc_All_param_silos_2.cpp
 OBJECTS       = obj/FastCRCsw.o \
 		obj/main.o \
 		obj/Main_window.o \
@@ -70,7 +72,9 @@ OBJECTS       = obj/FastCRCsw.o \
 		obj/All_param_silos_2.o \
 		obj/Silos_position.o \
 		obj/qrc_res.o \
-		obj/moc_Main_window.o
+		obj/moc_Main_window.o \
+		obj/moc_All_param_silos_1.o \
+		obj/moc_All_param_silos_2.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -389,9 +393,9 @@ compiler_moc_predefs_clean:
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_Main_window.cpp
+compiler_moc_header_make_all: moc/moc_Main_window.cpp moc/moc_All_param_silos_1.cpp moc/moc_All_param_silos_2.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc/moc_Main_window.cpp
+	-$(DEL_FILE) moc/moc_Main_window.cpp moc/moc_All_param_silos_1.cpp moc/moc_All_param_silos_2.cpp
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/custom_widgets_designer/All_param_silos_1.hpp \
@@ -401,6 +405,20 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
+
+moc/moc_All_param_silos_1.cpp: inc/custom_widgets_designer/All_param_silos_1.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/custom_widgets_designer/All_param_silos_1.hpp -o moc/moc_All_param_silos_1.cpp
+
+moc/moc_All_param_silos_2.cpp: inc/custom_widgets_designer/All_param_silos_2.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/custom_widgets_designer/All_param_silos_2.hpp -o moc/moc_All_param_silos_2.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -475,6 +493,12 @@ obj/qrc_res.o: res/res_output/qrc_res.cpp
 
 obj/moc_Main_window.o: moc/moc_Main_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Main_window.o moc/moc_Main_window.cpp
+
+obj/moc_All_param_silos_1.o: moc/moc_All_param_silos_1.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_All_param_silos_1.o moc/moc_All_param_silos_1.cpp
+
+obj/moc_All_param_silos_2.o: moc/moc_All_param_silos_2.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_All_param_silos_2.o moc/moc_All_param_silos_2.cpp
 
 ####### Install
 

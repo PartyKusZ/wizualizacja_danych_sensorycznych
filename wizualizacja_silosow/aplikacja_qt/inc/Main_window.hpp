@@ -10,11 +10,12 @@
 
 
 class Main_window : public QWidget, public Ui::Main_window{
-    Q_OBJECT
+  Q_OBJECT
 
     public:
        
         explicit Main_window(QWidget *parent = nullptr);
         ~Main_window();
+
 
 };

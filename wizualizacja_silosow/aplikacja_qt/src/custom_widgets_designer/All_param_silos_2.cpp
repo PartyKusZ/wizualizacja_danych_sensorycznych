@@ -15,9 +15,16 @@
    */
 
  void All_param_silos_2::paintEvent(QPaintEvent *event){
+    QStyleOption opt;
+    opt.init(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+
+
+
     QPainter painter(this);
     this->draw_outline(painter,this->size());
-    this->draw_fulfilment(painter,this->size(),15);
+    this->draw_fulfilment(painter,this->size());
     this->draw_lines(painter,this->size());
     this->draw_temp_hum(painter);
  }

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.py": "python",
-        "qpainter": "cpp"
+        "qpainter": "cpp",
+        "qwidget": "cpp"
     }
 }

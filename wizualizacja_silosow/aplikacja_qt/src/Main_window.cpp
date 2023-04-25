@@ -6,8 +6,11 @@
  * @param parent parent widget
  */
 
-Main_window::Main_window(QWidget *parent): QWidget(parent), Ui::Main_window(){
+Main_window::Main_window(QWidget *parent): Ui::Main_window(), QWidget(parent){
+   
     this->setupUi(this);
+    this->all_param_silos_1->set_values("2","1","3","7",98);
+    this->all_param_silos_2->set_values("2","1","3","7",50);
 }   
 
 /**
