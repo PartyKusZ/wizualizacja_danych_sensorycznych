@@ -374,6 +374,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) res/res_output/qrc_res.cpp
 res/res_output/qrc_res.cpp: res/res.qrc \
 		/usr/lib/qt5/bin/rcc \
+		res/ok.png \
 		res/ikona_warning.png \
 		res/ikona_stop_tło.png \
 		res/krople.png \

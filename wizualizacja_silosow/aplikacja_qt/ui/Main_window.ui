@@ -516,7 +516,7 @@ QTabBar::tab:selected {
              <enum>Qt::AutoText</enum>
             </property>
             <property name="pixmap">
-             <pixmap resource="../res/res.qrc">:/ikona_stop.png</pixmap>
+             <pixmap resource="../res/res.qrc">:/ok.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>false</bool>

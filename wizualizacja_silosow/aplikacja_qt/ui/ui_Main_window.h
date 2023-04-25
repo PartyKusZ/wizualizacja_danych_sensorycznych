@@ -319,7 +319,7 @@ public:
         volume_ico_al_2->setFont(font1);
         volume_ico_al_2->setStyleSheet(QString::fromUtf8(""));
         volume_ico_al_2->setTextFormat(Qt::AutoText);
-        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop.png")));
+        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ok.png")));
         volume_ico_al_2->setScaledContents(false);
         volume_ico_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         volume_ico_al_2->setOpenExternalLinks(false);
