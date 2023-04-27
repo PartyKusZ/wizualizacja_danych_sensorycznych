@@ -2,6 +2,8 @@
     "files.associations": {
         "*.py": "python",
         "qpainter": "cpp",
-        "qwidget": "cpp"
+        "qwidget": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp"
     }
 }
