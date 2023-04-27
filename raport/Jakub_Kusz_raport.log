@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.6)  29 MAR 2023 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.6)  27 APR 2023 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -857,7 +857,7 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 
 Package newfloat Info: `float' package detected.
 (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/strona_tytulowa.tex
-<//home/kubus/Obrazy/logo-Pwr.png, id=67, 540.0978pt x 135.8676pt>
+<//home/kubus/Obrazy/logo-Pwr.png, id=79, 540.0978pt x 135.8676pt>
 File: //home/kubus/Obrazy/logo-Pwr.png Graphic file (type png)
 <use //home/kubus/Obrazy/logo-Pwr.png>
 Package pdftex.def Info: //home/kubus/Obrazy/logo-Pwr.png  used on input line 4.
@@ -881,7 +881,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.44     \newpage
                   [1] (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/1.tex) (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/2.tex [2]) (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/3.tex [3]
-<obrazy/wsd_gantt.png, id=114, 1866.975pt x 678.535pt>
+<obrazy/wsd_gantt.png, id=129, 1866.975pt x 678.535pt>
 File: obrazy/wsd_gantt.png Graphic file (type png)
 <use obrazy/wsd_gantt.png>
 Package pdftex.def Info: obrazy/wsd_gantt.png  used on input line 62.
@@ -890,57 +890,63 @@ Package pdftex.def Info: obrazy/wsd_gantt.png  used on input line 62.
 Overfull \vbox (24.49998pt too high) has occurred while \output is active []
 
  [5 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/wsd_gantt.png>]
-<obrazy/projekt_grafiki/all.png, id=125, 706.89093pt x 436.63126pt>
+<obrazy/projekt_grafiki/all.png, id=140, 706.89093pt x 436.63126pt>
 File: obrazy/projekt_grafiki/all.png Graphic file (type png)
 <use obrazy/projekt_grafiki/all.png>
 Package pdftex.def Info: obrazy/projekt_grafiki/all.png  used on input line 17.
 (pdftex.def)             Requested size: 511.86491pt x 316.17313pt.
-<obrazy/projekt_grafiki/wypełnienie.png, id=127, 706.89093pt x 436.63126pt>
+<obrazy/projekt_grafiki/wypełnienie.png, id=142, 706.89093pt x 436.63126pt>
 File: obrazy/projekt_grafiki/wypełnienie.png Graphic file (type png)
 <use obrazy/projekt_grafiki/wypełnienie.png>
 Package pdftex.def Info: obrazy/projekt_grafiki/wypełnienie.png  used on input line 29.
 (pdftex.def)             Requested size: 511.86491pt x 316.17313pt.
  [6 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/all.png>]
-<obrazy/projekt_grafiki/temperatura.png, id=135, 706.89093pt x 436.63126pt>
+<obrazy/projekt_grafiki/temperatura.png, id=150, 706.89093pt x 436.63126pt>
 File: obrazy/projekt_grafiki/temperatura.png Graphic file (type png)
 <use obrazy/projekt_grafiki/temperatura.png>
 Package pdftex.def Info: obrazy/projekt_grafiki/temperatura.png  used on input line 42.
 (pdftex.def)             Requested size: 511.86491pt x 316.17313pt.
  [7 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/wypełnienie.png>]
-<obrazy/projekt_grafiki/wilgotność.png, id=142, 706.89093pt x 436.63126pt>
+<obrazy/projekt_grafiki/wilgotność.png, id=158, 706.89093pt x 436.63126pt>
 File: obrazy/projekt_grafiki/wilgotność.png Graphic file (type png)
 <use obrazy/projekt_grafiki/wilgotność.png>
 Package pdftex.def Info: obrazy/projekt_grafiki/wilgotność.png  used on input line 55.
 (pdftex.def)             Requested size: 511.86491pt x 316.17313pt.
  [8 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/temperatura.png>]
-<obrazy/projekt_grafiki/wykresy.png, id=150, 706.89093pt x 436.63126pt>
+<obrazy/projekt_grafiki/wykresy.png, id=166, 706.89093pt x 436.63126pt>
 File: obrazy/projekt_grafiki/wykresy.png Graphic file (type png)
 <use obrazy/projekt_grafiki/wykresy.png>
 Package pdftex.def Info: obrazy/projekt_grafiki/wykresy.png  used on input line 67.
 (pdftex.def)             Requested size: 511.86491pt x 316.17313pt.
- [9 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/wilgotność.png>]) [10 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/wykresy.png>]
+ [9 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/wilgotność.png>]) (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/5.tex [10 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/projekt_grafiki/wykresy.png>]
+<obrazy/zakladka_wszystkie_parametry.png, id=178, 1151.30125pt x 717.68124pt>
+File: obrazy/zakladka_wszystkie_parametry.png Graphic file (type png)
+<use obrazy/zakladka_wszystkie_parametry.png>
+Package pdftex.def Info: obrazy/zakladka_wszystkie_parametry.png  used on input line 35.
+(pdftex.def)             Requested size: 511.86491pt x 319.07695pt.
+ [11]) [12 </home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/obrazy/zakladka_wszystkie_parametry.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `Jakub_Kusz_raport.out' has not changed.
-(rerunfilecheck)             Checksum: 068307C23D2D3CE7F987D85AFC7607EF;1073.
+(rerunfilecheck)             Checksum: 6DF60E763D0124BAF3B4DC3418333CEF;1272.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 31018 strings out of 481239
- 716142 string characters out of 5920378
+ 31037 strings out of 481239
+ 716644 string characters out of 5920378
  1178287 words of memory out of 5100000
- 45662 multiletter control sequences out of 15000+600000
+ 45671 multiletter control sequences out of 15000+600000
  544394 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,12n,98p,799b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.pdf (11 pages, 353807 bytes).
+Output written on /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/raport/Jakub_Kusz_raport.pdf (13 pages, 419294 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

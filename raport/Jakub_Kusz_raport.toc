@@ -14,3 +14,6 @@
 \contentsline {subsection}{\numberline {4.3}Widok temperatury}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Wilgotność}{9}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Dane historyczne}{10}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Prezentacja wyników pracy}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Protokół komunikacji}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Aplikacja}{12}{subsection.5.2}%
