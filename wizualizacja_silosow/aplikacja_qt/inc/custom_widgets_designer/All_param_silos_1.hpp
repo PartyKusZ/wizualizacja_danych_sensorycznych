@@ -23,7 +23,7 @@ class All_param_silos_1: public QWidget, public All_param_draw{
         void paintEvent(QPaintEvent *event) override;
 
          ~All_param_silos_1();
-    public slots:
-        void data_refresh(int _temp_1, int _temp_2, int _hum_1, int _hum_2, int _fulfilment);
+   // public slots:
+        void data_refresh(int _fulfilment,int _temp_1, int _temp_2, int _hum_1, int _hum_2);
 
 };

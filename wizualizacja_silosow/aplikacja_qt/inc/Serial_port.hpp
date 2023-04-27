@@ -1,8 +1,10 @@
 #pragma once
+#include <iostream>
 #include <vector>
 #include <libserial/SerialPort.h>
 #include <libserial/SerialPortConstants.h>
 #include "FastCRC.hpp"
+#include "Data.hpp"
 
 /**
  * @brief A class that receives data from the serial port and interprets it
@@ -24,6 +26,6 @@ class Serial_port: private LibSerial::SerialPort, public FastCRC8{
     public:
 
         Serial_port();
-        std::vector<uint16_t> get_data(); // returns vector of read data : filling, temp1, temp2, humidity1, humidity2
+        void get_data(Data *data); // returns vector of read data : filling, temp1, temp2, humidity1, humidity2
 
 };

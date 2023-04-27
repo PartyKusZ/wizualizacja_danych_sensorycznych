@@ -9,7 +9,7 @@
  */
 class Data{
     private:
-        constexpr static int FIRST = 1;  //!< determines the silo number
+        constexpr static int FIRST = 0xFE;  //!< determines the silo number
         constexpr static int SECOND = 2; //!< determines the silo number
 
         std::mutex lock;                 //!< mutex for blocking access to data
