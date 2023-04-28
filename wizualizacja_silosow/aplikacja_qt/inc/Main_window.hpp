@@ -24,11 +24,11 @@ class Main_window : public QWidget, public Ui::Main_window{
   public:
       
     explicit Main_window(QWidget *parent = nullptr, Data *_data = nullptr);
-    void refresh();
     ~Main_window();
 
   public slots:
-    void test_silo();
+    void set_all_param_silos_1();
+    void set_all_param_silos_1_fullfilmnet_text();
 
 
 };

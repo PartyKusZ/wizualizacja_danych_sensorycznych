@@ -19,10 +19,10 @@ All_param_silos_1::All_param_silos_1(QWidget *parent): QWidget(parent), All_para
  */
 
 void All_param_silos_1::paintEvent(QPaintEvent *event){
-    QStyleOption opt;
-    opt.init(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+    // QStyleOption opt;
+    // opt.init(this);
+    // QPainter p(this);
+    // style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 
 
     QPainter painter(this);
@@ -42,9 +42,9 @@ void All_param_silos_1::paintEvent(QPaintEvent *event){
  * @param _fulfilment 
  */
 
-void All_param_silos_1::data_refresh(int _fulfilment,int _temp_1, int _temp_2, int _hum_1, int _hum_2){
+void All_param_silos_1::data_refresh(double _fulfilment,double _temp_1, double _temp_2, double _hum_1, double _hum_2){
 
-    this->set_values(QString::number(_temp_1 / 10 ),QString::number(_temp_2 / 10),QString::number(_hum_1 / 10),QString::number(_hum_2 / 10),_fulfilment);
+    this->set_values(_fulfilment,QString::number(_temp_1  ),QString::number(_temp_2 ),QString::number(_hum_1 ),QString::number(_hum_2 ));
     this->update();
 
 }

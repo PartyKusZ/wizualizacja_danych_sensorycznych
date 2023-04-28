@@ -18,7 +18,7 @@ void Silos::setup(int *dht_pins, int *hcsr04_pins,int _height_of_silos){
 
 uint16_t Silos::get_volume(){ // zwraca wypełnienie w [%] 
   int volume = hcsr04.dist() / this->height_of_silos * 100; 
-  return (volume < 100) ? volume : 100;  // jeśli obliczone wypełnienie byłoby wieksze to i tak zwróc 100 %
+  return 100 - ((volume < 100) ? volume : 100);  // jeśli obliczone wypełnienie byłoby wieksze to i tak zwróc 100 %
 }
 
 uint16_t Silos::get_temperature_0(){

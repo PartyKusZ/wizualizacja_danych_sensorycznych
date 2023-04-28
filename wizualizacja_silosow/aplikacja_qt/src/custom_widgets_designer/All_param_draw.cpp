@@ -132,11 +132,11 @@ void All_param_draw::draw_temp_hum(QPainter &painter){
  * @param _fulfilment 
  */
 
-void All_param_draw::set_values(QString _temp_1, QString _temp_2, QString _hum_1, QString _hum_2, int _fulfilment){
-    temp_1 = _temp_1;
-    temp_2 = _temp_2;
-    hum_1 = _hum_1;
-    hum_2 = _hum_2;
+void All_param_draw::set_values(int _fulfilment, QString _temp_1, QString _temp_2, QString _hum_1, QString _hum_2){
+    temp_1 = _temp_1 + " °C";
+    temp_2 = _temp_2 + " °C";
+    hum_1 = _hum_1 + " %";
+    hum_2 = _hum_2 + " %";
     fulfilment = _fulfilment;
 }
 

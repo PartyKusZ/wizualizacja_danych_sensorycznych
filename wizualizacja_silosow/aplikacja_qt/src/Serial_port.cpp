@@ -36,6 +36,7 @@ void Serial_port::get_data(Data *_data) {
             if(this->smbus(this->data.data(), 10) == crc){
                 this->ready_data.push_back(this->data[11]);
                 _data->set_data(this->ready_data);
+                this->ready_data.clear();
             }else{
                 this->ready_data.clear();
                 _data->set_data(this->ready_data);

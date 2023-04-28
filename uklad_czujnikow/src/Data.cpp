@@ -1,6 +1,6 @@
 #include "../inc/Data.hpp"
 
-Data::Data(): FastCRC8() {};
+Data::Data(int _silos_number): silos_number(_silos_number), FastCRC8() {};
 
 void Data::set_volume(uint16_t volume){
     byte first = (byte)(volume >> 8);         // przypisuje do pomocniczej zmiennej 8 najstarszych bitów
@@ -41,7 +41,7 @@ byte *Data::get_data_frame(){
     this->set_humidity_0(this->data[3]);
     this->set_humidity_1(this->data[4]);
     this->data_frame[11] = this->smbus(data_frame + 1, 10); // obliczenie sumy kontrlonej dla 10 bajtów reprezentujących dane 
-    this->data_frame[12] = STOP; // wpisanie znaku stop do ostatniego elementu ramki 
+    this->data_frame[12] = silos_number; // wpisanie znaku stop do ostatniego elementu ramki 
     return this->data_frame;     // zwrócenie ramki 
 }
 

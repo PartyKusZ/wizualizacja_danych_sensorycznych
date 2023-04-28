@@ -33,7 +33,7 @@ class All_param_draw: public Silos_position{
 
     public:
          All_param_draw();
-         void set_values(QString _temp_1, QString _temp_2, QString _hum_1, QString _hum_2, int _fulfilment);
+         void set_values(int _fulfilment,QString _temp_1, QString _temp_2, QString _hum_1, QString _hum_2);
         ~All_param_draw();
     protected:
         void draw_fulfilment(QPainter &painter,QSize size);
