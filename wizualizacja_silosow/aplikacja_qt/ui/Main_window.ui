@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1146</width>
+    <width>1147</width>
     <height>679</height>
    </rect>
   </property>
@@ -72,8 +72,9 @@ QTabBar::tab:selected {
        <string notr="true">QWidget{
 	background: #26292e;
 	border-radius: 20px;
-	margin: 10px;
+margin: 10px;
 }
+
 
 #tab_all_param{
 	background: #010101;
@@ -516,7 +517,7 @@ QTabBar::tab:selected {
              <enum>Qt::AutoText</enum>
             </property>
             <property name="pixmap">
-             <pixmap resource="../res/res.qrc">:/ikona_stop.png</pixmap>
+             <pixmap resource="../res/res.qrc">:/ok.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>false</bool>
@@ -664,7 +665,10 @@ QTabBar::tab:selected {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">QLabel{
+          <string notr="true">
+
+
+QLabel{
 	color: #ffffff
 }</string>
          </property>

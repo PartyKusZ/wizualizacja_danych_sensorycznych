@@ -1,6 +1,8 @@
 #pragma once
 #include <QWidget>
 #include <QPainter>
+#include <QStyle>
+#include <QStyleOption>
 #include <iostream>
 #include "All_param_draw.hpp"
 
@@ -15,9 +17,12 @@ class All_param_silos_1: public QWidget, public All_param_draw{
     public:
 
    
-        All_param_silos_1(QWidget *parent);
+        explicit All_param_silos_1(QWidget *parent);
 
         void paintEvent(QPaintEvent *event) override;
 
          ~All_param_silos_1();
+  
+        void data_refresh(double _fulfilment,double _temp_1, double _temp_2, double _hum_1, double _hum_2);
+
 };

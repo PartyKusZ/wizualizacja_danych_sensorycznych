@@ -68,7 +68,7 @@ public:
     {
         if (Main_window->objectName().isEmpty())
             Main_window->setObjectName(QString::fromUtf8("Main_window"));
-        Main_window->resize(1146, 679);
+        Main_window->resize(1147, 679);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -116,8 +116,9 @@ public:
         tab_all_param->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "	background: #26292e;\n"
 "	border-radius: 20px;\n"
-"	margin: 10px;\n"
+"margin: 10px;\n"
 "}\n"
+"\n"
 "\n"
 "#tab_all_param{\n"
 "	background: #010101;\n"
@@ -319,7 +320,7 @@ public:
         volume_ico_al_2->setFont(font1);
         volume_ico_al_2->setStyleSheet(QString::fromUtf8(""));
         volume_ico_al_2->setTextFormat(Qt::AutoText);
-        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop.png")));
+        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ok.png")));
         volume_ico_al_2->setScaledContents(false);
         volume_ico_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         volume_ico_al_2->setOpenExternalLinks(false);
@@ -379,7 +380,10 @@ public:
         sizePolicy2.setHeightForWidth(all_param_silos_1->sizePolicy().hasHeightForWidth());
         all_param_silos_1->setSizePolicy(sizePolicy2);
         all_param_silos_1->setMinimumSize(QSize(262, 446));
-        all_param_silos_1->setStyleSheet(QString::fromUtf8("QLabel{\n"
+        all_param_silos_1->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"\n"
+"QLabel{\n"
 "	color: #ffffff\n"
 "}"));
         gridLayout_5 = new QGridLayout(all_param_silos_1);

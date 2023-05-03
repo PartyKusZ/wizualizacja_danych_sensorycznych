@@ -2,7 +2,7 @@
 TARGET = wizualizacja
 
 
-QT += widgets
+QT += widgets 
 
 # sprawdzanie czy katalogi src i inc istnieją 
 src_dir_exists = $$system(test -d src)
