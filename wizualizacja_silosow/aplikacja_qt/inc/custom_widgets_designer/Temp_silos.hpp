@@ -4,24 +4,25 @@
 #include <QStyle>
 #include <QStyleOption>
 #include <iostream>
-#include "All_param_draw.hpp"
-
+#include "Temp_draw.hpp"
 
 /**
  * @brief The class responsible for drawing the silo in the "All parameters" tab.
  * 
  */
 
-
-class All_param_silos_2: public QWidget, public All_param_draw{
- 
+class Temp_silos: public QWidget, public Temp_draw{
     private:
-    
+
     public:
 
-        All_param_silos_2(QWidget *parent);
+   
+        explicit Temp_silos(QWidget *parent);
 
         void paintEvent(QPaintEvent *event) override;
 
-        ~All_param_silos_2();
+        ~Temp_silos();
+  
+        void data_refresh(double _temp_1, double _temp_2);
+
 };
