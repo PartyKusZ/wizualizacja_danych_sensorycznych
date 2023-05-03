@@ -6,7 +6,9 @@
  */
 
 Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent){
-   
+
+    this->state_of_alarms = new State_of_alarms;
+
     this->setupUi(this);
     
     this->volume_info_al_1->setText("98%");
@@ -44,4 +46,6 @@ void Main_window::set_all_param_silos_1_fullfilmnet_text(){
  * @brief Destroy the Main_window::Main_window object
  * 
  */
-Main_window::~Main_window(){}
+Main_window::~Main_window(){
+    delete this->state_of_alarms;
+}

@@ -22,7 +22,12 @@ void Temp_draw::set_temperature(QString _temp_1, QString _temp_2){
 
 };
 
-
+/**
+ * @brief Draws a gradient showing the temperature distribution 
+ * 
+ * @param painter Qpainter object
+ * @param size  size of the widget on which the gradient is drawn
+ */
 void Temp_draw::draw_gradient(QPainter &painter,QSize size){
     auto c_size = size;
     QRect rect(this->get_x_offset(c_size.width()),this->get_y_offset(c_size.height()),this->get_width(c_size.width()),this->get_height(c_size.height())); // Pozycja i rozmiar prostokąta
@@ -37,5 +42,8 @@ void Temp_draw::draw_gradient(QPainter &painter,QSize size){
     painter.drawRect(rect);
 }
 
-
+/**
+ * @brief Destroy the Temp_draw::Temp_draw object
+ * 
+ */
 Temp_draw::~Temp_draw(){;};

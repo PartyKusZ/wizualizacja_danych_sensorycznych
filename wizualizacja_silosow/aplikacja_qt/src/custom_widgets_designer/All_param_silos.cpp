@@ -33,7 +33,7 @@ void All_param_silos::paintEvent(QPaintEvent *event){
  }
 
 /**
- * @brief Slot for refresing data on na silos
+ * @brief   Sets all param  values needed to draw and to display it 
  * 
  * @param _temp_1 
  * @param _temp_2 

@@ -6,6 +6,7 @@
 #include <iostream>
 #include "ui_Main_window.h"
 #include "Data.hpp"
+#include "State_of_alarms.hpp"
 
 /**
  * @brief Class representing the main window
@@ -20,7 +21,10 @@ class Main_window : public QWidget, public Ui::Main_window{
     Data *data;
     std::array<int,5> silos_1;
     std::array<int,5> silos_2;
+
     QTimer timer;
+
+    State_of_alarms *state_of_alarms;
   public:
       
     explicit Main_window(QWidget *parent = nullptr, Data *_data = nullptr);
