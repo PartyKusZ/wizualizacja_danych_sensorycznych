@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Main_window_t {
-    QByteArrayData data[4];
-    char stringdata0[74];
+    QByteArrayData data[8];
+    char stringdata0[186];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,19 @@ static const qt_meta_stringdata_Main_window_t qt_meta_stringdata_Main_window = {
 QT_MOC_LITERAL(0, 0, 11), // "Main_window"
 QT_MOC_LITERAL(1, 12, 21), // "set_all_param_silos_1"
 QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 38) // "set_all_param_silos_1_fullfil..."
+QT_MOC_LITERAL(3, 35, 38), // "set_all_param_silos_1_fullfil..."
+QT_MOC_LITERAL(4, 74, 21), // "set_all_param_silos_2"
+QT_MOC_LITERAL(5, 96, 38), // "set_all_param_silos_2_fullfil..."
+QT_MOC_LITERAL(6, 135, 26), // "show_temp_settings_silos_1"
+QT_MOC_LITERAL(7, 162, 23) // "set_alarms_temp_silos_1"
 
     },
     "Main_window\0set_all_param_silos_1\0\0"
-    "set_all_param_silos_1_fullfilmnet_text"
+    "set_all_param_silos_1_fullfilmnet_text\0"
+    "set_all_param_silos_2\0"
+    "set_all_param_silos_2_fullfilmnet_text\0"
+    "show_temp_settings_silos_1\0"
+    "set_alarms_temp_silos_1"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +56,7 @@ static const uint qt_meta_data_Main_window[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,10 +64,18 @@ static const uint qt_meta_data_Main_window[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a /* Public */,
-       3,    0,   25,    2, 0x0a /* Public */,
+       1,    0,   44,    2, 0x0a /* Public */,
+       3,    0,   45,    2, 0x0a /* Public */,
+       4,    0,   46,    2, 0x0a /* Public */,
+       5,    0,   47,    2, 0x0a /* Public */,
+       6,    0,   48,    2, 0x0a /* Public */,
+       7,    0,   49,    2, 0x0a /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -74,6 +90,10 @@ void Main_window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->set_all_param_silos_1(); break;
         case 1: _t->set_all_param_silos_1_fullfilmnet_text(); break;
+        case 2: _t->set_all_param_silos_2(); break;
+        case 3: _t->set_all_param_silos_2_fullfilmnet_text(); break;
+        case 4: _t->show_temp_settings_silos_1(); break;
+        case 5: _t->set_alarms_temp_silos_1(); break;
         default: ;
         }
     }
@@ -111,13 +131,13 @@ int Main_window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 6;
     }
     return _id;
 }

@@ -5,7 +5,7 @@
  * 
  * @param parent 
  */
-Temp_silos::Temp_silos(QWidget *parent): QWidget(parent), Temp_draw(), Ui::temp_alarms_window() {};
+Temp_silos::Temp_silos(QWidget *parent): QWidget(parent), Temp_draw() {};
 
 /**
  * @brief overloaded drawing method 

@@ -1,12 +1,10 @@
 #pragma once
-#include <QObject>
 /**
  * @brief Class storing information about alarm levels
  * 
  */
 
-class State_of_alarms: public QObject{
-    Q_OBJECT
+class State_of_alarms{
     private:
         int temp_alarm_silos_1;
         int temp_alarm_silos_2;
@@ -43,7 +41,7 @@ class State_of_alarms: public QObject{
         int get_critical_fulfillment_alarm_silos_1() const;
         int get_critical_fulfillment_alarm_silos_2() const;
     
-    public slots:
+  
         void set_temp_alarm_silos_1(int temp_alarm_silos_1);
         void set_temp_alarm_silos_2(int temp_alarm_silos_2);
         void set_critical_temp_alarm_silos_1(int critical_temp_alarm_silos_1);

@@ -11,7 +11,7 @@ State_of_alarms::State_of_alarms()
       hum_alarm_silos_1(0), hum_alarm_silos_2(0),
       critical_hum_alarm_silos_1(0), critical_hum_alarm_silos_2(0),
       fulfillment_alarm_silos_1(0), fulfillment_alarm_silos_2(0),
-      critical_fulfillment_alarm_silos_1(0), critical_fulfillment_alarm_silos_2(0), QObject() {
+      critical_fulfillment_alarm_silos_1(0), critical_fulfillment_alarm_silos_2(0) {
 }
 
 

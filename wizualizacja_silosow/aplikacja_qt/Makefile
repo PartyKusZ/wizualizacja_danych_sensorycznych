@@ -63,8 +63,7 @@ SOURCES       = src/Data.cpp \
 		src/custom_widgets_designer/Silos_position.cpp \
 		src/custom_widgets_designer/Temp_draw.cpp \
 		src/custom_widgets_designer/Temp_silos.cpp res/res_output/qrc_res.cpp \
-		moc/moc_Main_window.cpp \
-		moc/moc_State_of_alarms.cpp
+		moc/moc_Main_window.cpp
 OBJECTS       = obj/Data.o \
 		obj/FastCRCsw.o \
 		obj/main.o \
@@ -77,8 +76,7 @@ OBJECTS       = obj/Data.o \
 		obj/Temp_draw.o \
 		obj/Temp_silos.o \
 		obj/qrc_res.o \
-		obj/moc_Main_window.o \
-		obj/moc_State_of_alarms.o
+		obj/moc_Main_window.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -403,21 +401,17 @@ compiler_moc_predefs_clean:
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_Main_window.cpp moc/moc_State_of_alarms.cpp
+compiler_moc_header_make_all: moc/moc_Main_window.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc/moc_Main_window.cpp moc/moc_State_of_alarms.cpp
+	-$(DEL_FILE) moc/moc_Main_window.cpp
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/Data.hpp \
 		inc/State_of_alarms.hpp \
+		ui/ui_Temp_alarms.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
-
-moc/moc_State_of_alarms.cpp: inc/State_of_alarms.hpp \
-		moc/moc_predefs.h \
-		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/State_of_alarms.hpp -o moc/moc_State_of_alarms.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -433,8 +427,7 @@ ui/ui_Main_window.h: ui/Main_window.ui \
 		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/custom_widgets_designer/Temp_draw.hpp \
-		inc/custom_widgets_designer/Silos_position.hpp \
-		ui/ui_Temp_alarms.h
+		inc/custom_widgets_designer/Silos_position.hpp
 	/usr/lib/qt5/bin/uic ui/Main_window.ui -o ui/ui_Main_window.h
 
 ui/ui_Temp_alarms.h: ui/Temp_alarms.ui \
@@ -462,6 +455,7 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/Data.hpp \
 		inc/State_of_alarms.hpp \
+		ui/ui_Temp_alarms.h \
 		inc/Serial_port.hpp \
 		inc/FastCRC.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
@@ -469,7 +463,8 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
 		inc/Data.hpp \
-		inc/State_of_alarms.hpp
+		inc/State_of_alarms.hpp \
+		ui/ui_Temp_alarms.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
@@ -498,8 +493,7 @@ obj/Temp_draw.o: src/custom_widgets_designer/Temp_draw.cpp inc/custom_widgets_de
 
 obj/Temp_silos.o: src/custom_widgets_designer/Temp_silos.cpp inc/custom_widgets_designer/Temp_silos.hpp \
 		inc/custom_widgets_designer/Temp_draw.hpp \
-		inc/custom_widgets_designer/Silos_position.hpp \
-		ui/ui_Temp_alarms.h
+		inc/custom_widgets_designer/Silos_position.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Temp_silos.o src/custom_widgets_designer/Temp_silos.cpp
 
 obj/qrc_res.o: res/res_output/qrc_res.cpp 
@@ -507,9 +501,6 @@ obj/qrc_res.o: res/res_output/qrc_res.cpp
 
 obj/moc_Main_window.o: moc/moc_Main_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Main_window.o moc/moc_Main_window.cpp
-
-obj/moc_State_of_alarms.o: moc/moc_State_of_alarms.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_State_of_alarms.o moc/moc_State_of_alarms.cpp
 
 ####### Install
 
