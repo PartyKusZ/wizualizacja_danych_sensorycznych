@@ -8,19 +8,39 @@
 Temp_draw::Temp_draw(): Silos_position() {;};
 
 
+/**
+ * @brief Sets the temperature values needed to draw the gradient
+ * 
+ * @param _temp_1 temperature of the first sensor
+ * @param _temp_2 temperature of the second sensor
+ */
+
+void Temp_draw:: set_temperature(int _temp_1, int _temp_2){
+
+    this->temp_1 = _temp_1;
+    this->temp_2 = _temp_2;
+}
+
+
+
+
 
 /**
- * @brief simply setter method for temp param 
+ * @brief sets the value of the alrams for correct gradient adjustment. the colours depend on the value of the alrams.
  * 
- * @param _temp_1 
- * @param _temp_2 
+ * @param state state of alarms 
  */
-void Temp_draw::set_temperature(QString _temp_1, QString _temp_2){
 
-    this->temp_1 = _temp_1 + " °C";
-    this->temp_2 = _temp_2 + " °C";
+void Temp_draw::set_state_of_alarms(State_of_alarms *state){
+    this->state_of_alarms = state;
+}
 
-};
+
+
+
+
+
+
 
 /**
  * @brief Draws a gradient showing the temperature distribution 

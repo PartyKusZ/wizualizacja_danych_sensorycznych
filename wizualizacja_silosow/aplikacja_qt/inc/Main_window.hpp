@@ -4,6 +4,7 @@
 #include <array>
 #include <QTimer>
 #include <iostream>
+#include <algorithm>
 #include "ui_Main_window.h"
 #include "Data.hpp"
 #include "State_of_alarms.hpp"
@@ -34,12 +35,15 @@ class Main_window : public QWidget, public Ui::Main_window{
     ~Main_window();
 
   public slots:
+    void silos_data_update();
     void set_all_param_silos_1();
     void set_all_param_silos_1_fullfilmnet_text();
     void set_all_param_silos_2();
     void set_all_param_silos_2_fullfilmnet_text();
     void show_temp_settings_silos_1();
     void set_alarms_temp_silos_1();
+    void set_info_alarms_temp_silos_1();
+    void set_temp_silos_1();
 
 
 

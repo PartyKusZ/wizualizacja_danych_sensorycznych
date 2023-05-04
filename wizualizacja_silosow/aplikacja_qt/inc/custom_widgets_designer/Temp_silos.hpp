@@ -6,13 +6,12 @@
 #include <iostream>
 #include "Temp_draw.hpp"
 /**
- * @brief The class responsible for drawing the silo in the "All parameters" tab.
+ * @brief The class responsible for drawing the silo in the "Temperature" tab.
  * 
  */
 
 class Temp_silos: public QWidget, public Temp_draw{
     private:
-
     public:
 
    

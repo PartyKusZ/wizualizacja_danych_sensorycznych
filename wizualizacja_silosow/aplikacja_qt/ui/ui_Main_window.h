@@ -70,6 +70,11 @@ public:
     QPushButton *temp_alarms_settings_button_silos_2;
     Temp_silos *temp_silos_1;
     QGridLayout *gridLayout_13;
+    QLabel *temp_silos_1_second;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *temp_silos_1_first;
+    QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_5;
     Temp_silos *temp_silos_2;
     QGridLayout *gridLayout_14;
     QWidget *temp_alarms_silos_1;
@@ -509,10 +514,39 @@ public:
 "\n"
 "\n"
 "QLabel{\n"
-"	color: #ffffff\n"
+"	color: #ffffff;\n"
+"	 background-color: rgba(0, 0, 0, 0); \n"
 "}"));
         gridLayout_13 = new QGridLayout(temp_silos_1);
         gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+        temp_silos_1_second = new QLabel(temp_silos_1);
+        temp_silos_1_second->setObjectName(QString::fromUtf8("temp_silos_1_second"));
+        QFont font4;
+        font4.setPointSize(23);
+        temp_silos_1_second->setFont(font4);
+        temp_silos_1_second->setAlignment(Qt::AlignCenter);
+
+        gridLayout_13->addWidget(temp_silos_1_second, 3, 0, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_4, 4, 0, 1, 1);
+
+        temp_silos_1_first = new QLabel(temp_silos_1);
+        temp_silos_1_first->setObjectName(QString::fromUtf8("temp_silos_1_first"));
+        temp_silos_1_first->setFont(font4);
+        temp_silos_1_first->setAlignment(Qt::AlignCenter);
+
+        gridLayout_13->addWidget(temp_silos_1_first, 1, 0, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_5, 2, 0, 1, 1);
+
 
         gridLayout_15->addWidget(temp_silos_1, 0, 0, 1, 1);
 
@@ -644,6 +678,8 @@ public:
         temp_info_alarms_temp_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         temp_ico_temp_2->setText(QString());
         temp_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
+        temp_silos_1_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        temp_silos_1_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
         temp_ico_temp_1->setText(QString());
         temp_info_alarms_temp_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         temp_alarms_temp_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
