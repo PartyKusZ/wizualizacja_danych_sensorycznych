@@ -1,12 +1,12 @@
-#include "All_param_silos_1.hpp"
+#include "All_param_silos.hpp"
 
 /**
-* @brief Construct a new All_param_silos_1 object
+* @brief Construct a new All_param_silos object
 * 
 * @param parent parent widget
  */
 
-All_param_silos_1::All_param_silos_1(QWidget *parent): QWidget(parent), All_param_draw() {
+All_param_silos::All_param_silos(QWidget *parent): QWidget(parent), All_param_draw() {
     
 };
 
@@ -18,7 +18,7 @@ All_param_silos_1::All_param_silos_1(QWidget *parent): QWidget(parent), All_para
  * @param event 
  */
 
-void All_param_silos_1::paintEvent(QPaintEvent *event){
+void All_param_silos::paintEvent(QPaintEvent *event){
     // QStyleOption opt;
     // opt.init(this);
     // QPainter p(this);
@@ -33,7 +33,7 @@ void All_param_silos_1::paintEvent(QPaintEvent *event){
  }
 
 /**
- * @brief Slot for refresing data on na silos
+ * @brief   Sets all param  values needed to draw and to display it 
  * 
  * @param _temp_1 
  * @param _temp_2 
@@ -42,7 +42,7 @@ void All_param_silos_1::paintEvent(QPaintEvent *event){
  * @param _fulfilment 
  */
 
-void All_param_silos_1::data_refresh(double _fulfilment,double _temp_1, double _temp_2, double _hum_1, double _hum_2){
+void All_param_silos::data_refresh(double _fulfilment,double _temp_1, double _temp_2, double _hum_1, double _hum_2){
 
     this->set_values(_fulfilment,QString::number(_temp_1  ),QString::number(_temp_2 ),QString::number(_hum_1 ),QString::number(_hum_2 ));
     this->update();
@@ -53,8 +53,8 @@ void All_param_silos_1::data_refresh(double _fulfilment,double _temp_1, double _
 
 
 /**
- * @brief Destroy the All_param_silos_1::All_param_silos_1 object
+ * @brief Destroy the All_param_silos::All_param_silos object
  * 
  */
-All_param_silos_1::~All_param_silos_1(){};
+All_param_silos::~All_param_silos(){};
  

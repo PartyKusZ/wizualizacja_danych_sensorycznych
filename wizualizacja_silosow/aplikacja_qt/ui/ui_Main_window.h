@@ -14,11 +14,12 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
-#include "All_param_silos_1.hpp"
-#include "All_param_silos_2.hpp"
+#include "All_param_silos.hpp"
+#include "Temp_silos.hpp"
 
 QT_BEGIN_NAMESPACE
 
@@ -35,31 +36,58 @@ public:
     QLabel *volume_ico_al_1;
     QLabel *temp_ico_al_1;
     QLabel *volume_alarms_al_1;
-    QLabel *hum_ico_al_1;
     QLabel *temp_alarms_al_1;
     QLabel *volume_info_alarms_al_1;
     QLabel *temp_info_alarms_al_1;
     QLabel *hum_info_alarms_al_1;
-    All_param_silos_2 *all_param_silos_2;
+    QLabel *hum_ico_al_1;
+    All_param_silos *all_param_silos_2;
     QGridLayout *gridLayout_6;
     QLabel *volume_info_al_2;
     QSpacerItem *verticalSpacer_2;
     QWidget *all_param_alarms_silos_2;
     QGridLayout *gridLayout_4;
-    QLabel *temp_alarms_al_2;
-    QLabel *temp_info_alarms_al_2;
     QLabel *temp_ico_al_2;
-    QLabel *volume_ico_al_2;
     QLabel *volume_info_alarms_al_2;
-    QLabel *volume_alarms_al_2;
+    QLabel *temp_info_alarms_al_2;
     QLabel *hum_alarms_al_2;
     QLabel *hum_info_alarms_al_2;
+    QLabel *volume_ico_al_2;
+    QLabel *temp_alarms_al_2;
     QLabel *hum_ico_al_2;
-    All_param_silos_1 *all_param_silos_1;
+    QLabel *volume_alarms_al_2;
+    All_param_silos *all_param_silos_1;
     QGridLayout *gridLayout_5;
     QLabel *volume_info_al_1;
     QSpacerItem *verticalSpacer;
     QWidget *tab_temp;
+    QGridLayout *gridLayout_15;
+    QWidget *temp_alarms_silos_2;
+    QGridLayout *gridLayout_7;
+    QLabel *temp_alarms_temp_2;
+    QLabel *temp_info_alarms_temp_2;
+    QLabel *temp_ico_temp_2;
+    QPushButton *temp_alarms_settings_button_silos_2;
+    Temp_silos *temp_silos_1;
+    QGridLayout *gridLayout_13;
+    QLabel *temp_silos_1_second;
+    QSpacerItem *verticalSpacer_4;
+    QLabel *temp_silos_1_first;
+    QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_5;
+    Temp_silos *temp_silos_2;
+    QGridLayout *gridLayout_8;
+    QSpacerItem *verticalSpacer_6;
+    QLabel *temp_silos_2_first;
+    QSpacerItem *verticalSpacer_7;
+    QLabel *temp_silos_2_second;
+    QSpacerItem *verticalSpacer_8;
+    QWidget *temp_alarms_silos_1;
+    QGridLayout *gridLayout_11;
+    QLabel *temp_ico_temp_1;
+    QLabel *temp_info_alarms_temp_1;
+    QLabel *temp_alarms_temp_1;
+    QPushButton *temp_alarms_settings_button_silos_1;
     QWidget *tab_humidity;
     QWidget *tab_volume;
     QWidget *tab_old_data;
@@ -68,7 +96,7 @@ public:
     {
         if (Main_window->objectName().isEmpty())
             Main_window->setObjectName(QString::fromUtf8("Main_window"));
-        Main_window->resize(1147, 679);
+        Main_window->resize(1144, 679);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -198,16 +226,6 @@ public:
 
         gridLayout_3->addWidget(volume_alarms_al_1, 1, 0, 1, 1);
 
-        hum_ico_al_1 = new QLabel(all_param_alarms_silos_1);
-        hum_ico_al_1->setObjectName(QString::fromUtf8("hum_ico_al_1"));
-        sizePolicy2.setHeightForWidth(hum_ico_al_1->sizePolicy().hasHeightForWidth());
-        hum_ico_al_1->setSizePolicy(sizePolicy2);
-        hum_ico_al_1->setMinimumSize(QSize(50, 50));
-        hum_ico_al_1->setPixmap(QPixmap(QString::fromUtf8(":/ikona_warning.png")));
-        hum_ico_al_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-
-        gridLayout_3->addWidget(hum_ico_al_1, 5, 2, 1, 1);
-
         temp_alarms_al_1 = new QLabel(all_param_alarms_silos_1);
         temp_alarms_al_1->setObjectName(QString::fromUtf8("temp_alarms_al_1"));
         sizePolicy2.setHeightForWidth(temp_alarms_al_1->sizePolicy().hasHeightForWidth());
@@ -243,10 +261,20 @@ public:
 
         gridLayout_3->addWidget(hum_info_alarms_al_1, 5, 1, 1, 1);
 
+        hum_ico_al_1 = new QLabel(all_param_alarms_silos_1);
+        hum_ico_al_1->setObjectName(QString::fromUtf8("hum_ico_al_1"));
+        sizePolicy2.setHeightForWidth(hum_ico_al_1->sizePolicy().hasHeightForWidth());
+        hum_ico_al_1->setSizePolicy(sizePolicy2);
+        hum_ico_al_1->setMinimumSize(QSize(50, 50));
+        hum_ico_al_1->setPixmap(QPixmap(QString::fromUtf8(":/ikona_warning.png")));
+        hum_ico_al_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+
+        gridLayout_3->addWidget(hum_ico_al_1, 5, 2, 1, 1);
+
 
         gridLayout_2->addWidget(all_param_alarms_silos_1, 2, 0, 1, 1);
 
-        all_param_silos_2 = new All_param_silos_2(tab_all_param);
+        all_param_silos_2 = new All_param_silos(tab_all_param);
         all_param_silos_2->setObjectName(QString::fromUtf8("all_param_silos_2"));
         sizePolicy2.setHeightForWidth(all_param_silos_2->sizePolicy().hasHeightForWidth());
         all_param_silos_2->setSizePolicy(sizePolicy2);
@@ -282,23 +310,6 @@ public:
 "}"));
         gridLayout_4 = new QGridLayout(all_param_alarms_silos_2);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        temp_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
-        temp_alarms_al_2->setObjectName(QString::fromUtf8("temp_alarms_al_2"));
-        sizePolicy2.setHeightForWidth(temp_alarms_al_2->sizePolicy().hasHeightForWidth());
-        temp_alarms_al_2->setSizePolicy(sizePolicy2);
-        temp_alarms_al_2->setFont(font);
-
-        gridLayout_4->addWidget(temp_alarms_al_2, 1, 0, 1, 1);
-
-        temp_info_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
-        temp_info_alarms_al_2->setObjectName(QString::fromUtf8("temp_info_alarms_al_2"));
-        sizePolicy2.setHeightForWidth(temp_info_alarms_al_2->sizePolicy().hasHeightForWidth());
-        temp_info_alarms_al_2->setSizePolicy(sizePolicy2);
-        temp_info_alarms_al_2->setMinimumSize(QSize(0, 0));
-        temp_info_alarms_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_4->addWidget(temp_info_alarms_al_2, 1, 1, 1, 1);
-
         temp_ico_al_2 = new QLabel(all_param_alarms_silos_2);
         temp_ico_al_2->setObjectName(QString::fromUtf8("temp_ico_al_2"));
         sizePolicy2.setHeightForWidth(temp_ico_al_2->sizePolicy().hasHeightForWidth());
@@ -312,21 +323,6 @@ public:
 
         gridLayout_4->addWidget(temp_ico_al_2, 1, 2, 1, 1);
 
-        volume_ico_al_2 = new QLabel(all_param_alarms_silos_2);
-        volume_ico_al_2->setObjectName(QString::fromUtf8("volume_ico_al_2"));
-        sizePolicy2.setHeightForWidth(volume_ico_al_2->sizePolicy().hasHeightForWidth());
-        volume_ico_al_2->setSizePolicy(sizePolicy2);
-        volume_ico_al_2->setMinimumSize(QSize(50, 50));
-        volume_ico_al_2->setFont(font1);
-        volume_ico_al_2->setStyleSheet(QString::fromUtf8(""));
-        volume_ico_al_2->setTextFormat(Qt::AutoText);
-        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ok.png")));
-        volume_ico_al_2->setScaledContents(false);
-        volume_ico_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        volume_ico_al_2->setOpenExternalLinks(false);
-
-        gridLayout_4->addWidget(volume_ico_al_2, 0, 2, 1, 1);
-
         volume_info_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
         volume_info_alarms_al_2->setObjectName(QString::fromUtf8("volume_info_alarms_al_2"));
         sizePolicy2.setHeightForWidth(volume_info_alarms_al_2->sizePolicy().hasHeightForWidth());
@@ -336,14 +332,14 @@ public:
 
         gridLayout_4->addWidget(volume_info_alarms_al_2, 0, 1, 1, 1);
 
-        volume_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
-        volume_alarms_al_2->setObjectName(QString::fromUtf8("volume_alarms_al_2"));
-        sizePolicy2.setHeightForWidth(volume_alarms_al_2->sizePolicy().hasHeightForWidth());
-        volume_alarms_al_2->setSizePolicy(sizePolicy2);
-        volume_alarms_al_2->setMinimumSize(QSize(50, 50));
-        volume_alarms_al_2->setFont(font2);
+        temp_info_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
+        temp_info_alarms_al_2->setObjectName(QString::fromUtf8("temp_info_alarms_al_2"));
+        sizePolicy2.setHeightForWidth(temp_info_alarms_al_2->sizePolicy().hasHeightForWidth());
+        temp_info_alarms_al_2->setSizePolicy(sizePolicy2);
+        temp_info_alarms_al_2->setMinimumSize(QSize(0, 0));
+        temp_info_alarms_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        gridLayout_4->addWidget(volume_alarms_al_2, 0, 0, 1, 1);
+        gridLayout_4->addWidget(temp_info_alarms_al_2, 1, 1, 1, 1);
 
         hum_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
         hum_alarms_al_2->setObjectName(QString::fromUtf8("hum_alarms_al_2"));
@@ -362,6 +358,29 @@ public:
 
         gridLayout_4->addWidget(hum_info_alarms_al_2, 2, 1, 1, 1);
 
+        volume_ico_al_2 = new QLabel(all_param_alarms_silos_2);
+        volume_ico_al_2->setObjectName(QString::fromUtf8("volume_ico_al_2"));
+        sizePolicy2.setHeightForWidth(volume_ico_al_2->sizePolicy().hasHeightForWidth());
+        volume_ico_al_2->setSizePolicy(sizePolicy2);
+        volume_ico_al_2->setMinimumSize(QSize(50, 50));
+        volume_ico_al_2->setFont(font1);
+        volume_ico_al_2->setStyleSheet(QString::fromUtf8(""));
+        volume_ico_al_2->setTextFormat(Qt::AutoText);
+        volume_ico_al_2->setPixmap(QPixmap(QString::fromUtf8(":/ok.png")));
+        volume_ico_al_2->setScaledContents(false);
+        volume_ico_al_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        volume_ico_al_2->setOpenExternalLinks(false);
+
+        gridLayout_4->addWidget(volume_ico_al_2, 0, 2, 1, 1);
+
+        temp_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
+        temp_alarms_al_2->setObjectName(QString::fromUtf8("temp_alarms_al_2"));
+        sizePolicy2.setHeightForWidth(temp_alarms_al_2->sizePolicy().hasHeightForWidth());
+        temp_alarms_al_2->setSizePolicy(sizePolicy2);
+        temp_alarms_al_2->setFont(font);
+
+        gridLayout_4->addWidget(temp_alarms_al_2, 1, 0, 1, 1);
+
         hum_ico_al_2 = new QLabel(all_param_alarms_silos_2);
         hum_ico_al_2->setObjectName(QString::fromUtf8("hum_ico_al_2"));
         sizePolicy2.setHeightForWidth(hum_ico_al_2->sizePolicy().hasHeightForWidth());
@@ -372,10 +391,19 @@ public:
 
         gridLayout_4->addWidget(hum_ico_al_2, 2, 2, 1, 1);
 
+        volume_alarms_al_2 = new QLabel(all_param_alarms_silos_2);
+        volume_alarms_al_2->setObjectName(QString::fromUtf8("volume_alarms_al_2"));
+        sizePolicy2.setHeightForWidth(volume_alarms_al_2->sizePolicy().hasHeightForWidth());
+        volume_alarms_al_2->setSizePolicy(sizePolicy2);
+        volume_alarms_al_2->setMinimumSize(QSize(50, 50));
+        volume_alarms_al_2->setFont(font2);
+
+        gridLayout_4->addWidget(volume_alarms_al_2, 0, 0, 1, 1);
+
 
         gridLayout_2->addWidget(all_param_alarms_silos_2, 2, 2, 1, 1);
 
-        all_param_silos_1 = new All_param_silos_1(tab_all_param);
+        all_param_silos_1 = new All_param_silos(tab_all_param);
         all_param_silos_1->setObjectName(QString::fromUtf8("all_param_silos_1"));
         sizePolicy2.setHeightForWidth(all_param_silos_1->sizePolicy().hasHeightForWidth());
         all_param_silos_1->setSizePolicy(sizePolicy2);
@@ -405,6 +433,233 @@ public:
         tabs->addTab(tab_all_param, QString());
         tab_temp = new QWidget();
         tab_temp->setObjectName(QString::fromUtf8("tab_temp"));
+        tab_temp->setStyleSheet(QString::fromUtf8("QWidget{\n"
+"	background: #26292e;\n"
+"	border-radius: 20px;\n"
+"margin: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"#tab_temp{\n"
+"	background: #010101;\n"
+"}"));
+        gridLayout_15 = new QGridLayout(tab_temp);
+        gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
+        temp_alarms_silos_2 = new QWidget(tab_temp);
+        temp_alarms_silos_2->setObjectName(QString::fromUtf8("temp_alarms_silos_2"));
+        sizePolicy1.setHeightForWidth(temp_alarms_silos_2->sizePolicy().hasHeightForWidth());
+        temp_alarms_silos_2->setSizePolicy(sizePolicy1);
+        temp_alarms_silos_2->setMinimumSize(QSize(50, 160));
+        temp_alarms_silos_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff\n"
+"}\n"
+"QPushButton{\n"
+"background: #9b9a9f;\n"
+"color: white;\n"
+"border-top-left-radius: 5px;\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-left-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"                         background-color: #b5b5b5;  \n"
+"                     }\n"
+"                         QPushButton:pressed {\n"
+"                         background-color: #808080;  \n"
+"                         }"));
+        gridLayout_7 = new QGridLayout(temp_alarms_silos_2);
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        temp_alarms_temp_2 = new QLabel(temp_alarms_silos_2);
+        temp_alarms_temp_2->setObjectName(QString::fromUtf8("temp_alarms_temp_2"));
+        sizePolicy2.setHeightForWidth(temp_alarms_temp_2->sizePolicy().hasHeightForWidth());
+        temp_alarms_temp_2->setSizePolicy(sizePolicy2);
+        temp_alarms_temp_2->setFont(font);
+
+        gridLayout_7->addWidget(temp_alarms_temp_2, 0, 0, 1, 1);
+
+        temp_info_alarms_temp_2 = new QLabel(temp_alarms_silos_2);
+        temp_info_alarms_temp_2->setObjectName(QString::fromUtf8("temp_info_alarms_temp_2"));
+        sizePolicy2.setHeightForWidth(temp_info_alarms_temp_2->sizePolicy().hasHeightForWidth());
+        temp_info_alarms_temp_2->setSizePolicy(sizePolicy2);
+        temp_info_alarms_temp_2->setMinimumSize(QSize(0, 0));
+        temp_info_alarms_temp_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_7->addWidget(temp_info_alarms_temp_2, 0, 1, 1, 1);
+
+        temp_ico_temp_2 = new QLabel(temp_alarms_silos_2);
+        temp_ico_temp_2->setObjectName(QString::fromUtf8("temp_ico_temp_2"));
+        sizePolicy2.setHeightForWidth(temp_ico_temp_2->sizePolicy().hasHeightForWidth());
+        temp_ico_temp_2->setSizePolicy(sizePolicy2);
+        temp_ico_temp_2->setMinimumSize(QSize(50, 50));
+        temp_ico_temp_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop_t\305\202o.png")));
+        temp_ico_temp_2->setScaledContents(false);
+        temp_ico_temp_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        temp_ico_temp_2->setWordWrap(false);
+        temp_ico_temp_2->setOpenExternalLinks(false);
+
+        gridLayout_7->addWidget(temp_ico_temp_2, 0, 2, 1, 1);
+
+        temp_alarms_settings_button_silos_2 = new QPushButton(temp_alarms_silos_2);
+        temp_alarms_settings_button_silos_2->setObjectName(QString::fromUtf8("temp_alarms_settings_button_silos_2"));
+        temp_alarms_settings_button_silos_2->setMinimumSize(QSize(0, 50));
+        temp_alarms_settings_button_silos_2->setFont(font);
+
+        gridLayout_7->addWidget(temp_alarms_settings_button_silos_2, 1, 0, 1, 3);
+
+
+        gridLayout_15->addWidget(temp_alarms_silos_2, 1, 1, 1, 1);
+
+        temp_silos_1 = new Temp_silos(tab_temp);
+        temp_silos_1->setObjectName(QString::fromUtf8("temp_silos_1"));
+        sizePolicy2.setHeightForWidth(temp_silos_1->sizePolicy().hasHeightForWidth());
+        temp_silos_1->setSizePolicy(sizePolicy2);
+        temp_silos_1->setMinimumSize(QSize(262, 446));
+        temp_silos_1->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"\n"
+"QLabel{\n"
+"	color: #ffffff;\n"
+"	 background-color: rgba(0, 0, 0, 0); \n"
+"}"));
+        gridLayout_13 = new QGridLayout(temp_silos_1);
+        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
+        temp_silos_1_second = new QLabel(temp_silos_1);
+        temp_silos_1_second->setObjectName(QString::fromUtf8("temp_silos_1_second"));
+        QFont font4;
+        font4.setPointSize(23);
+        temp_silos_1_second->setFont(font4);
+        temp_silos_1_second->setAlignment(Qt::AlignCenter);
+
+        gridLayout_13->addWidget(temp_silos_1_second, 3, 0, 1, 1);
+
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_4, 4, 0, 1, 1);
+
+        temp_silos_1_first = new QLabel(temp_silos_1);
+        temp_silos_1_first->setObjectName(QString::fromUtf8("temp_silos_1_first"));
+        temp_silos_1_first->setFont(font4);
+        temp_silos_1_first->setAlignment(Qt::AlignCenter);
+
+        gridLayout_13->addWidget(temp_silos_1_first, 1, 0, 1, 1);
+
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_3, 0, 0, 1, 1);
+
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_13->addItem(verticalSpacer_5, 2, 0, 1, 1);
+
+
+        gridLayout_15->addWidget(temp_silos_1, 0, 0, 1, 1);
+
+        temp_silos_2 = new Temp_silos(tab_temp);
+        temp_silos_2->setObjectName(QString::fromUtf8("temp_silos_2"));
+        sizePolicy2.setHeightForWidth(temp_silos_2->sizePolicy().hasHeightForWidth());
+        temp_silos_2->setSizePolicy(sizePolicy2);
+        temp_silos_2->setMinimumSize(QSize(263, 446));
+        temp_silos_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff;\n"
+"	 background-color: rgba(0, 0, 0, 0); \n"
+"}"));
+        gridLayout_8 = new QGridLayout(temp_silos_2);
+        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
+        verticalSpacer_6 = new QSpacerItem(20, 96, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_6, 0, 0, 1, 1);
+
+        temp_silos_2_first = new QLabel(temp_silos_2);
+        temp_silos_2_first->setObjectName(QString::fromUtf8("temp_silos_2_first"));
+        temp_silos_2_first->setFont(font4);
+        temp_silos_2_first->setAlignment(Qt::AlignCenter);
+
+        gridLayout_8->addWidget(temp_silos_2_first, 1, 0, 1, 1);
+
+        verticalSpacer_7 = new QSpacerItem(20, 95, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_7, 2, 0, 1, 1);
+
+        temp_silos_2_second = new QLabel(temp_silos_2);
+        temp_silos_2_second->setObjectName(QString::fromUtf8("temp_silos_2_second"));
+        temp_silos_2_second->setFont(font4);
+        temp_silos_2_second->setAlignment(Qt::AlignCenter);
+
+        gridLayout_8->addWidget(temp_silos_2_second, 3, 0, 1, 1);
+
+        verticalSpacer_8 = new QSpacerItem(20, 96, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_8->addItem(verticalSpacer_8, 4, 0, 1, 1);
+
+
+        gridLayout_15->addWidget(temp_silos_2, 0, 1, 1, 1);
+
+        temp_alarms_silos_1 = new QWidget(tab_temp);
+        temp_alarms_silos_1->setObjectName(QString::fromUtf8("temp_alarms_silos_1"));
+        sizePolicy1.setHeightForWidth(temp_alarms_silos_1->sizePolicy().hasHeightForWidth());
+        temp_alarms_silos_1->setSizePolicy(sizePolicy1);
+        temp_alarms_silos_1->setMinimumSize(QSize(50, 160));
+        temp_alarms_silos_1->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff\n"
+"}\n"
+"QPushButton{\n"
+"background: #9b9a9f;\n"
+"color: white;\n"
+"border-top-left-radius: 5px;\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-left-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"                         background-color: #b5b5b5;  \n"
+"                     }\n"
+"                         QPushButton:pressed {\n"
+"                         background-color: #808080;  \n"
+"                         }"));
+        gridLayout_11 = new QGridLayout(temp_alarms_silos_1);
+        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
+        temp_ico_temp_1 = new QLabel(temp_alarms_silos_1);
+        temp_ico_temp_1->setObjectName(QString::fromUtf8("temp_ico_temp_1"));
+        sizePolicy2.setHeightForWidth(temp_ico_temp_1->sizePolicy().hasHeightForWidth());
+        temp_ico_temp_1->setSizePolicy(sizePolicy2);
+        temp_ico_temp_1->setMinimumSize(QSize(50, 50));
+        temp_ico_temp_1->setPixmap(QPixmap(QString::fromUtf8(":/ikona_warning_t\305\202o.png")));
+        temp_ico_temp_1->setScaledContents(false);
+        temp_ico_temp_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        temp_ico_temp_1->setWordWrap(false);
+        temp_ico_temp_1->setOpenExternalLinks(false);
+
+        gridLayout_11->addWidget(temp_ico_temp_1, 3, 2, 1, 1);
+
+        temp_info_alarms_temp_1 = new QLabel(temp_alarms_silos_1);
+        temp_info_alarms_temp_1->setObjectName(QString::fromUtf8("temp_info_alarms_temp_1"));
+        sizePolicy2.setHeightForWidth(temp_info_alarms_temp_1->sizePolicy().hasHeightForWidth());
+        temp_info_alarms_temp_1->setSizePolicy(sizePolicy2);
+        temp_info_alarms_temp_1->setMinimumSize(QSize(0, 0));
+        temp_info_alarms_temp_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_11->addWidget(temp_info_alarms_temp_1, 3, 1, 1, 1);
+
+        temp_alarms_temp_1 = new QLabel(temp_alarms_silos_1);
+        temp_alarms_temp_1->setObjectName(QString::fromUtf8("temp_alarms_temp_1"));
+        sizePolicy2.setHeightForWidth(temp_alarms_temp_1->sizePolicy().hasHeightForWidth());
+        temp_alarms_temp_1->setSizePolicy(sizePolicy2);
+        temp_alarms_temp_1->setFont(font);
+
+        gridLayout_11->addWidget(temp_alarms_temp_1, 3, 0, 1, 1);
+
+        temp_alarms_settings_button_silos_1 = new QPushButton(temp_alarms_silos_1);
+        temp_alarms_settings_button_silos_1->setObjectName(QString::fromUtf8("temp_alarms_settings_button_silos_1"));
+        temp_alarms_settings_button_silos_1->setMinimumSize(QSize(0, 50));
+        temp_alarms_settings_button_silos_1->setFont(font);
+
+        gridLayout_11->addWidget(temp_alarms_settings_button_silos_1, 4, 0, 1, 3);
+
+
+        gridLayout_15->addWidget(temp_alarms_silos_1, 1, 0, 1, 1);
+
         tabs->addTab(tab_temp, QString());
         tab_humidity = new QWidget();
         tab_humidity->setObjectName(QString::fromUtf8("tab_humidity"));
@@ -421,7 +676,7 @@ public:
 
         retranslateUi(Main_window);
 
-        tabs->setCurrentIndex(0);
+        tabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Main_window);
@@ -434,23 +689,35 @@ public:
         volume_ico_al_1->setText(QString());
         temp_ico_al_1->setText(QString());
         volume_alarms_al_1->setText(QApplication::translate("Main_window", "OBJ\304\230TO\305\232\304\206", nullptr));
-        hum_ico_al_1->setText(QString());
         temp_alarms_al_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
         volume_info_alarms_al_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         temp_info_alarms_al_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         hum_info_alarms_al_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        hum_ico_al_1->setText(QString());
         volume_info_al_2->setText(QApplication::translate("Main_window", "70%", nullptr));
-        temp_alarms_al_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
-        temp_info_alarms_al_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         temp_ico_al_2->setText(QString());
-        volume_ico_al_2->setText(QString());
         volume_info_alarms_al_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
-        volume_alarms_al_2->setText(QApplication::translate("Main_window", "OBJ\304\230TO\305\232\304\206", nullptr));
+        temp_info_alarms_al_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         hum_alarms_al_2->setText(QApplication::translate("Main_window", "WILGOTNO\305\232\304\206", nullptr));
         hum_info_alarms_al_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        volume_ico_al_2->setText(QString());
+        temp_alarms_al_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
         hum_ico_al_2->setText(QString());
+        volume_alarms_al_2->setText(QApplication::translate("Main_window", "OBJ\304\230TO\305\232\304\206", nullptr));
         volume_info_al_1->setText(QApplication::translate("Main_window", "70%", nullptr));
         tabs->setTabText(tabs->indexOf(tab_all_param), QApplication::translate("Main_window", "Wszystkie parametry", nullptr));
+        temp_alarms_temp_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        temp_info_alarms_temp_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        temp_ico_temp_2->setText(QString());
+        temp_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
+        temp_silos_1_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        temp_silos_1_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        temp_silos_2_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        temp_silos_2_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        temp_ico_temp_1->setText(QString());
+        temp_info_alarms_temp_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        temp_alarms_temp_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        temp_alarms_settings_button_silos_1->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_temp), QApplication::translate("Main_window", "Temperatura", nullptr));
         tabs->setTabText(tabs->indexOf(tab_humidity), QApplication::translate("Main_window", "Wilgotno\305\233\304\207", nullptr));
         tabs->setTabText(tabs->indexOf(tab_volume), QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));
