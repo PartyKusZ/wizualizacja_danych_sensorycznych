@@ -26,7 +26,8 @@ void Temp_silos::paintEvent(QPaintEvent *event){
  * @param _temp_2 
  */
 void Temp_silos::data_refresh(double _temp_1, double _temp_2){
-
+    this->set_temperature(_temp_1, _temp_2);
+    this->update();
 }
 
 

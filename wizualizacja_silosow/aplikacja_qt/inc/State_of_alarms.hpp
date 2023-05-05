@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
 /**
  * @brief Class storing information about alarm levels
  * 
@@ -20,6 +23,10 @@ class State_of_alarms{
         int fulfillment_alarm_silos_2;
         int critical_fulfillment_alarm_silos_1;
         int critical_fulfillment_alarm_silos_2;
+
+        char *FILE_NAME = ".state_of_alarms";
+       std::ofstream output_file;
+       std::ifstream input_file;
     public: 
         State_of_alarms();
         ~State_of_alarms();
@@ -56,9 +63,5 @@ class State_of_alarms{
         void set_fulfillment_alarm_silos_2(int fulfillment_alarm_silos_2);
         void set_critical_fulfillment_alarm_silos_1(int critical_fulfillment_alarm_silos_1);
         void set_critical_fulfillment_alarm_silos_2(int critical_fulfillment_alarm_silos_2);
-    
-    
-
-
 
 };

@@ -10,20 +10,22 @@
 class Temp_draw: public Silos_position{
     
     private:
-        int temp_1 = 0;
-        int temp_2 = 0;
-        State_of_alarms *state_of_alarms = nullptr;
+        double temp_1 = 0;
+        double temp_2 = 0;
+        double warning = 0;
+        double critical = 0;
 
 
     public:
         Temp_draw();
-        void set_temperature(int _temp_1, int _temp_2);
-        void set_state_of_alarms(State_of_alarms *state);
+        void set_state_of_alarms(int _warning,int _critical);
 
         ~Temp_draw();
 
     protected:
+        void set_temperature(int _temp_1, int _temp_2);
         void draw_gradient(QPainter &painter,QSize size);
+        QColor colors_interpolation(double temp);
 
 
 };

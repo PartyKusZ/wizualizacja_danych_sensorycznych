@@ -406,8 +406,13 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc/moc_Main_window.cpp
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/Data.hpp \
 		ui/ui_Temp_alarms.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -427,7 +432,8 @@ ui/ui_Main_window.h: ui/Main_window.ui \
 		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/custom_widgets_designer/Temp_draw.hpp \
-		inc/custom_widgets_designer/Silos_position.hpp
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/State_of_alarms.hpp
 	/usr/lib/qt5/bin/uic ui/Main_window.ui -o ui/ui_Main_window.h
 
 ui/ui_Temp_alarms.h: ui/Temp_alarms.ui \
@@ -453,8 +459,13 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/Data.hpp \
 		ui/ui_Temp_alarms.h \
 		inc/Serial_port.hpp \
 		inc/FastCRC.hpp
@@ -462,8 +473,13 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/Data.hpp \
 		ui/ui_Temp_alarms.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
@@ -488,12 +504,14 @@ obj/Silos_position.o: src/custom_widgets_designer/Silos_position.cpp inc/custom_
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Silos_position.o src/custom_widgets_designer/Silos_position.cpp
 
 obj/Temp_draw.o: src/custom_widgets_designer/Temp_draw.cpp inc/custom_widgets_designer/Temp_draw.hpp \
-		inc/custom_widgets_designer/Silos_position.hpp
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/State_of_alarms.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Temp_draw.o src/custom_widgets_designer/Temp_draw.cpp
 
 obj/Temp_silos.o: src/custom_widgets_designer/Temp_silos.cpp inc/custom_widgets_designer/Temp_silos.hpp \
 		inc/custom_widgets_designer/Temp_draw.hpp \
-		inc/custom_widgets_designer/Silos_position.hpp
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/State_of_alarms.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Temp_silos.o src/custom_widgets_designer/Temp_silos.cpp
 
 obj/qrc_res.o: res/res_output/qrc_res.cpp 
