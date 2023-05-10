@@ -1,0 +1,18 @@
+\section{Prezentacja wyników pracy - 10.05.2023r}
+    Do dnia 10.05.2023r. dokonano następujących postępów:
+        \begin{itemize}
+            \item zaimplementowano odczyt danych z portu szeregowego, poprzez uruchomienie go w osobnym wątku. 
+                Obiekt będący kontenerem na dane przekazywany jest przez wskaźnik do obiektu \textit{main\_window}, dzięki
+                czemu dane są dostępne dla pozostałych komponentów aplikacji.
+            \item zaprojektowano interfejs widoku ,,Temperatura''.
+            \item zaprojektowano interfejs okienka służącego ustawianiu wartości alarmów,
+            \item połączono sloty odpowiedzialne za aktualizacje właściwych im danych dotyczących elementów interfejsu, takich jak:
+                \begin{itemize}
+                    \item graficzna i tekstowa  prezentacja wypełnienia silosu (widok ,,Wszystkie parametry''),
+                    \item graficzna i tekstowa prezentacja temperatury (widoki ,,Wszystkie parametry'' i ,,Temperatura''),
+                    \item Prezentacja informacji o alarmach  (widoki ,,Wszystkie parametry'' i ,,Temperatura''),
+                \end{itemize}
+            \item przebudowano strukturę aplikacji, odciążono obiekt \textit{main\_window}, w którym znajdowały się 
+                wszystkie sloty wykorzystywane przez aplikację. Utworzono klasy ,,backendowe'' w których usystematyzowano
+                kod dotyczący  slotów.
+        \end{itemize}
