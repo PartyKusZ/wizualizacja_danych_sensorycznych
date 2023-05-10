@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Main_window_t {
-    QByteArrayData data[8];
-    char stringdata0[161];
+    QByteArrayData data[6];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,16 +34,12 @@ static const qt_meta_stringdata_Main_window_t qt_meta_stringdata_Main_window = {
 QT_MOC_LITERAL(0, 0, 11), // "Main_window"
 QT_MOC_LITERAL(1, 12, 17), // "silos_data_update"
 QT_MOC_LITERAL(2, 30, 0), // ""
-QT_MOC_LITERAL(3, 31, 19), // "set_all_param_silos"
-QT_MOC_LITERAL(4, 51, 36), // "set_all_param_silos_fullfilmn..."
-QT_MOC_LITERAL(5, 88, 28), // "set_info_alarms_temp_silos_1"
-QT_MOC_LITERAL(6, 117, 28), // "set_info_alarms_temp_silos_2"
-QT_MOC_LITERAL(7, 146, 14) // "set_temp_silos"
+QT_MOC_LITERAL(3, 31, 28), // "set_info_alarms_temp_silos_1"
+QT_MOC_LITERAL(4, 60, 28), // "set_info_alarms_temp_silos_2"
+QT_MOC_LITERAL(5, 89, 14) // "set_temp_silos"
 
     },
     "Main_window\0silos_data_update\0\0"
-    "set_all_param_silos\0"
-    "set_all_param_silos_fullfilmnet_text\0"
     "set_info_alarms_temp_silos_1\0"
     "set_info_alarms_temp_silos_2\0"
     "set_temp_silos"
@@ -56,7 +52,7 @@ static const uint qt_meta_data_Main_window[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,16 +60,12 @@ static const uint qt_meta_data_Main_window[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x0a /* Public */,
-       3,    0,   45,    2, 0x0a /* Public */,
-       4,    0,   46,    2, 0x0a /* Public */,
-       5,    0,   47,    2, 0x0a /* Public */,
-       6,    0,   48,    2, 0x0a /* Public */,
-       7,    0,   49,    2, 0x0a /* Public */,
+       1,    0,   34,    2, 0x0a /* Public */,
+       3,    0,   35,    2, 0x0a /* Public */,
+       4,    0,   36,    2, 0x0a /* Public */,
+       5,    0,   37,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -89,11 +81,9 @@ void Main_window::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->silos_data_update(); break;
-        case 1: _t->set_all_param_silos(); break;
-        case 2: _t->set_all_param_silos_fullfilmnet_text(); break;
-        case 3: _t->set_info_alarms_temp_silos_1(); break;
-        case 4: _t->set_info_alarms_temp_silos_2(); break;
-        case 5: _t->set_temp_silos(); break;
+        case 1: _t->set_info_alarms_temp_silos_1(); break;
+        case 2: _t->set_info_alarms_temp_silos_2(); break;
+        case 3: _t->set_temp_silos(); break;
         default: ;
         }
     }
@@ -131,13 +121,13 @@ int Main_window::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 4;
     }
     return _id;
 }

@@ -8,8 +8,9 @@
 #include "ui_Main_window.h"
 #include "Data.hpp"
 #include "State_of_alarms.hpp"
-#include "Temp_settings_window.hpp"
-#include "ui_Temp_alarms.h"
+#include "Alarms_window.hpp"
+#include "All_param_backend.hpp"
+#include "ui_Alarms_window.h"
 
 /**
  * @brief Class representing the main window
@@ -32,8 +33,10 @@ class Main_window : public QWidget, public Ui::Main_window{
     QTimer timer; //!< a timer for cyclic application status updates
 
     State_of_alarms *state_of_alarms; //!< stores alarm values for filling, temperature, volume and humidity
-    Temp_settings_window *temp_alarms_settings_1; //!< widget for a window in which values can be set for alarms
-    Temp_settings_window *temp_alarms_settings_2; //!< widget for a window in which values can be set for alarms
+    Alarms_window *temp_alarms_settings_1; //!< widget for a window in which values can be set for alarms
+    Alarms_window *temp_alarms_settings_2; //!< widget for a window in which values can be set for alarms
+
+    All_param_backend *all_param_backend;
   public:
       
     explicit Main_window(QWidget *parent = nullptr, Data *_data = nullptr);
@@ -41,8 +44,6 @@ class Main_window : public QWidget, public Ui::Main_window{
 
   public slots:
     void silos_data_update();
-    void set_all_param_silos();
-    void set_all_param_silos_fullfilmnet_text();
     void set_info_alarms_temp_silos_1();
     void set_info_alarms_temp_silos_2();
     void set_temp_silos();
