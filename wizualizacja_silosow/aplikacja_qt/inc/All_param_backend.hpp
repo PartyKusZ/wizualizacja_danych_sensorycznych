@@ -6,7 +6,7 @@
 #include "ui_Main_window.h"
 
 /**
- * @brief 
+ * @brief Class containing slots that update data on all param tabs
  * 
  */
 class All_param_backend: public QObject{
@@ -16,7 +16,7 @@ class All_param_backend: public QObject{
     private:
     const std::array<int,5> &silos_1; //!< store data for silo 1
     const std::array<int,5> &silos_2; //!< store data for silo 2
-    Ui::Main_window &ui;
+    Ui::Main_window &ui; //!< Ui object
 
     public:
 

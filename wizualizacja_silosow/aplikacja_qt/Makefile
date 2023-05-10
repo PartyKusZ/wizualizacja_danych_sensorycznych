@@ -60,6 +60,7 @@ SOURCES       = src/Alarms_window.cpp \
 		src/Main_window.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
+		src/Temp_backend.cpp \
 		src/custom_widgets_designer/All_param_draw.cpp \
 		src/custom_widgets_designer/All_param_silos.cpp \
 		src/custom_widgets_designer/Silos_position.cpp \
@@ -67,7 +68,8 @@ SOURCES       = src/Alarms_window.cpp \
 		src/custom_widgets_designer/Temp_silos.cpp res/res_output/qrc_res.cpp \
 		moc/moc_Alarms_window.cpp \
 		moc/moc_All_param_backend.cpp \
-		moc/moc_Main_window.cpp
+		moc/moc_Main_window.cpp \
+		moc/moc_Temp_backend.cpp
 OBJECTS       = obj/Alarms_window.o \
 		obj/All_param_backend.o \
 		obj/Data.o \
@@ -76,6 +78,7 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/Main_window.o \
 		obj/Serial_port.o \
 		obj/State_of_alarms.o \
+		obj/Temp_backend.o \
 		obj/All_param_draw.o \
 		obj/All_param_silos.o \
 		obj/Silos_position.o \
@@ -84,7 +87,8 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/qrc_res.o \
 		obj/moc_Alarms_window.o \
 		obj/moc_All_param_backend.o \
-		obj/moc_Main_window.o
+		obj/moc_Main_window.o \
+		obj/moc_Temp_backend.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -168,6 +172,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/Main_window.hpp \
 		inc/Serial_port.hpp \
 		inc/State_of_alarms.hpp \
+		inc/Temp_backend.hpp \
 		inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/All_param_silos.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp \
@@ -180,6 +185,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Main_window.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
+		src/Temp_backend.cpp \
 		src/custom_widgets_designer/All_param_draw.cpp \
 		src/custom_widgets_designer/All_param_silos.cpp \
 		src/custom_widgets_designer/Silos_position.cpp \
@@ -367,8 +373,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Alarms_window.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/Alarms_window.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui $(DISTDIR)/
 
 
@@ -413,9 +419,9 @@ compiler_moc_predefs_clean:
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_All_param_backend.cpp moc/moc_Main_window.cpp
+compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_All_param_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_All_param_backend.cpp moc/moc_Main_window.cpp
+	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_All_param_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp
 moc/moc_Alarms_window.cpp: inc/Alarms_window.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
@@ -436,9 +442,17 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
+		inc/Temp_backend.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
+
+moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
+		ui/ui_Main_window.h \
+		inc/State_of_alarms.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Temp_backend.hpp -o moc/moc_Temp_backend.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -495,6 +509,7 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
+		inc/Temp_backend.hpp \
 		inc/Serial_port.hpp \
 		inc/FastCRC.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
@@ -505,7 +520,8 @@ obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		inc/State_of_alarms.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
-		inc/All_param_backend.hpp
+		inc/All_param_backend.hpp \
+		inc/Temp_backend.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
@@ -515,6 +531,11 @@ obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
 
 obj/State_of_alarms.o: src/State_of_alarms.cpp inc/State_of_alarms.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/State_of_alarms.o src/State_of_alarms.cpp
+
+obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
+		ui/ui_Main_window.h \
+		inc/State_of_alarms.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Temp_backend.o src/Temp_backend.cpp
 
 obj/All_param_draw.o: src/custom_widgets_designer/All_param_draw.cpp inc/custom_widgets_designer/All_param_draw.hpp \
 		inc/custom_widgets_designer/Silos_position.hpp
@@ -550,6 +571,9 @@ obj/moc_All_param_backend.o: moc/moc_All_param_backend.cpp
 
 obj/moc_Main_window.o: moc/moc_Main_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Main_window.o moc/moc_Main_window.cpp
+
+obj/moc_Temp_backend.o: moc/moc_Temp_backend.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Temp_backend.o moc/moc_Temp_backend.cpp
 
 ####### Install
 

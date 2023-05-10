@@ -29,6 +29,9 @@ void All_param_backend::set_all_param_fullfilmnet_text(){
  }
 
 
-
+/**
+ * @brief Destroy the All_param_backend::All_param_backend object
+ * 
+ */
 
 All_param_backend::~All_param_backend(){}

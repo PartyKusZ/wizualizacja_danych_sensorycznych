@@ -10,6 +10,7 @@
 #include "State_of_alarms.hpp"
 #include "Alarms_window.hpp"
 #include "All_param_backend.hpp"
+#include "Temp_backend.hpp"
 #include "ui_Alarms_window.h"
 
 /**
@@ -37,6 +38,8 @@ class Main_window : public QWidget, public Ui::Main_window{
     Alarms_window *temp_alarms_settings_2; //!< widget for a window in which values can be set for alarms
 
     All_param_backend *all_param_backend;
+    Temp_backend *temp_backend;
+
   public:
       
     explicit Main_window(QWidget *parent = nullptr, Data *_data = nullptr);
@@ -46,7 +49,6 @@ class Main_window : public QWidget, public Ui::Main_window{
     void silos_data_update();
     void set_info_alarms_temp_silos_1();
     void set_info_alarms_temp_silos_2();
-    void set_temp_silos();
 
 
 
