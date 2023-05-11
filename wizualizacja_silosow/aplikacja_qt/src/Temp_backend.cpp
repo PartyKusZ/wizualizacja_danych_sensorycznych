@@ -44,6 +44,43 @@ void Temp_backend::set_temp_silos(){
 }
 
 /**
+ * @brief Slot for setting  alarms information in the  tab temperature. sets text information and the alarm icon.  
+ * 
+ */ 
+
+void Temp_backend::set_info_alarms_silos(){
+    ui.temp_silos_1->set_state_of_alarms(state_of_alarms->get_temp_alarm_silos_1(),state_of_alarms->get_critical_temp_alarm_silos_1());
+    ui.temp_silos_2->set_state_of_alarms(state_of_alarms->get_temp_alarm_silos_2(),state_of_alarms->get_critical_temp_alarm_silos_2());
+
+
+    if(silos_1[1] < state_of_alarms->get_temp_alarm_silos_1()){
+        ui.temp_info_alarms_temp_1->setText("Temperatury w normie");
+        ui.temp_ico_temp_1->setPixmap(QPixmap(":/ok.png"));
+    }
+    if(silos_1[1] > state_of_alarms->get_temp_alarm_silos_1()){
+        ui.temp_info_alarms_temp_1->setText("Przekroczono wartość ostrzegawczą");
+        ui.temp_ico_temp_1->setPixmap(QPixmap(":/ikona_warning.png"));
+    }
+     if(silos_1[1] > state_of_alarms->get_critical_temp_alarm_silos_1()){
+        ui.temp_info_alarms_temp_1->setText("Przekroczono wartość krytyczną");
+        ui.temp_ico_temp_1->setPixmap(QPixmap(":/ikona_stop.png"));
+    }
+
+    if(silos_2[1] < state_of_alarms->get_temp_alarm_silos_2()){
+        ui.temp_info_alarms_temp_2->setText("Temperatury w normie");
+        ui.temp_ico_temp_2->setPixmap(QPixmap(":/ok.png"));
+    }
+    if(silos_2[1] > state_of_alarms->get_temp_alarm_silos_2()){
+        ui.temp_info_alarms_temp_2->setText("Przekroczono wartość ostrzegawczą");
+        ui.temp_ico_temp_2->setPixmap(QPixmap(":/ikona_warning.png"));
+    }
+     if(silos_2[1] > state_of_alarms->get_critical_temp_alarm_silos_2()){
+        ui.temp_info_alarms_temp_2->setText("Przekroczono wartość krytyczną");
+        ui.temp_ico_temp_2->setPixmap(QPixmap(":/ikona_stop.png"));
+    }
+}
+
+/**
  * @brief Destroy the Temp_backend::Temp_backend object
  * 
  */

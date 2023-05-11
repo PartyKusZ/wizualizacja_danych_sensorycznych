@@ -89,6 +89,33 @@ public:
     QLabel *temp_ico_temp_1;
     QPushButton *temp_alarms_settings_button_silos_1;
     QWidget *tab_humidity;
+    QGridLayout *gridLayout_20;
+    Temp_silos *hum_silos_1;
+    QGridLayout *gridLayout_19;
+    QLabel *hum_silos_1_second;
+    QSpacerItem *verticalSpacer_18;
+    QLabel *hum_silos_1_first;
+    QSpacerItem *verticalSpacer_19;
+    QSpacerItem *verticalSpacer_20;
+    Temp_silos *hum_silos_2;
+    QGridLayout *gridLayout_18;
+    QSpacerItem *verticalSpacer_15;
+    QLabel *hum_silos_2_first;
+    QSpacerItem *verticalSpacer_16;
+    QLabel *hum_silos_2_second;
+    QSpacerItem *verticalSpacer_17;
+    QWidget *hum_alarms_silos_1;
+    QGridLayout *gridLayout_16;
+    QLabel *hum_alarms_hum_1;
+    QLabel *hum_info_alarms_hum_1;
+    QLabel *hum_ico_hum_1;
+    QPushButton *hum_alarms_settings_button_silos_1;
+    QWidget *hum_alarms_silos_2;
+    QGridLayout *gridLayout_17;
+    QLabel *hum_alarms_hum_2;
+    QLabel *hum_info_alarms_hum_2;
+    QLabel *hum_ico_temp_2;
+    QPushButton *hum_alarms_settings_button_silos_2;
     QWidget *tab_volume;
     QWidget *tab_old_data;
 
@@ -96,7 +123,7 @@ public:
     {
         if (Main_window->objectName().isEmpty())
             Main_window->setObjectName(QString::fromUtf8("Main_window"));
-        Main_window->resize(1144, 679);
+        Main_window->resize(1144, 689);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -679,6 +706,233 @@ public:
         tabs->addTab(tab_temp, QString());
         tab_humidity = new QWidget();
         tab_humidity->setObjectName(QString::fromUtf8("tab_humidity"));
+        tab_humidity->setStyleSheet(QString::fromUtf8("QWidget{\n"
+"	background: #26292e;\n"
+"	border-radius: 20px;\n"
+"margin: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"#tab_humidity{\n"
+"	background: #010101;\n"
+"}"));
+        gridLayout_20 = new QGridLayout(tab_humidity);
+        gridLayout_20->setObjectName(QString::fromUtf8("gridLayout_20"));
+        hum_silos_1 = new Temp_silos(tab_humidity);
+        hum_silos_1->setObjectName(QString::fromUtf8("hum_silos_1"));
+        sizePolicy2.setHeightForWidth(hum_silos_1->sizePolicy().hasHeightForWidth());
+        hum_silos_1->setSizePolicy(sizePolicy2);
+        hum_silos_1->setMinimumSize(QSize(262, 446));
+        hum_silos_1->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"\n"
+"QLabel{\n"
+"	color: #ffffff;\n"
+"	 background-color: rgba(0, 0, 0, 0); \n"
+"}"));
+        gridLayout_19 = new QGridLayout(hum_silos_1);
+        gridLayout_19->setObjectName(QString::fromUtf8("gridLayout_19"));
+        hum_silos_1_second = new QLabel(hum_silos_1);
+        hum_silos_1_second->setObjectName(QString::fromUtf8("hum_silos_1_second"));
+        hum_silos_1_second->setFont(font4);
+        hum_silos_1_second->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(hum_silos_1_second, 3, 0, 1, 1);
+
+        verticalSpacer_18 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_19->addItem(verticalSpacer_18, 4, 0, 1, 1);
+
+        hum_silos_1_first = new QLabel(hum_silos_1);
+        hum_silos_1_first->setObjectName(QString::fromUtf8("hum_silos_1_first"));
+        hum_silos_1_first->setFont(font4);
+        hum_silos_1_first->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(hum_silos_1_first, 1, 0, 1, 1);
+
+        verticalSpacer_19 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_19->addItem(verticalSpacer_19, 0, 0, 1, 1);
+
+        verticalSpacer_20 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_19->addItem(verticalSpacer_20, 2, 0, 1, 1);
+
+
+        gridLayout_20->addWidget(hum_silos_1, 0, 0, 1, 1);
+
+        hum_silos_2 = new Temp_silos(tab_humidity);
+        hum_silos_2->setObjectName(QString::fromUtf8("hum_silos_2"));
+        sizePolicy2.setHeightForWidth(hum_silos_2->sizePolicy().hasHeightForWidth());
+        hum_silos_2->setSizePolicy(sizePolicy2);
+        hum_silos_2->setMinimumSize(QSize(263, 446));
+        hum_silos_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff;\n"
+"	 background-color: rgba(0, 0, 0, 0); \n"
+"}"));
+        gridLayout_18 = new QGridLayout(hum_silos_2);
+        gridLayout_18->setObjectName(QString::fromUtf8("gridLayout_18"));
+        verticalSpacer_15 = new QSpacerItem(20, 96, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_18->addItem(verticalSpacer_15, 0, 0, 1, 1);
+
+        hum_silos_2_first = new QLabel(hum_silos_2);
+        hum_silos_2_first->setObjectName(QString::fromUtf8("hum_silos_2_first"));
+        hum_silos_2_first->setFont(font4);
+        hum_silos_2_first->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(hum_silos_2_first, 1, 0, 1, 1);
+
+        verticalSpacer_16 = new QSpacerItem(20, 95, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_18->addItem(verticalSpacer_16, 2, 0, 1, 1);
+
+        hum_silos_2_second = new QLabel(hum_silos_2);
+        hum_silos_2_second->setObjectName(QString::fromUtf8("hum_silos_2_second"));
+        hum_silos_2_second->setFont(font4);
+        hum_silos_2_second->setAlignment(Qt::AlignCenter);
+
+        gridLayout_18->addWidget(hum_silos_2_second, 3, 0, 1, 1);
+
+        verticalSpacer_17 = new QSpacerItem(20, 96, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_18->addItem(verticalSpacer_17, 4, 0, 1, 1);
+
+
+        gridLayout_20->addWidget(hum_silos_2, 0, 1, 1, 1);
+
+        hum_alarms_silos_1 = new QWidget(tab_humidity);
+        hum_alarms_silos_1->setObjectName(QString::fromUtf8("hum_alarms_silos_1"));
+        sizePolicy1.setHeightForWidth(hum_alarms_silos_1->sizePolicy().hasHeightForWidth());
+        hum_alarms_silos_1->setSizePolicy(sizePolicy1);
+        hum_alarms_silos_1->setMinimumSize(QSize(50, 160));
+        hum_alarms_silos_1->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff\n"
+"}\n"
+"QPushButton{\n"
+"background: #9b9a9f;\n"
+"color: white;\n"
+"border-top-left-radius: 5px;\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-left-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"                         background-color: #b5b5b5;  \n"
+"                     }\n"
+"                         QPushButton:pressed {\n"
+"                         background-color: #808080;  \n"
+"                         }"));
+        gridLayout_16 = new QGridLayout(hum_alarms_silos_1);
+        gridLayout_16->setObjectName(QString::fromUtf8("gridLayout_16"));
+        hum_alarms_hum_1 = new QLabel(hum_alarms_silos_1);
+        hum_alarms_hum_1->setObjectName(QString::fromUtf8("hum_alarms_hum_1"));
+        sizePolicy3.setHeightForWidth(hum_alarms_hum_1->sizePolicy().hasHeightForWidth());
+        hum_alarms_hum_1->setSizePolicy(sizePolicy3);
+        hum_alarms_hum_1->setMinimumSize(QSize(50, 50));
+        hum_alarms_hum_1->setFont(font);
+
+        gridLayout_16->addWidget(hum_alarms_hum_1, 3, 1, 1, 1);
+
+        hum_info_alarms_hum_1 = new QLabel(hum_alarms_silos_1);
+        hum_info_alarms_hum_1->setObjectName(QString::fromUtf8("hum_info_alarms_hum_1"));
+        sizePolicy2.setHeightForWidth(hum_info_alarms_hum_1->sizePolicy().hasHeightForWidth());
+        hum_info_alarms_hum_1->setSizePolicy(sizePolicy2);
+        hum_info_alarms_hum_1->setMinimumSize(QSize(0, 0));
+        hum_info_alarms_hum_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_16->addWidget(hum_info_alarms_hum_1, 3, 2, 1, 1);
+
+        hum_ico_hum_1 = new QLabel(hum_alarms_silos_1);
+        hum_ico_hum_1->setObjectName(QString::fromUtf8("hum_ico_hum_1"));
+        sizePolicy3.setHeightForWidth(hum_ico_hum_1->sizePolicy().hasHeightForWidth());
+        hum_ico_hum_1->setSizePolicy(sizePolicy3);
+        hum_ico_hum_1->setMinimumSize(QSize(10, 50));
+        hum_ico_hum_1->setPixmap(QPixmap(QString::fromUtf8(":/ikona_warning_t\305\202o.png")));
+        hum_ico_hum_1->setScaledContents(false);
+        hum_ico_hum_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        hum_ico_hum_1->setWordWrap(false);
+        hum_ico_hum_1->setOpenExternalLinks(false);
+
+        gridLayout_16->addWidget(hum_ico_hum_1, 3, 0, 1, 1);
+
+        hum_alarms_settings_button_silos_1 = new QPushButton(hum_alarms_silos_1);
+        hum_alarms_settings_button_silos_1->setObjectName(QString::fromUtf8("hum_alarms_settings_button_silos_1"));
+        hum_alarms_settings_button_silos_1->setMinimumSize(QSize(0, 50));
+        hum_alarms_settings_button_silos_1->setFont(font);
+
+        gridLayout_16->addWidget(hum_alarms_settings_button_silos_1, 4, 0, 1, 4);
+
+
+        gridLayout_20->addWidget(hum_alarms_silos_1, 1, 0, 1, 1);
+
+        hum_alarms_silos_2 = new QWidget(tab_humidity);
+        hum_alarms_silos_2->setObjectName(QString::fromUtf8("hum_alarms_silos_2"));
+        sizePolicy1.setHeightForWidth(hum_alarms_silos_2->sizePolicy().hasHeightForWidth());
+        hum_alarms_silos_2->setSizePolicy(sizePolicy1);
+        hum_alarms_silos_2->setMinimumSize(QSize(50, 160));
+        hum_alarms_silos_2->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	color: #ffffff\n"
+"}\n"
+"QPushButton{\n"
+"background: #9b9a9f;\n"
+"color: white;\n"
+"border-top-left-radius: 5px;\n"
+"    border-top-right-radius: 5px;\n"
+"    border-bottom-left-radius: 5px;\n"
+"    border-bottom-right-radius: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"                         background-color: #b5b5b5;  \n"
+"                     }\n"
+"                         QPushButton:pressed {\n"
+"                         background-color: #808080;  \n"
+"                         }"));
+        gridLayout_17 = new QGridLayout(hum_alarms_silos_2);
+        gridLayout_17->setObjectName(QString::fromUtf8("gridLayout_17"));
+        hum_alarms_hum_2 = new QLabel(hum_alarms_silos_2);
+        hum_alarms_hum_2->setObjectName(QString::fromUtf8("hum_alarms_hum_2"));
+        sizePolicy3.setHeightForWidth(hum_alarms_hum_2->sizePolicy().hasHeightForWidth());
+        hum_alarms_hum_2->setSizePolicy(sizePolicy3);
+        hum_alarms_hum_2->setMinimumSize(QSize(50, 50));
+        hum_alarms_hum_2->setFont(font);
+
+        gridLayout_17->addWidget(hum_alarms_hum_2, 0, 1, 1, 1);
+
+        hum_info_alarms_hum_2 = new QLabel(hum_alarms_silos_2);
+        hum_info_alarms_hum_2->setObjectName(QString::fromUtf8("hum_info_alarms_hum_2"));
+        sizePolicy2.setHeightForWidth(hum_info_alarms_hum_2->sizePolicy().hasHeightForWidth());
+        hum_info_alarms_hum_2->setSizePolicy(sizePolicy2);
+        hum_info_alarms_hum_2->setMinimumSize(QSize(0, 0));
+        hum_info_alarms_hum_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        gridLayout_17->addWidget(hum_info_alarms_hum_2, 0, 2, 1, 1);
+
+        hum_ico_temp_2 = new QLabel(hum_alarms_silos_2);
+        hum_ico_temp_2->setObjectName(QString::fromUtf8("hum_ico_temp_2"));
+        sizePolicy3.setHeightForWidth(hum_ico_temp_2->sizePolicy().hasHeightForWidth());
+        hum_ico_temp_2->setSizePolicy(sizePolicy3);
+        hum_ico_temp_2->setMinimumSize(QSize(10, 50));
+        hum_ico_temp_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop_t\305\202o.png")));
+        hum_ico_temp_2->setScaledContents(false);
+        hum_ico_temp_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        hum_ico_temp_2->setWordWrap(false);
+        hum_ico_temp_2->setOpenExternalLinks(false);
+
+        gridLayout_17->addWidget(hum_ico_temp_2, 0, 0, 1, 1);
+
+        hum_alarms_settings_button_silos_2 = new QPushButton(hum_alarms_silos_2);
+        hum_alarms_settings_button_silos_2->setObjectName(QString::fromUtf8("hum_alarms_settings_button_silos_2"));
+        hum_alarms_settings_button_silos_2->setMinimumSize(QSize(0, 50));
+        hum_alarms_settings_button_silos_2->setFont(font);
+
+        gridLayout_17->addWidget(hum_alarms_settings_button_silos_2, 1, 0, 1, 4);
+
+
+        gridLayout_20->addWidget(hum_alarms_silos_2, 1, 1, 1, 1);
+
         tabs->addTab(tab_humidity, QString());
         tab_volume = new QWidget();
         tab_volume->setObjectName(QString::fromUtf8("tab_volume"));
@@ -692,7 +946,7 @@ public:
 
         retranslateUi(Main_window);
 
-        tabs->setCurrentIndex(0);
+        tabs->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(Main_window);
@@ -735,6 +989,18 @@ public:
         temp_ico_temp_1->setText(QString());
         temp_alarms_settings_button_silos_1->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_temp), QApplication::translate("Main_window", "Temperatura", nullptr));
+        hum_silos_1_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        hum_silos_1_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        hum_silos_2_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        hum_silos_2_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
+        hum_alarms_hum_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_info_alarms_hum_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        hum_ico_hum_1->setText(QString());
+        hum_alarms_settings_button_silos_1->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
+        hum_alarms_hum_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_info_alarms_hum_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
+        hum_ico_temp_2->setText(QString());
+        hum_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_humidity), QApplication::translate("Main_window", "Wilgotno\305\233\304\207", nullptr));
         tabs->setTabText(tabs->indexOf(tab_volume), QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));
         tabs->setTabText(tabs->indexOf(tab_old_data), QApplication::translate("Main_window", "Dane historyczne", nullptr));

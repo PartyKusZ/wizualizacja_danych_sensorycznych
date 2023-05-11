@@ -1,3 +1,4 @@
+#pragma once
 #include <QWidget>
 #include <QPushButton>
 #include "State_of_alarms.hpp"

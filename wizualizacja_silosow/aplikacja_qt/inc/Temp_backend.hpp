@@ -24,6 +24,7 @@ public:
 
 public slots:
     void set_temp_silos();
+    void set_info_alarms_silos();
 
     
 };
