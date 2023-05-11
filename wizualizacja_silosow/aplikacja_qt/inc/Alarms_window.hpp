@@ -8,7 +8,7 @@
  * 
  */
 
-class Alarms_window: public QWidget, private Ui::alarms_window{
+class Alarms_window: public QWidget, protected Ui::alarms_window{
     
     Q_OBJECT
 
@@ -19,6 +19,7 @@ class Alarms_window: public QWidget, private Ui::alarms_window{
     public: 
 
         Alarms_window(QWidget *parent, State_of_alarms *_state_of_alarms, int _silo_number,QString _window_title);
+        //virtual void set_up() = 0;
         ~Alarms_window();
 
     public slots:
