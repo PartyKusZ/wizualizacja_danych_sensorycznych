@@ -56,7 +56,7 @@ QColor Temp_draw::colors_interpolation(double temp){
         b = static_cast<int>(255 * (1 - factor) + 0 * factor);
         return QColor(r,g,b);
     }
-    if(temp > this->warning && temp < this->critical){
+    if(temp >= this->warning && temp < this->critical){
         factor = temp / this->critical;
         r = static_cast<int>(255 * (1 - factor) + 255 * factor);
         g = static_cast<int>(255 * (1 - factor) + 0 * factor);
@@ -64,7 +64,7 @@ QColor Temp_draw::colors_interpolation(double temp){
 
         return QColor(r,g,b);
     }
-    if(temp > this->critical){
+    if(temp >= this->critical){
         return QColor(255,0,0);
     }
 }

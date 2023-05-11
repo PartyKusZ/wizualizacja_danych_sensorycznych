@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>temp_alarms_window</class>
- <widget class="QWidget" name="temp_alarms_window">
+ <class>alarms_window</class>
+ <widget class="QWidget" name="alarms_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>458</width>
-    <height>165</height>
+    <width>461</width>
+    <height>167</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Temperatura - alarmy</string>
+   <string>ustaw nazwe w kodzie</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#temp_alarms_window {
+   <string notr="true">#alarms_window {
 background: #010101;
 }
 
