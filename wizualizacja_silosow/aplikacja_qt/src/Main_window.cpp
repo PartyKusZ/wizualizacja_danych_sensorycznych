@@ -18,7 +18,6 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
     
     
     
-    
     this->timer.setInterval(100); // timer napędzający odświerzanie aplkacji co 100 ms 
     this->connect(&timer,&QTimer::timeout,this,&Main_window::silos_data_update); // aktualizowanie danych odebranych z serial portu
 
