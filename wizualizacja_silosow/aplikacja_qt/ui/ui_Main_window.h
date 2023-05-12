@@ -19,6 +19,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 #include "All_param_silos.hpp"
+#include "Hum_silos.hpp"
 #include "Temp_silos.hpp"
 
 QT_BEGIN_NAMESPACE
@@ -90,14 +91,14 @@ public:
     QPushButton *temp_alarms_settings_button_silos_1;
     QWidget *tab_humidity;
     QGridLayout *gridLayout_20;
-    Temp_silos *hum_silos_1;
+    Hum_silos *hum_silos_1;
     QGridLayout *gridLayout_19;
     QLabel *hum_silos_1_second;
     QSpacerItem *verticalSpacer_18;
     QLabel *hum_silos_1_first;
     QSpacerItem *verticalSpacer_19;
     QSpacerItem *verticalSpacer_20;
-    Temp_silos *hum_silos_2;
+    Hum_silos *hum_silos_2;
     QGridLayout *gridLayout_18;
     QSpacerItem *verticalSpacer_15;
     QLabel *hum_silos_2_first;
@@ -114,7 +115,7 @@ public:
     QGridLayout *gridLayout_17;
     QLabel *hum_alarms_hum_2;
     QLabel *hum_info_alarms_hum_2;
-    QLabel *hum_ico_temp_2;
+    QLabel *hum_ico_hum_2;
     QPushButton *hum_alarms_settings_button_silos_2;
     QWidget *tab_volume;
     QWidget *tab_old_data;
@@ -718,7 +719,7 @@ public:
 "}"));
         gridLayout_20 = new QGridLayout(tab_humidity);
         gridLayout_20->setObjectName(QString::fromUtf8("gridLayout_20"));
-        hum_silos_1 = new Temp_silos(tab_humidity);
+        hum_silos_1 = new Hum_silos(tab_humidity);
         hum_silos_1->setObjectName(QString::fromUtf8("hum_silos_1"));
         sizePolicy2.setHeightForWidth(hum_silos_1->sizePolicy().hasHeightForWidth());
         hum_silos_1->setSizePolicy(sizePolicy2);
@@ -761,7 +762,7 @@ public:
 
         gridLayout_20->addWidget(hum_silos_1, 0, 0, 1, 1);
 
-        hum_silos_2 = new Temp_silos(tab_humidity);
+        hum_silos_2 = new Hum_silos(tab_humidity);
         hum_silos_2->setObjectName(QString::fromUtf8("hum_silos_2"));
         sizePolicy2.setHeightForWidth(hum_silos_2->sizePolicy().hasHeightForWidth());
         hum_silos_2->setSizePolicy(sizePolicy2);
@@ -910,18 +911,18 @@ public:
 
         gridLayout_17->addWidget(hum_info_alarms_hum_2, 0, 2, 1, 1);
 
-        hum_ico_temp_2 = new QLabel(hum_alarms_silos_2);
-        hum_ico_temp_2->setObjectName(QString::fromUtf8("hum_ico_temp_2"));
-        sizePolicy3.setHeightForWidth(hum_ico_temp_2->sizePolicy().hasHeightForWidth());
-        hum_ico_temp_2->setSizePolicy(sizePolicy3);
-        hum_ico_temp_2->setMinimumSize(QSize(10, 50));
-        hum_ico_temp_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop_t\305\202o.png")));
-        hum_ico_temp_2->setScaledContents(false);
-        hum_ico_temp_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        hum_ico_temp_2->setWordWrap(false);
-        hum_ico_temp_2->setOpenExternalLinks(false);
+        hum_ico_hum_2 = new QLabel(hum_alarms_silos_2);
+        hum_ico_hum_2->setObjectName(QString::fromUtf8("hum_ico_hum_2"));
+        sizePolicy3.setHeightForWidth(hum_ico_hum_2->sizePolicy().hasHeightForWidth());
+        hum_ico_hum_2->setSizePolicy(sizePolicy3);
+        hum_ico_hum_2->setMinimumSize(QSize(10, 50));
+        hum_ico_hum_2->setPixmap(QPixmap(QString::fromUtf8(":/ikona_stop_t\305\202o.png")));
+        hum_ico_hum_2->setScaledContents(false);
+        hum_ico_hum_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        hum_ico_hum_2->setWordWrap(false);
+        hum_ico_hum_2->setOpenExternalLinks(false);
 
-        gridLayout_17->addWidget(hum_ico_temp_2, 0, 0, 1, 1);
+        gridLayout_17->addWidget(hum_ico_hum_2, 0, 0, 1, 1);
 
         hum_alarms_settings_button_silos_2 = new QPushButton(hum_alarms_silos_2);
         hum_alarms_settings_button_silos_2->setObjectName(QString::fromUtf8("hum_alarms_settings_button_silos_2"));
@@ -993,13 +994,13 @@ public:
         hum_silos_1_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
         hum_silos_2_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
         hum_silos_2_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
-        hum_alarms_hum_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_alarms_hum_1->setText(QApplication::translate("Main_window", "WILGOTNO\305\232\304\206", nullptr));
         hum_info_alarms_hum_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         hum_ico_hum_1->setText(QString());
         hum_alarms_settings_button_silos_1->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
-        hum_alarms_hum_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_alarms_hum_2->setText(QApplication::translate("Main_window", "WILGOTNO\305\232\304\206", nullptr));
         hum_info_alarms_hum_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
-        hum_ico_temp_2->setText(QString());
+        hum_ico_hum_2->setText(QString());
         hum_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_humidity), QApplication::translate("Main_window", "Wilgotno\305\233\304\207", nullptr));
         tabs->setTabText(tabs->indexOf(tab_volume), QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));

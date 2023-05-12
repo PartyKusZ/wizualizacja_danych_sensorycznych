@@ -11,6 +11,7 @@
 #include "Alarms_window.hpp"
 #include "All_param_backend.hpp"
 #include "Temp_backend.hpp"
+#include "Hum_backend.hpp"
 #include "ui_Alarms_window.h"
 
 /**
@@ -39,6 +40,7 @@ class Main_window : public QWidget, public Ui::Main_window{
 
     All_param_backend *all_param_backend;
     Temp_backend *temp_backend;
+    Hum_backend *hum_backend;
 
   public:
       
@@ -47,9 +49,7 @@ class Main_window : public QWidget, public Ui::Main_window{
 
   public slots:
     void silos_data_update();
-    void set_info_alarms_temp_silos_1();
-    void set_info_alarms_temp_silos_2();
-
+    
 
 
 };

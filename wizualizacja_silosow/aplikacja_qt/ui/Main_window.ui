@@ -1239,7 +1239,7 @@ margin: 10px;
       </attribute>
       <layout class="QGridLayout" name="gridLayout_20">
        <item row="0" column="0">
-        <widget class="Temp_silos" name="hum_silos_1" native="true">
+        <widget class="Hum_silos" name="hum_silos_1" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1335,7 +1335,7 @@ QLabel{
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="Temp_silos" name="hum_silos_2" native="true">
+        <widget class="Hum_silos" name="hum_silos_2" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1482,7 +1482,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="text">
-             <string>TEMPERATURA</string>
+             <string>WILGOTNOŚĆ</string>
             </property>
            </widget>
           </item>
@@ -1618,7 +1618,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="text">
-             <string>TEMPERATURA</string>
+             <string>WILGOTNOŚĆ</string>
             </property>
            </widget>
           </item>
@@ -1645,7 +1645,7 @@ QPushButton:hover {
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="hum_ico_temp_2">
+           <widget class="QLabel" name="hum_ico_hum_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
               <horstretch>0</horstretch>
@@ -1726,6 +1726,12 @@ QPushButton:hover {
    <class>Temp_silos</class>
    <extends>QWidget</extends>
    <header>Temp_silos.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Hum_silos</class>
+   <extends>QWidget</extends>
+   <header>Hum_silos.hpp</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
