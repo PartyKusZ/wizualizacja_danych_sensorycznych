@@ -35,8 +35,7 @@ class Main_window : public QWidget, public Ui::Main_window{
     QTimer timer; //!< a timer for cyclic application status updates
 
     State_of_alarms *state_of_alarms; //!< stores alarm values for filling, temperature, volume and humidity
-    Alarms_window *temp_alarms_settings_1; //!< widget for a window in which values can be set for alarms
-    Alarms_window *temp_alarms_settings_2; //!< widget for a window in which values can be set for alarms
+   
 
     All_param_backend *all_param_backend;
     Temp_backend *temp_backend;

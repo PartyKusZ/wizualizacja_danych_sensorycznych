@@ -1,5 +1,13 @@
 #include "Alarms_window_temp.hpp"
 
+/**
+ * @brief Construct a new Alarms_window_temp::Alarms_window_temp object
+ * 
+ * @param _state_of_alarms //<! alarms values
+ * @param _silo_number 
+ * @param _window_title 
+ */
+
 Alarms_window_temp::Alarms_window_temp(State_of_alarms *_state_of_alarms, 
                                        int _silo_number,
                                        QString _window_title):
@@ -8,6 +16,12 @@ Alarms_window_temp::Alarms_window_temp(State_of_alarms *_state_of_alarms,
     this->set_up();
                                        }
 
+
+/**
+ * @brief The method takes the current stored alarm values and sets the slider and spinbox values according to them.    
+ *  It then connects the corresponding signals and sliders together for correct operation of the window
+ * 
+ */
 
 void Alarms_window_temp::set_up(){
     if(this->silo_number == 1){
@@ -34,6 +48,10 @@ void Alarms_window_temp::set_up(){
 
 }
 
+/**
+ * @brief Writes new, user-selected alarm values to the state_of_alarms object
+ * 
+ */
 
 void Alarms_window_temp::set_alarms(){
 
@@ -48,5 +66,9 @@ void Alarms_window_temp::set_alarms(){
     
     this->close();
 }
+/**
+ * @brief Destroy the Alarms_window_temp::Alarms_window_temp object
+ * 
+ */
 
 Alarms_window_temp::~Alarms_window_temp(){}

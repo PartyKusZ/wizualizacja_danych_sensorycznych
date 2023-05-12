@@ -12,8 +12,6 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
 
     this->state_of_alarms = new State_of_alarms; // utworzenie instancji klasy State_of_alarms odpowiedzialnej za przechowywanie inforamcji o alarmach 
 
-    //this->temp_alarms_settings_1 = new Alarms_window(nullptr,state_of_alarms,SILO_1,"Alarmy temperatury - silos 1"); // utowrzenie okienka do ustawiania alarmów temperatury w zakładce TEMP dla silosu pierwszego
-    //this->temp_alarms_settings_2 = new Alarms_window(nullptr,state_of_alarms,SILO_2,"Alarmy temperatury - silos 2"); // utowrzenie okienka do ustawiania alarmów temperatury w zakładce TEMP dla silosu drugiego 
     this->all_param_backend = new All_param_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->temp_backend = new Temp_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->hum_backend = new Hum_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
@@ -63,8 +61,6 @@ void Main_window::silos_data_update(){
  */
 Main_window::~Main_window(){
     delete this->state_of_alarms;
-    delete this->temp_alarms_settings_1;
-    delete this->temp_alarms_settings_2;
     delete this->all_param_backend;
     delete this->temp_backend;
 }

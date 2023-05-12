@@ -4,7 +4,7 @@
 #include "State_of_alarms.hpp"
 #include "ui_Alarms_window.h"
 /**
- * @brief Class representing a window for setting alarm values in the alarms section
+ * @brief Abstract class representing the alarm window
  * 
  */
 
@@ -19,9 +19,17 @@ class Alarms_window: public QWidget, protected Ui::alarms_window{
     public: 
 
         Alarms_window(QWidget *parent, State_of_alarms *_state_of_alarms, int _silo_number,QString _window_title);
+        /**
+         * @brief Set the up object
+         * 
+         */
         virtual void set_up() = 0;
         virtual ~Alarms_window();
 
     public slots:
+        /**
+         * @brief Sets user-defined alarm values
+         * 
+         */
         virtual void set_alarms() = 0;
 };
