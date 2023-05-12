@@ -1482,7 +1482,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="text">
-             <string>TEMPERATURA</string>
+             <string>WILGOTNOŚĆ</string>
             </property>
            </widget>
           </item>
@@ -1618,7 +1618,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="text">
-             <string>TEMPERATURA</string>
+             <string>WILGOTNOŚĆ</string>
             </property>
            </widget>
           </item>

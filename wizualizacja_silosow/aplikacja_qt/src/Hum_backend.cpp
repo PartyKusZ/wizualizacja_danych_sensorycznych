@@ -18,9 +18,15 @@ Hum_backend::Hum_backend(std::array<int,5> &_silos_1,
                          silos_2(_silos_2),
                          ui(_ui),
                          state_of_alarms(_state_of_alarms){
+    this->alarms_window_1 = new Alarms_window_hum(_state_of_alarms,SILO_1,"Alarmy wilgotności - silos 1");
+    this->alarms_window_2 = new Alarms_window_hum(_state_of_alarms,SILO_2,"Alarmy wilgotności - silos 2");
+
 
     this->ui.hum_silos_1->set_state_of_alarms(state_of_alarms->get_hum_alarm_silos_1(),state_of_alarms->get_critical_hum_alarm_silos_1()); // ustawienie wartości alarmów humeratury dla rysowania gradientów w klasie hum_draw silos 1
     this->ui.hum_silos_2->set_state_of_alarms(state_of_alarms->get_hum_alarm_silos_2(),state_of_alarms->get_critical_hum_alarm_silos_2()); // ustawienie wartości alarmów humeratury dla rysowania gradientów w klasie hum_draw silos 2
+
+    this->connect(this->ui.hum_alarms_settings_button_silos_1,&QPushButton::clicked,this->alarms_window_1,&Alarms_window_hum::show); // uruchamia okienko do ustawiania alarmów temperatury w silos 1 po wicsięcicu guzika
+    this->connect(this->ui.hum_alarms_settings_button_silos_2,&QPushButton::clicked,this->alarms_window_2,&Alarms_window_hum::show); // uruchamia okienko do ustawiania alarmów temperatury w silos 2 po wicsięcicu guzika
 
 
   
@@ -54,7 +60,7 @@ void Hum_backend::set_info_alarms_silos(){
 
 
     if(silos_1[3] < state_of_alarms->get_hum_alarm_silos_1() || silos_1[4] < state_of_alarms->get_hum_alarm_silos_1()){
-        ui.hum_info_alarms_hum_1->setText("humeratury w normie");
+        ui.hum_info_alarms_hum_1->setText("Wilgotność w normie");
         ui.hum_ico_hum_1->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_1[3] > state_of_alarms->get_hum_alarm_silos_1() || silos_1[4] > state_of_alarms->get_hum_alarm_silos_1()){
@@ -67,7 +73,7 @@ void Hum_backend::set_info_alarms_silos(){
     }
 
     if(silos_2[3] < state_of_alarms->get_hum_alarm_silos_2() || silos_2[4] < state_of_alarms->get_hum_alarm_silos_2()){
-        ui.hum_info_alarms_hum_2->setText("humeratury w normie");
+        ui.hum_info_alarms_hum_2->setText("Wilgotność w normie");
         ui.hum_ico_hum_2->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_2[3] > state_of_alarms->get_hum_alarm_silos_2() || silos_2[4] > state_of_alarms->get_hum_alarm_silos_2()){
@@ -84,4 +90,7 @@ void Hum_backend::set_info_alarms_silos(){
  * @brief Destroy the Hum_backend::Hum_backend object
  * 
  */
-Hum_backend::~Hum_backend(){}
+Hum_backend::~Hum_backend(){
+    delete this->alarms_window_1;
+    delete this->alarms_window_2;
+}

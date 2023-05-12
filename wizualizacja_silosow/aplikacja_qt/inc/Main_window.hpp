@@ -49,9 +49,7 @@ class Main_window : public QWidget, public Ui::Main_window{
 
   public slots:
     void silos_data_update();
-    void set_info_alarms_temp_silos_1();
-    void set_info_alarms_temp_silos_2();
-
+    
 
 
 };

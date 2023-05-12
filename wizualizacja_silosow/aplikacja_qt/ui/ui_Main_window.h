@@ -994,11 +994,11 @@ public:
         hum_silos_1_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
         hum_silos_2_first->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
         hum_silos_2_second->setText(QApplication::translate("Main_window", "TextLabel", nullptr));
-        hum_alarms_hum_1->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_alarms_hum_1->setText(QApplication::translate("Main_window", "WILGOTNO\305\232\304\206", nullptr));
         hum_info_alarms_hum_1->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         hum_ico_hum_1->setText(QString());
         hum_alarms_settings_button_silos_1->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
-        hum_alarms_hum_2->setText(QApplication::translate("Main_window", "TEMPERATURA", nullptr));
+        hum_alarms_hum_2->setText(QApplication::translate("Main_window", "WILGOTNO\305\232\304\206", nullptr));
         hum_info_alarms_hum_2->setText(QApplication::translate("Main_window", "Przekroczono poziom(I II) ", nullptr));
         hum_ico_hum_2->setText(QString());
         hum_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
