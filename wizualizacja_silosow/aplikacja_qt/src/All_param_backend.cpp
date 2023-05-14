@@ -105,6 +105,32 @@ void All_param_backend::set_info_alarms_silos(){
         ui.hum_info_alarms_al_2->setText("Przekroczono wartość krytyczną");
         ui.hum_ico_al_2->setPixmap(QPixmap(":/ikona_stop.png"));
     }
+
+    if(silos_1[0] < state_of_alarms->get_fulfillment_alarm_silos_1()){
+        ui.vol_info_alarms_al_1->setText("Wilgotność w normie");
+        ui.vol_ico_al_1->setPixmap(QPixmap(":/ok.png"));
+    }
+    if(silos_1[0] > state_of_alarms->get_fulfillment_alarm_silos_1()){
+        ui.vol_info_alarms_al_1->setText("Przekroczono wartość ostrzegawczą");
+        ui.vol_ico_al_1->setPixmap(QPixmap(":/ikona_warning.png"));
+    }
+     if(silos_1[0] > state_of_alarms->get_critical_fulfillment_alarm_silos_1()){
+        ui.vol_info_alarms_al_1->setText("Przekroczono wartość krytyczną");
+        ui.vol_ico_al_1->setPixmap(QPixmap(":/ikona_stop.png"));
+    }
+
+    if(silos_2[0] < state_of_alarms->get_fulfillment_alarm_silos_2() ){
+        ui.vol_info_alarms_al_2->setText("Wilgotność w normie");
+        ui.vol_ico_al_2->setPixmap(QPixmap(":/ok.png"));
+    }
+    if(silos_2[0] > state_of_alarms->get_fulfillment_alarm_silos_2() ){
+        ui.vol_info_alarms_al_2->setText("Przekroczono wartość ostrzegawczą");
+        ui.vol_ico_al_2->setPixmap(QPixmap(":/ikona_warning.png"));
+    }
+     if(silos_2[0] > state_of_alarms->get_critical_fulfillment_alarm_silos_2()){
+        ui.vol_info_alarms_al_2->setText("Przekroczono wartość krytyczną");
+        ui.vol_ico_al_2->setPixmap(QPixmap(":/ikona_stop.png"));
+    }
 }
 
 

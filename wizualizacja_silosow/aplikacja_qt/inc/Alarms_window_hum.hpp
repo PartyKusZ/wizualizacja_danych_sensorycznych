@@ -2,6 +2,11 @@
 #include <QString>
 #include "Alarms_window.hpp"
 #include "State_of_alarms.hpp"
+
+/**
+ * @brief Class representing the window for setting the alarm values on the humidity tab
+ * 
+ */
 class Alarms_window_hum: public Alarms_window {
     Q_OBJECT
     

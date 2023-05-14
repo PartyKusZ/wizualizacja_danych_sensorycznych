@@ -1,5 +1,13 @@
 #include "Alarms_window_hum.hpp"
 
+/**
+ * @brief Construct a new Alarms_window_hum::Alarms_window_hum object
+ * 
+ * @param _state_of_alarms //!< alarm values
+ * @param _silo_number 
+ * @param _window_title 
+ */
+
 Alarms_window_hum::Alarms_window_hum(State_of_alarms *_state_of_alarms, 
                                        int _silo_number,
                                        QString _window_title):
@@ -8,6 +16,11 @@ Alarms_window_hum::Alarms_window_hum(State_of_alarms *_state_of_alarms,
     this->set_up();
                                        }
 
+/**
+ * @brief The method takes the current stored alarm values and sets the slider and spinbox values according to them.    
+ *  It then connects the corresponding signals and sliders together for correct operation of the window
+ * 
+ */
 
 void Alarms_window_hum::set_up(){
     if(this->silo_number == 1){
@@ -34,6 +47,10 @@ void Alarms_window_hum::set_up(){
 
 }
 
+/**
+ * @brief Writes new, user-selected alarm values to the state_of_alarms object
+ * 
+ */
 
 void Alarms_window_hum::set_alarms(){
 
@@ -48,5 +65,10 @@ void Alarms_window_hum::set_alarms(){
     
     this->close();
 }
+
+/**
+ * @brief Destroy the Alarms_window_hum::Alarms_window_hum object
+ * 
+ */
 
 Alarms_window_hum::~Alarms_window_hum(){}

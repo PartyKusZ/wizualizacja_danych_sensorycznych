@@ -12,13 +12,10 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
 
     this->state_of_alarms = new State_of_alarms; // utworzenie instancji klasy State_of_alarms odpowiedzialnej za przechowywanie inforamcji o alarmach 
 
-    //this->temp_alarms_settings_1 = new Alarms_window(nullptr,state_of_alarms,SILO_1,"Alarmy temperatury - silos 1"); // utowrzenie okienka do ustawiania alarmów temperatury w zakładce TEMP dla silosu pierwszego
-    //this->temp_alarms_settings_2 = new Alarms_window(nullptr,state_of_alarms,SILO_2,"Alarmy temperatury - silos 2"); // utowrzenie okienka do ustawiania alarmów temperatury w zakładce TEMP dla silosu drugiego 
     this->all_param_backend = new All_param_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->temp_backend = new Temp_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->hum_backend = new Hum_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
-    
-    
+    this->vol_backend = new Vol_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     
     
     this->timer.setInterval(100); // timer napędzający odświerzanie aplkacji co 100 ms 
@@ -31,6 +28,8 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
     this->connect(&timer,&QTimer::timeout,this->temp_backend,&Temp_backend::set_temp_silos); // ustawia dane do teskstowego zapreazentowania w zakładce Temp i ustawia dane potrzebne do rysowania gradientu.
     this->connect(&timer,&QTimer::timeout,this->hum_backend,&Hum_backend::set_info_alarms_silos); // ustawia tekstowe alarmy w widgetach pod silosem 2 w zakladce Wszystkie parametry i Temp
     this->connect(&timer,&QTimer::timeout,this->hum_backend,&Hum_backend::set_hum_silos); // ustawia dane do teskstowego zapreazentowania w zakładce Temp i ustawia dane potrzebne do rysowania gradientu.
+    this->connect(&timer,&QTimer::timeout,this->vol_backend,&Vol_backend::set_info_alarms_silos);
+    this->connect(&timer,&QTimer::timeout,this->vol_backend,&Vol_backend::set_vol_silos);
 
    
     this->timer.start(); // uruchamia timer nadający "rytm" apliakcji
@@ -63,8 +62,7 @@ void Main_window::silos_data_update(){
  */
 Main_window::~Main_window(){
     delete this->state_of_alarms;
-    delete this->temp_alarms_settings_1;
-    delete this->temp_alarms_settings_2;
     delete this->all_param_backend;
     delete this->temp_backend;
+    delete this->vol_backend;
 }

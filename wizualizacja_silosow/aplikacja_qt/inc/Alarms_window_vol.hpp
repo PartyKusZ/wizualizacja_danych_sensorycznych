@@ -8,16 +8,16 @@
  * 
  */
 
-class Alarms_window_temp: public Alarms_window {
+class Alarms_window_vol: public Alarms_window {
     Q_OBJECT
     
     public: 
 
-        Alarms_window_temp(State_of_alarms *_state_of_alarms, int _silo_number,QString _window_title);
+        Alarms_window_vol(State_of_alarms *_state_of_alarms, int _silo_number,QString _window_title);
 
         void set_up() override; 
 
-        ~Alarms_window_temp();
+        ~Alarms_window_vol();
 
     private:
 
