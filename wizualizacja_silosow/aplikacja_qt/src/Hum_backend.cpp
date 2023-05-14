@@ -41,11 +41,11 @@ Hum_backend::Hum_backend(std::array<int,5> &_silos_1,
 void Hum_backend::set_hum_silos(){
     this->ui.hum_silos_1_first->setText(QString::number(this->silos_1[3]) + " %");
     this->ui.hum_silos_1_second->setText(QString::number(this->silos_1[4]) + " %");
-    this->ui.hum_silos_1->data_refresh(this->silos_1[1],this->silos_1[4]);
+    this->ui.hum_silos_1->data_refresh(this->silos_1[3],this->silos_1[4]);
 
     this->ui.hum_silos_2_first->setText(QString::number(this->silos_2[3]) + " %");
     this->ui.hum_silos_2_second->setText(QString::number(this->silos_2[4]) + " %");
-    this->ui.hum_silos_2->data_refresh(this->silos_2[1],this->silos_2[4]);
+    this->ui.hum_silos_2->data_refresh(this->silos_2[3],this->silos_2[4]);
 
 }
 
