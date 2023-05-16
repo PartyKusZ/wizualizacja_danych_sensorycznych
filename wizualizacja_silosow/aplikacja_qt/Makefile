@@ -62,6 +62,7 @@ SOURCES       = src/Alarms_window.cpp \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
+		src/Port_error.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
 		src/Temp_backend.cpp \
@@ -82,6 +83,7 @@ SOURCES       = src/Alarms_window.cpp \
 		moc/moc_All_param_backend.cpp \
 		moc/moc_Hum_backend.cpp \
 		moc/moc_Main_window.cpp \
+		moc/moc_Port_error.cpp \
 		moc/moc_Temp_backend.cpp \
 		moc/moc_Vol_backend.cpp
 OBJECTS       = obj/Alarms_window.o \
@@ -94,6 +96,7 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/Hum_backend.o \
 		obj/main.o \
 		obj/Main_window.o \
+		obj/Port_error.o \
 		obj/Serial_port.o \
 		obj/State_of_alarms.o \
 		obj/Temp_backend.o \
@@ -115,6 +118,7 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/moc_All_param_backend.o \
 		obj/moc_Hum_backend.o \
 		obj/moc_Main_window.o \
+		obj/moc_Port_error.o \
 		obj/moc_Temp_backend.o \
 		obj/moc_Vol_backend.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -202,6 +206,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/FastCRC_tables.hpp \
 		inc/Hum_backend.hpp \
 		inc/Main_window.hpp \
+		inc/Port_error.hpp \
 		inc/Serial_port.hpp \
 		inc/State_of_alarms.hpp \
 		inc/Temp_backend.hpp \
@@ -224,6 +229,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
+		src/Port_error.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
 		src/Temp_backend.cpp \
@@ -245,7 +251,7 @@ TARGET        = wizualizacja
 first: all
 ####### Build rules
 
-wizualizacja: ui/ui_Alarms_window.h ui/ui_Main_window.h $(OBJECTS)  
+wizualizacja: ui/ui_Alarms_window.h ui/ui_Main_window.h ui/ui_Port_error.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -419,9 +425,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui $(DISTDIR)/
+	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Port_error.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Port_error.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui ui/Port_error.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -465,9 +471,9 @@ compiler_moc_predefs_clean:
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
+compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Port_error.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
+	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Port_error.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
 moc/moc_Alarms_window.cpp: inc/Alarms_window.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
@@ -502,15 +508,33 @@ moc/moc_Alarms_window_vol.cpp: inc/Alarms_window_vol.hpp \
 moc/moc_All_param_backend.cpp: inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/All_param_backend.hpp -o moc/moc_All_param_backend.cpp
 
 moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -518,8 +542,17 @@ moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -533,9 +566,24 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
 
+moc/moc_Port_error.cpp: inc/Port_error.hpp \
+		ui/ui_Port_error.h \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Port_error.hpp -o moc/moc_Port_error.cpp
+
 moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
@@ -545,9 +593,18 @@ moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
 
 moc/moc_Vol_backend.cpp: inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -557,9 +614,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui/ui_Alarms_window.h ui/ui_Main_window.h
+compiler_uic_make_all: ui/ui_Alarms_window.h ui/ui_Main_window.h ui/ui_Port_error.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui/ui_Alarms_window.h ui/ui_Main_window.h
+	-$(DEL_FILE) ui/ui_Alarms_window.h ui/ui_Main_window.h ui/ui_Port_error.h
 ui/ui_Alarms_window.h: ui/Alarms_window.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ui/Alarms_window.ui -o ui/ui_Alarms_window.h
@@ -582,6 +639,10 @@ ui/ui_Main_window.h: ui/Main_window.ui \
 		inc/custom_widgets_designer/Silos_position.hpp \
 		inc/State_of_alarms.hpp
 	/usr/lib/qt5/bin/uic ui/Main_window.ui -o ui/ui_Main_window.h
+
+ui/ui_Port_error.h: ui/Port_error.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ui/Port_error.ui -o ui/ui_Port_error.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -618,7 +679,16 @@ obj/Alarms_window_vol.o: src/Alarms_window_vol.cpp inc/Alarms_window_vol.hpp \
 
 obj/All_param_backend.o: src/All_param_backend.cpp inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
-		ui/ui_Main_window.h
+		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_backend.o src/All_param_backend.cpp
 
 obj/Data.o: src/Data.cpp inc/Data.hpp
@@ -630,16 +700,34 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 
 obj/Hum_backend.o: src/Hum_backend.cpp inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Hum_backend.o src/Hum_backend.cpp
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -650,13 +738,24 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 		inc/Vol_backend.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Serial_port.hpp \
-		inc/FastCRC.hpp
+		inc/FastCRC.hpp \
+		inc/Port_error.hpp \
+		ui/ui_Port_error.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -668,6 +767,10 @@ obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		inc/Alarms_window_vol.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
+obj/Port_error.o: src/Port_error.cpp inc/Port_error.hpp \
+		ui/ui_Port_error.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Port_error.o src/Port_error.cpp
+
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
 		inc/FastCRC.hpp \
 		inc/Data.hpp
@@ -678,7 +781,16 @@ obj/State_of_alarms.o: src/State_of_alarms.cpp inc/State_of_alarms.hpp
 
 obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h
@@ -686,9 +798,18 @@ obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 
 obj/Vol_backend.o: src/Vol_backend.cpp inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Vol_backend.o src/Vol_backend.cpp
 
@@ -760,6 +881,9 @@ obj/moc_Hum_backend.o: moc/moc_Hum_backend.cpp
 
 obj/moc_Main_window.o: moc/moc_Main_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Main_window.o moc/moc_Main_window.cpp
+
+obj/moc_Port_error.o: moc/moc_Port_error.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Port_error.o moc/moc_Port_error.cpp
 
 obj/moc_Temp_backend.o: moc/moc_Temp_backend.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Temp_backend.o moc/moc_Temp_backend.cpp
