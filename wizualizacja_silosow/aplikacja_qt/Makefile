@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_NO_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -Iinc -Iinc/custom_widgets_designer -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -Iui -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -Iinc -Iinc/custom_widgets_designer -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCharts -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -Imoc -Iui -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = wizualizacja1.0.0
 DISTDIR = /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/obj/wizualizacja1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) -lserial /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) -lserial /usr/lib/x86_64-linux-gnu/libQt5Charts.so /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -62,6 +62,7 @@ SOURCES       = src/Alarms_window.cpp \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
+		src/Port_error.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
 		src/Temp_backend.cpp \
@@ -94,6 +95,7 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/Hum_backend.o \
 		obj/main.o \
 		obj/Main_window.o \
+		obj/Port_error.o \
 		obj/Serial_port.o \
 		obj/State_of_alarms.o \
 		obj/Temp_backend.o \
@@ -128,12 +130,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_edid_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri \
@@ -145,6 +151,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_glx_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
@@ -163,6 +171,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uiplugin.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
@@ -202,6 +213,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/FastCRC_tables.hpp \
 		inc/Hum_backend.hpp \
 		inc/Main_window.hpp \
+		inc/Port_error.hpp \
 		inc/Serial_port.hpp \
 		inc/State_of_alarms.hpp \
 		inc/Temp_backend.hpp \
@@ -224,6 +236,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
+		src/Port_error.cpp \
 		src/Serial_port.cpp \
 		src/State_of_alarms.cpp \
 		src/Temp_backend.cpp \
@@ -259,12 +272,16 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_edid_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri \
@@ -276,6 +293,8 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_glx_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri \
@@ -294,6 +313,9 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uiplugin.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri \
@@ -337,12 +359,16 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designer_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_edid_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri:
@@ -354,6 +380,8 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_glx_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_help_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri:
@@ -372,6 +400,9 @@ Makefile: wizualizacja.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uiplugin.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_uitools_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri:
@@ -419,8 +450,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Port_error.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/FastCRCsw.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Port_error.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui $(DISTDIR)/
 
 
@@ -473,7 +504,7 @@ moc/moc_Alarms_window.cpp: inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window.hpp -o moc/moc_Alarms_window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window.hpp -o moc/moc_Alarms_window.cpp
 
 moc/moc_Alarms_window_hum.cpp: inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
@@ -481,7 +512,7 @@ moc/moc_Alarms_window_hum.cpp: inc/Alarms_window_hum.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_hum.hpp -o moc/moc_Alarms_window_hum.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_hum.hpp -o moc/moc_Alarms_window_hum.cpp
 
 moc/moc_Alarms_window_temp.cpp: inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
@@ -489,7 +520,7 @@ moc/moc_Alarms_window_temp.cpp: inc/Alarms_window_temp.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_temp.hpp -o moc/moc_Alarms_window_temp.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_temp.hpp -o moc/moc_Alarms_window_temp.cpp
 
 moc/moc_Alarms_window_vol.cpp: inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
@@ -497,29 +528,56 @@ moc/moc_Alarms_window_vol.cpp: inc/Alarms_window_vol.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_vol.hpp -o moc/moc_Alarms_window_vol.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Alarms_window_vol.hpp -o moc/moc_Alarms_window_vol.cpp
 
 moc/moc_All_param_backend.cpp: inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/All_param_backend.hpp -o moc/moc_All_param_backend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/All_param_backend.hpp -o moc/moc_All_param_backend.cpp
 
 moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Hum_backend.hpp -o moc/moc_Hum_backend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Hum_backend.hpp -o moc/moc_Hum_backend.cpp
 
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -531,27 +589,45 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		inc/Alarms_window_vol.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
 
 moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Temp_backend.hpp -o moc/moc_Temp_backend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Temp_backend.hpp -o moc/moc_Temp_backend.cpp
 
 moc/moc_Vol_backend.cpp: inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Vol_backend.hpp -o moc/moc_Vol_backend.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Vol_backend.hpp -o moc/moc_Vol_backend.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -618,7 +694,16 @@ obj/Alarms_window_vol.o: src/Alarms_window_vol.cpp inc/Alarms_window_vol.hpp \
 
 obj/All_param_backend.o: src/All_param_backend.cpp inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
-		ui/ui_Main_window.h
+		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_backend.o src/All_param_backend.cpp
 
 obj/Data.o: src/Data.cpp inc/Data.hpp
@@ -630,16 +715,34 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 
 obj/Hum_backend.o: src/Hum_backend.cpp inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Hum_backend.o src/Hum_backend.cpp
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -650,13 +753,23 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 		inc/Vol_backend.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Serial_port.hpp \
-		inc/FastCRC.hpp
+		inc/FastCRC.hpp \
+		inc/Port_error.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -668,6 +781,12 @@ obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		inc/Alarms_window_vol.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
+obj/Port_error.o: src/Port_error.cpp inc/Port_error.hpp \
+		inc/Serial_port.hpp \
+		inc/FastCRC.hpp \
+		inc/Data.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Port_error.o src/Port_error.cpp
+
 obj/Serial_port.o: src/Serial_port.cpp inc/Serial_port.hpp \
 		inc/FastCRC.hpp \
 		inc/Data.hpp
@@ -678,7 +797,16 @@ obj/State_of_alarms.o: src/State_of_alarms.cpp inc/State_of_alarms.hpp
 
 obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h
@@ -686,9 +814,18 @@ obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 
 obj/Vol_backend.o: src/Vol_backend.cpp inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Vol_backend.o src/Vol_backend.cpp
 

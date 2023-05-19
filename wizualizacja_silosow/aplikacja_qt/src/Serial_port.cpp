@@ -5,7 +5,7 @@
  *  
  */
 
-Serial_port::Serial_port(): LibSerial::SerialPort(path), FastCRC8(){
+Serial_port::Serial_port(): LibSerial::SerialPort(PATH), FastCRC8(){
 
     this->SetBaudRate(LibSerial::BaudRate::BAUD_9600);
     this->SetCharacterSize(LibSerial::CharacterSize::CHAR_SIZE_8 );
@@ -14,6 +14,18 @@ Serial_port::Serial_port(): LibSerial::SerialPort(path), FastCRC8(){
     this->SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE);
 
 };
+
+Serial_port::Serial_port(QString _path): LibSerial::SerialPort(_path.toStdString()), FastCRC8(){
+
+    this->SetBaudRate(LibSerial::BaudRate::BAUD_9600);
+    this->SetCharacterSize(LibSerial::CharacterSize::CHAR_SIZE_8 );
+    this->SetStopBits(LibSerial::StopBits::STOP_BITS_1 );
+    this->SetParity(LibSerial::Parity::PARITY_NONE);
+    this->SetFlowControl(LibSerial::FlowControl::FLOW_CONTROL_NONE);
+
+};
+
+
 
 
   
@@ -45,3 +57,5 @@ void Serial_port::get_data(Data *_data) {
         }
     }
 }
+
+Serial_port::~Serial_port(){}

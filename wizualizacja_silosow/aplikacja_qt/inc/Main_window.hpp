@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <array>
 #include <QTimer>
+#include <QtCharts>
 #include <iostream>
 #include <algorithm>
 #include "ui_Main_window.h"

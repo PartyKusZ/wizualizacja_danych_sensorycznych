@@ -53,13 +53,13 @@ QTabBar::tab:selected {
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="2" colspan="2">
+   <item row="0" column="0">
     <widget class="QTabWidget" name="tabs">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <property name="usesScrollButtons">
       <bool>false</bool>
@@ -2104,6 +2104,25 @@ QPushButton:hover {
       <attribute name="title">
        <string>Dane historyczne</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="silos_1">
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="silos_2">
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QtCharts::QChartView" name="chartview"/>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
