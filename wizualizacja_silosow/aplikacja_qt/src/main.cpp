@@ -1,16 +1,16 @@
 #include <QApplication>
 #include <QtCharts>
-
 #include <iostream>
 #include <thread>
 #include "Main_window.hpp"
 #include "Serial_port.hpp"
 #include "Data.hpp"
 #include "Port_error.hpp"
+#include "Database.hpp"
 int main(int argc, char *argv[]){
     QApplication app(argc, argv);
     Serial_port *serial_port;
-     std::cerr <<"2137";
+    Database db("test.db");
     try{
         serial_port  = new Serial_port();
         std::cerr << "w bloku trow";

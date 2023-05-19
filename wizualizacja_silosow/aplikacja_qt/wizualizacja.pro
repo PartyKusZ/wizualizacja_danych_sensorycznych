@@ -47,3 +47,4 @@ RCC_DIR = res/res_output
 # Biblioteki 
 
 LIBS += -lserial
+LIBS += -lsqlite3
