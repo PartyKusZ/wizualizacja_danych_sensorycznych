@@ -15,9 +15,11 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
+#include <qchartview.h>
 #include "All_param_silos.hpp"
 #include "Hum_silos.hpp"
 #include "Temp_silos.hpp"
@@ -141,6 +143,10 @@ public:
     QLabel *vol_ico_vol_2;
     QPushButton *vol_alarms_settings_button_silos_2;
     QWidget *tab_old_data;
+    QGridLayout *gridLayout_9;
+    QRadioButton *silos_1;
+    QRadioButton *silos_2;
+    QtCharts::QChartView *chartview;
 
     void setupUi(QWidget *Main_window)
     {
@@ -1157,14 +1163,31 @@ public:
         tabs->addTab(tab_volume, QString());
         tab_old_data = new QWidget();
         tab_old_data->setObjectName(QString::fromUtf8("tab_old_data"));
+        gridLayout_9 = new QGridLayout(tab_old_data);
+        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
+        silos_1 = new QRadioButton(tab_old_data);
+        silos_1->setObjectName(QString::fromUtf8("silos_1"));
+
+        gridLayout_9->addWidget(silos_1, 0, 0, 1, 1);
+
+        silos_2 = new QRadioButton(tab_old_data);
+        silos_2->setObjectName(QString::fromUtf8("silos_2"));
+
+        gridLayout_9->addWidget(silos_2, 0, 1, 1, 1);
+
+        chartview = new QtCharts::QChartView(tab_old_data);
+        chartview->setObjectName(QString::fromUtf8("chartview"));
+
+        gridLayout_9->addWidget(chartview, 2, 0, 1, 2);
+
         tabs->addTab(tab_old_data, QString());
 
-        gridLayout->addWidget(tabs, 0, 0, 2, 2);
+        gridLayout->addWidget(tabs, 0, 0, 1, 1);
 
 
         retranslateUi(Main_window);
 
-        tabs->setCurrentIndex(0);
+        tabs->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Main_window);
@@ -1231,6 +1254,8 @@ public:
         vol_ico_vol_2->setText(QString());
         vol_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_volume), QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));
+        silos_1->setText(QApplication::translate("Main_window", "RadioButton", nullptr));
+        silos_2->setText(QApplication::translate("Main_window", "RadioButton", nullptr));
         tabs->setTabText(tabs->indexOf(tab_old_data), QApplication::translate("Main_window", "Dane historyczne", nullptr));
     } // retranslateUi
 

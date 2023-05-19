@@ -1,4 +1,6 @@
 #include <QApplication>
+#include <QtCharts>
+
 #include <iostream>
 #include <thread>
 #include "Main_window.hpp"
@@ -7,12 +9,19 @@
 #include "Port_error.hpp"
 int main(int argc, char *argv[]){
     QApplication app(argc, argv);
-    Serial_port *serial_port = new Serial_port();
+    Serial_port *serial_port;
+     std::cerr <<"2137";
+    try{
+        serial_port  = new Serial_port();
+        std::cerr << "w bloku trow";
+
+    }catch(LibSerial::OpenFailed& e){
+        std::cerr << "w bloku catch";
+        Port_error port_error;
+        port_error(serial_port);
+    }
     Data data;
     std::thread data_reciver(&Serial_port::get_data,serial_port,&data);
-   
-    Port_error port_error(nullptr,nullptr);
-    port_error.show();
     Main_window main_window(nullptr,&data);
     main_window.show();
     return app.exec();

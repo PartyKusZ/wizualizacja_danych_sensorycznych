@@ -6,7 +6,9 @@
 #include <libserial/SerialPortConstants.h>
 #include "FastCRC.hpp"
 #include "Data.hpp"
-#define PATH "/dev/ttyACM0" 
+
+constexpr static char PATH[] = "/dev/serial/by-id/usb-Arduino__www.arduino.cc__0043_75834343839351309062-if00";
+
 /**
  * @brief A class that receives data from the serial port and interprets it
  * 
