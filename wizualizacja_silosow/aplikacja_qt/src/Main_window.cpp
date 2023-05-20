@@ -34,7 +34,7 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
    
     this->timer.start(); // uruchamia timer nadający "rytm" apliakcji
 
-    // Wyświetl wykres
+   
 }   
 
 
