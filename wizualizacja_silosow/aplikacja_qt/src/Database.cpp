@@ -39,8 +39,20 @@ std::pair<std::string,std::string>  Database::get_time_date(){
 }
 
 
-void Database::insert_silo_1(std::array<int,5> silos_1){
+  int Database::sqlite_callback(void* data, int argc, char** argv, char** azColName){
 
+    std::vector<Db_data>* results = static_cast<std::vector<Db_data>*>(data);
+    Db_data newRow;
+    newRow.data = std::stoi(argv[0]); // Konwersja na int
+    newRow.time = argv[1]; // Przypisanie stringa
+    newRow.date = argv[2]; // Przypisanie stringa
+    results->push_back(newRow);
+    return 0;
+}
+
+
+void Database::insert_silo_1(std::array<int,5> silos_1){
+    std::string INSERT = INSERT_;
     INSERT = std::regex_replace(INSERT,regexes[0],"silo_1");
 
     for(int i = 0; i < silos_1.size(); ++i){
@@ -57,7 +69,7 @@ void Database::insert_silo_1(std::array<int,5> silos_1){
 }
 
 void Database::insert_silo_2(std::array<int,5> silos_2){
-
+    std::string INSERT = INSERT_;
     INSERT = std::regex_replace(INSERT,regexes[0],"silo_2");
 
     for(int i = 0; i < silos_2.size(); ++i){
@@ -70,5 +82,41 @@ void Database::insert_silo_2(std::array<int,5> silos_2){
 
     std::cout<<INSERT<<std::endl;
     sqlite3_exec(db, INSERT.c_str(), NULL, NULL, &error_msg);
-        
+}
+
+
+std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, std::string date_end){
+    std::string SELECT = SELECT_;
+    SELECT = std::regex_replace(SELECT,regexes[1],"silo_1");
+    SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);
+    date_begin = "'" + date_begin + "'";
+    date_end = "'" + date_end + "'";
+    SELECT = std::regex_replace(SELECT,regexes[2],date_begin);
+    SELECT = std::regex_replace(SELECT,regexes[3],date_end);
+    std::cout<<SELECT<<std::endl;
+    sqlite3_exec(db, SELECT.c_str(), sqlite_callback, &data, &error_msg);  
+    // for (auto &&i : data)
+    // {
+    //     std::cout<< i.data << " " ;
+    //     std::cout<< i.time << " " ;
+    //     std::cout<< i.date << " " ;
+    //     std::cout<<std::endl;
+    // }  
+    return this->data;
+}
+
+std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, std::string date_end){
+
+    std::string SELECT = SELECT_;
+    SELECT = std::regex_replace(SELECT,regexes[1],"silo_2");
+    SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);
+    date_begin = "'" + date_begin + "'";
+    date_end = "'" + date_end + "'";
+    SELECT = std::regex_replace(SELECT,regexes[2],date_begin);
+    SELECT = std::regex_replace(SELECT,regexes[3],date_end);
+    std::cout<<SELECT<<std::endl;
+    sqlite3_exec(db, SELECT.c_str(), sqlite_callback, &data, &error_msg);   
+    
+     
+    return this->data;
 }

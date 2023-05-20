@@ -2106,24 +2106,15 @@ QPushButton:hover {
 
 QRadioButton{
 	color: #ffffff;
-	
-}
-
-
- 
-QLabel{
-	color: #ffffff
+	 background-color: rgba(0, 0, 0, 0); 
 }</string>
       </property>
       <attribute name="title">
        <string>Dane historyczne</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_9">
-       <item row="2" column="1" colspan="5">
-        <widget class="QChartView" name="chartview"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QRadioButton" name="radioButton">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="silos_1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2133,19 +2124,13 @@ QLabel{
          <property name="text">
           <string>Silos 1</string>
          </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
         </widget>
        </item>
-       <item row="1" column="5">
-        <widget class="QDateEdit" name="dateEdit_2"/>
+       <item row="2" column="0" colspan="3">
+        <widget class="QWidget" name="chartview" native="true"/>
        </item>
-       <item row="1" column="4">
-        <widget class="QDateEdit" name="dateEdit"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QRadioButton" name="radioButton_2">
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="silos_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -2153,64 +2138,7 @@ QLabel{
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Sios 2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QComboBox" name="comboBox">
-         <item>
-          <property name="text">
-           <string>Wypełnienie</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Temperatura 1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Temperatura 2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Wilgotność 1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>wilgotność 2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Od:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Wybierz silos</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Wybierz parametr do przedstawienia na wykresie </string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Do:</string>
+          <string>Silos 2</string>
          </property>
         </widget>
        </item>
@@ -2244,11 +2172,6 @@ QLabel{
    <extends>QWidget</extends>
    <header>Vol_silos.hpp</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QChartView</class>
-   <extends>QGraphicsView</extends>
-   <header>QtCharts</header>
   </customwidget>
  </customwidgets>
  <resources>

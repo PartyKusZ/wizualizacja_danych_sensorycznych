@@ -10,7 +10,6 @@
 int main(int argc, char *argv[]){
     QApplication app(argc, argv);
     Serial_port *serial_port;
-    Database db("test.db");
     try{
         serial_port  = new Serial_port();
         std::cerr << "w bloku trow";
@@ -29,6 +28,58 @@ int main(int argc, char *argv[]){
 
 
 
+// #include <QApplication>
+// #include <QDateEdit>
+// #include <QCalendarWidget>
+// #include <QDebug>
+
+// #include <QApplication>
+// #include <QDateEdit>
+// #include <QCalendarWidget>
+// #include <QDebug>
+
+// #include <QApplication>
+// #include <QDateEdit>
+// #include <QCalendarWidget>
+// #include <QDebug>
+// #include <QVBoxLayout>
+// #include <QWidget>
+// #include <iostream>
+
+// int main(int argc, char *argv[]) {
+//     QApplication app(argc, argv);
+
+//     QWidget mainWidget;
+//     QVBoxLayout layout(&mainWidget);
+//     QDateEdit dateEdit;
+//     QCalendarWidget calendarWidget;
+
+//     layout.addWidget(&dateEdit);
+//     layout.addWidget(&calendarWidget);
+//     //calendarWidget.hide();
+
+//     QObject::connect(&dateEdit, &QDateEdit::dateChanged, [&](const QDate &date){
+//         auto x = date.toString("yyyy-MM-dd");
+//         auto y = x.toStdString();
+//         //std::replace(y.begin(), y.end(), '\"', '\'');
+//         std::cout << "Wybrana data: " << y << std::endl;  
+//     });
+
+//     QObject::connect(&calendarWidget, &QCalendarWidget::clicked, [&](const QDate &date){
+//         dateEdit.setDate(date);
+//         //calendarWidget.hide();
+//     });
+
+//     QObject::connect(&dateEdit, &QDateEdit::editingFinished, [&](){
+//         calendarWidget.setSelectedDate(dateEdit.date());
+//         calendarWidget.show();
+//     });
+
+//     dateEdit.setDate(QDate::currentDate());
+//     mainWidget.show();
+
+//     return app.exec();
+// }
 
 
 

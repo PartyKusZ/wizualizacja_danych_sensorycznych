@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -19,9 +21,9 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
-#include <qchartview.h>
 #include "All_param_silos.hpp"
 #include "Hum_silos.hpp"
+#include "QtCharts"
 #include "Temp_silos.hpp"
 #include "Vol_silos.hpp"
 
@@ -144,9 +146,16 @@ public:
     QPushButton *vol_alarms_settings_button_silos_2;
     QWidget *tab_old_data;
     QGridLayout *gridLayout_9;
-    QRadioButton *silos_1;
-    QRadioButton *silos_2;
-    QtCharts::QChartView *chartview;
+    QChartView *chartview;
+    QRadioButton *radioButton;
+    QDateEdit *dateEdit_2;
+    QDateEdit *dateEdit;
+    QRadioButton *radioButton_2;
+    QComboBox *comboBox;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_4;
 
     void setupUi(QWidget *Main_window)
     {
@@ -1163,22 +1172,82 @@ public:
         tabs->addTab(tab_volume, QString());
         tab_old_data = new QWidget();
         tab_old_data->setObjectName(QString::fromUtf8("tab_old_data"));
+        tab_old_data->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"QRadioButton{\n"
+"	color: #ffffff;\n"
+"	\n"
+"}\n"
+"\n"
+"\n"
+" \n"
+"QLabel{\n"
+"	color: #ffffff\n"
+"}"));
         gridLayout_9 = new QGridLayout(tab_old_data);
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
-        silos_1 = new QRadioButton(tab_old_data);
-        silos_1->setObjectName(QString::fromUtf8("silos_1"));
-
-        gridLayout_9->addWidget(silos_1, 0, 0, 1, 1);
-
-        silos_2 = new QRadioButton(tab_old_data);
-        silos_2->setObjectName(QString::fromUtf8("silos_2"));
-
-        gridLayout_9->addWidget(silos_2, 0, 1, 1, 1);
-
-        chartview = new QtCharts::QChartView(tab_old_data);
+        chartview = new QChartView(tab_old_data);
         chartview->setObjectName(QString::fromUtf8("chartview"));
 
-        gridLayout_9->addWidget(chartview, 2, 0, 1, 2);
+        gridLayout_9->addWidget(chartview, 2, 1, 1, 5);
+
+        radioButton = new QRadioButton(tab_old_data);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(radioButton->sizePolicy().hasHeightForWidth());
+        radioButton->setSizePolicy(sizePolicy4);
+        radioButton->setChecked(true);
+
+        gridLayout_9->addWidget(radioButton, 1, 1, 1, 1);
+
+        dateEdit_2 = new QDateEdit(tab_old_data);
+        dateEdit_2->setObjectName(QString::fromUtf8("dateEdit_2"));
+
+        gridLayout_9->addWidget(dateEdit_2, 1, 5, 1, 1);
+
+        dateEdit = new QDateEdit(tab_old_data);
+        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
+
+        gridLayout_9->addWidget(dateEdit, 1, 4, 1, 1);
+
+        radioButton_2 = new QRadioButton(tab_old_data);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        sizePolicy4.setHeightForWidth(radioButton_2->sizePolicy().hasHeightForWidth());
+        radioButton_2->setSizePolicy(sizePolicy4);
+
+        gridLayout_9->addWidget(radioButton_2, 1, 2, 1, 1);
+
+        comboBox = new QComboBox(tab_old_data);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+
+        gridLayout_9->addWidget(comboBox, 1, 3, 1, 1);
+
+        label = new QLabel(tab_old_data);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout_9->addWidget(label, 0, 4, 1, 1);
+
+        label_2 = new QLabel(tab_old_data);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_9->addWidget(label_2, 0, 1, 1, 1);
+
+        label_3 = new QLabel(tab_old_data);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout_9->addWidget(label_3, 0, 3, 1, 1);
+
+        label_4 = new QLabel(tab_old_data);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        gridLayout_9->addWidget(label_4, 0, 5, 1, 1);
 
         tabs->addTab(tab_old_data, QString());
 
@@ -1254,8 +1323,18 @@ public:
         vol_ico_vol_2->setText(QString());
         vol_alarms_settings_button_silos_2->setText(QApplication::translate("Main_window", "Ustawienia alarm\303\263w", nullptr));
         tabs->setTabText(tabs->indexOf(tab_volume), QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));
-        silos_1->setText(QApplication::translate("Main_window", "RadioButton", nullptr));
-        silos_2->setText(QApplication::translate("Main_window", "RadioButton", nullptr));
+        radioButton->setText(QApplication::translate("Main_window", "Silos 1", nullptr));
+        radioButton_2->setText(QApplication::translate("Main_window", "Sios 2", nullptr));
+        comboBox->setItemText(0, QApplication::translate("Main_window", "Wype\305\202nienie", nullptr));
+        comboBox->setItemText(1, QApplication::translate("Main_window", "Temperatura 1", nullptr));
+        comboBox->setItemText(2, QApplication::translate("Main_window", "Temperatura 2", nullptr));
+        comboBox->setItemText(3, QApplication::translate("Main_window", "Wilgotno\305\233\304\207 1", nullptr));
+        comboBox->setItemText(4, QApplication::translate("Main_window", "wilgotno\305\233\304\207 2", nullptr));
+
+        label->setText(QApplication::translate("Main_window", "Od:", nullptr));
+        label_2->setText(QApplication::translate("Main_window", "Wybierz silos", nullptr));
+        label_3->setText(QApplication::translate("Main_window", "Wybierz parametr do przedstawienia na wykresie ", nullptr));
+        label_4->setText(QApplication::translate("Main_window", "Do:", nullptr));
         tabs->setTabText(tabs->indexOf(tab_old_data), QApplication::translate("Main_window", "Dane historyczne", nullptr));
     } // retranslateUi
 
