@@ -2119,8 +2119,28 @@ QLabel{
        <string>Dane historyczne</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_9">
-       <item row="2" column="1" colspan="5">
-        <widget class="QChartView" name="chartview"/>
+       <item row="1" column="2">
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Sios 2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Wybierz parametr do przedstawienia na wykresie </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QDateEdit" name="dateEdit"/>
        </item>
        <item row="1" column="1">
         <widget class="QRadioButton" name="radioButton">
@@ -2140,22 +2160,6 @@ QLabel{
        </item>
        <item row="1" column="5">
         <widget class="QDateEdit" name="dateEdit_2"/>
-       </item>
-       <item row="1" column="4">
-        <widget class="QDateEdit" name="dateEdit"/>
-       </item>
-       <item row="1" column="2">
-        <widget class="QRadioButton" name="radioButton_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Sios 2</string>
-         </property>
-        </widget>
        </item>
        <item row="1" column="3">
         <widget class="QComboBox" name="comboBox">
@@ -2186,10 +2190,20 @@ QLabel{
          </item>
         </widget>
        </item>
+       <item row="3" column="1" colspan="7">
+        <widget class="QChartView" name="chartview"/>
+       </item>
        <item row="0" column="4">
         <widget class="QLabel" name="label">
          <property name="text">
           <string>Od:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7">
+        <widget class="QPushButton" name="apply_button">
+         <property name="text">
+          <string>Zatwierdź</string>
          </property>
         </widget>
        </item>
@@ -2200,17 +2214,24 @@ QLabel{
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Wybierz parametr do przedstawienia na wykresie </string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="5">
         <widget class="QLabel" name="label_4">
          <property name="text">
           <string>Do:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QPushButton" name="show_calendar_button_1">
+         <property name="text">
+          <string>Pokaż kalendarz</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5">
+        <widget class="QPushButton" name="show_calendar_button_2">
+         <property name="text">
+          <string>Pokaż kalendarz</string>
          </property>
         </widget>
        </item>

@@ -86,6 +86,7 @@ void Database::insert_silo_2(std::array<int,5> silos_2){
 
 
 std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, std::string date_end){
+    data.clear();
     std::string SELECT = SELECT_;
     SELECT = std::regex_replace(SELECT,regexes[1],"silo_1");
     SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);
@@ -106,7 +107,7 @@ std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, st
 }
 
 std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, std::string date_end){
-
+    data.clear();
     std::string SELECT = SELECT_;
     SELECT = std::regex_replace(SELECT,regexes[1],"silo_2");
     SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);

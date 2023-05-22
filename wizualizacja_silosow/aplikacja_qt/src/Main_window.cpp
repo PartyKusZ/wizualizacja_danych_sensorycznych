@@ -6,7 +6,7 @@
  * @param data data recived form serial port
  */
 
-Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent){
+Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db"){
     this->setupUi(this); // nadanie Ui dla głownego okna aplikacji
 
 
@@ -16,6 +16,7 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
     this->temp_backend = new Temp_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->hum_backend = new Hum_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
     this->vol_backend = new Vol_backend(this->silos_1,this->silos_2,dynamic_cast<Ui::Main_window&>(*this),this->state_of_alarms);
+    this->historical_data = new Historical_data(dynamic_cast<Ui::Main_window&>(*this),database);
     
     
     this->timer.setInterval(100); // timer napędzający odświerzanie aplkacji co 100 ms 
