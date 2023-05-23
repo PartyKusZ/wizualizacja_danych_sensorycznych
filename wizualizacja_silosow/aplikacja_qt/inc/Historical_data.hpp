@@ -3,6 +3,7 @@
 #include <QCalendarWidget>
 #include <QDateEdit>
 #include <QtCharts>
+#include <QDebug>
 #include <vector>
 #include "Db_data.hpp"
 #include "ui_Main_window.h"

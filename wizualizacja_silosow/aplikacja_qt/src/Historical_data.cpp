@@ -5,9 +5,11 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->calendar_2 = new QCalendarWidget();
 
     this->chart = new QChart();
+    this->series  = new QLineSeries();
+
     this->chart->setTitle("Prosty Wykres");
 
-    this->series  = new QLineSeries();
+
 
     this->connect(this->ui.show_calendar_button_1,&QPushButton::clicked, this->calendar_1,&QCalendarWidget::show);
     this->connect(this->ui.show_calendar_button_2,&QPushButton::clicked, this->calendar_2,&QCalendarWidget::show);
@@ -15,8 +17,12 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->connect(this->calendar_2,&QCalendarWidget::clicked, this,&Historical_data::set_data_2);
     this->connect(this->ui.apply_button,&QPushButton::clicked,this,&Historical_data::show_chart);
     //qdate_to_db_format(this->ui.dateEdit->date());
+   
+    this->ui.chartview->setChart(chart);
 
-
+    this->ui.chartview->setRenderHint(QPainter::Antialiasing);
+    
+    
 }
 
 
@@ -52,27 +58,40 @@ void Historical_data::set_data_2(const QDate &date){
 }
 
 void Historical_data::show_chart(){
-    db_data.clear();
+  
+    this->series->clear();
+    this->db_data.clear();
+    
+
+
     if(this->ui.radioButton->isChecked()){
         this->db_data = db.select_silos_1(this->ui.comboBox->currentIndex(),qdate_to_db_format(this->ui.dateEdit->date()),qdate_to_db_format(this->ui.dateEdit_2->date()));
+
     }
     if(this->ui.radioButton_2->isChecked()){
-        this->db_data = db.select_silos_2(this->ui.comboBox->currentIndex(),qdate_to_db_format(this->ui.dateEdit->date()),qdate_to_db_format(this->ui.dateEdit_2->date()));
+        this->db_data = db.select_silos_2(this->ui.comboBox->currentIndex(),qdate_to_db_format(this->ui.dateEdit->date()),qdate_to_db_format(this->ui.dateEdit_2->date()));  
     }
     
     for(int i = 0; i < this->db_data.size(); ++i){
-        *this->series << QPointF(i, this->db_data[i].data);
+        series->append(QPointF(i, this->db_data[i].data));
     }
 
     this->chart->addSeries(series);
+    this->chart->createDefaultAxes();
 
-    this->ui.chartview->setRenderHint(QPainter::Antialiasing);
-    this->ui.chartview->setChart(chart);
     this->ui.chartview->show();
 
-}
+    //this->chart->removeAllSeries();
+    
+    
+    
+    }
 
 
 Historical_data::~Historical_data(){
-    
+    delete this->calendar_1;
+    delete this->calendar_2;
+    delete this->chart;
+    delete this->series;   
+
 }

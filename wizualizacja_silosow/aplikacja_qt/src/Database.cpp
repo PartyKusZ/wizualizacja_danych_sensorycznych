@@ -118,6 +118,13 @@ std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, st
     std::cout<<SELECT<<std::endl;
     sqlite3_exec(db, SELECT.c_str(), sqlite_callback, &data, &error_msg);   
     
+    for (auto &&i : data)
+    {
+        std::cout<< i.data << " " ;
+        std::cout<< i.time << " " ;
+        std::cout<< i.date << " " ;
+        std::cout<<std::endl;
+    }  
      
     return this->data;
 }
