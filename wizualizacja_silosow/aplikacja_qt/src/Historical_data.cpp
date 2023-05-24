@@ -6,8 +6,18 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
 
     this->chart = new QChart();
     this->series  = new QLineSeries();
+    this->chart->addSeries(series);
+
+
+    this->axisX = new QValueAxis();
+    this->axisY = new QValueAxis();
+    chart->setAxisX(axisX, series);
+    chart->setAxisY(axisY, series);
+    
 
     this->chart->setTitle("Prosty Wykres");
+    this->ui.chartview->setChart(chart);
+    this->ui.chartview->setRenderHint(QPainter::Antialiasing);
 
 
 
@@ -18,9 +28,9 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->connect(this->ui.apply_button,&QPushButton::clicked,this,&Historical_data::show_chart);
     //qdate_to_db_format(this->ui.dateEdit->date());
    
-    this->ui.chartview->setChart(chart);
 
-    this->ui.chartview->setRenderHint(QPainter::Antialiasing);
+    
+
     
     
 }
@@ -59,10 +69,8 @@ void Historical_data::set_data_2(const QDate &date){
 
 void Historical_data::show_chart(){
   
-    this->series->clear();
-    this->db_data.clear();
-    
-
+    series->clear();
+    db_data.clear();
 
     if(this->ui.radioButton->isChecked()){
         this->db_data = db.select_silos_1(this->ui.comboBox->currentIndex(),qdate_to_db_format(this->ui.dateEdit->date()),qdate_to_db_format(this->ui.dateEdit_2->date()));
@@ -75,16 +83,14 @@ void Historical_data::show_chart(){
     for(int i = 0; i < this->db_data.size(); ++i){
         series->append(QPointF(i, this->db_data[i].data));
     }
+    this->axisX->setRange(0,db_data.size());
 
-    this->chart->addSeries(series);
-    this->chart->createDefaultAxes();
+    auto elem_max = std::max_element(db_data.begin(), db_data.end(), [](const Db_data& a, const Db_data& b) {
+        return a.data < b.data;
+    });
 
-    this->ui.chartview->show();
-
-    //this->chart->removeAllSeries();
-    
-    
-    
+    this->axisY->setRange(0,elem_max->data);
+    chart->update();
     }
 
 
