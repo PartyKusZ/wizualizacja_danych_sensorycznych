@@ -1,14 +1,23 @@
 #include "Database.hpp"
 
-Database::Database(const std::string db_name){
+Database::Database(const std::string db_name,std::array<int,5> &_silos_1,std::array<int,5> &_silos_2): QObject(), silos_1(_silos_1),silos_2(_silos_2){
     int status = sqlite3_open(db_name.c_str(),&db);
     if(status){
         std::cerr << "Can't open database: "<<sqlite3_errmsg(db)<< std::endl;
     }   
     status = sqlite3_exec(db, CREATE_SILO_1, NULL, NULL, &error_msg);
     status = sqlite3_exec(db, CREATE_SILO_2, NULL, NULL, &error_msg);
+
+    this->timer.setInterval(3000);
+    this->connect(&this->timer,&QTimer::timeout,this,&Database::update);
+    this->timer.start();
     
     
+}
+
+void Database::update(){
+    this->insert_silo_1(silos_1);
+    this->insert_silo_2(silos_2);
 }
 
 std::pair<std::string,std::string>  Database::get_time_date(){

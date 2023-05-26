@@ -8,8 +8,8 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->series  = new QLineSeries();
     this->chart->addSeries(series);
 
-
-    this->axisX = new QValueAxis();
+    this->axisX = new QDateTimeAxis();
+    this->axisX->setFormat("hh:mm:ss"); // Ustaw format na odpowiedni dla twoich danych
     this->axisY = new QValueAxis();
     chart->setAxisX(axisX, series);
     chart->setAxisY(axisY, series);
@@ -19,22 +19,14 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->ui.chartview->setChart(chart);
     this->ui.chartview->setRenderHint(QPainter::Antialiasing);
 
-
-
     this->connect(this->ui.show_calendar_button_1,&QPushButton::clicked, this->calendar_1,&QCalendarWidget::show);
     this->connect(this->ui.show_calendar_button_2,&QPushButton::clicked, this->calendar_2,&QCalendarWidget::show);
     this->connect(this->calendar_1,&QCalendarWidget::clicked, this,&Historical_data::set_data_1);
     this->connect(this->calendar_2,&QCalendarWidget::clicked, this,&Historical_data::set_data_2);
     this->connect(this->ui.apply_button,&QPushButton::clicked,this,&Historical_data::show_chart);
     //qdate_to_db_format(this->ui.dateEdit->date());
-   
-
-    
-
-    
     
 }
-
 
 std::string Historical_data::qdate_to_db_format(const QDate &date){
     std::string d;
@@ -81,9 +73,11 @@ void Historical_data::show_chart(){
     }
     
     for(int i = 0; i < this->db_data.size(); ++i){
-        series->append(QPointF(i, this->db_data[i].data));
+        QDateTime datetime = QDateTime::fromString(QString::fromStdString(this->db_data[i].time), "hh:mm:ss"); // Użyj odpowiedniego formatu
+        series->append(datetime.toMSecsSinceEpoch(), this->db_data[i].data);
     }
-    this->axisX->setRange(0,db_data.size());
+    this->axisX->setMin(QDateTime::fromString(QString::fromStdString(this->db_data.front().time), "hh:mm:ss"));
+    this->axisX->setMax(QDateTime::fromString(QString::fromStdString(this->db_data.back().time), "hh:mm:ss"));
 
     auto elem_max = std::max_element(db_data.begin(), db_data.end(), [](const Db_data& a, const Db_data& b) {
         return a.data < b.data;
@@ -91,7 +85,7 @@ void Historical_data::show_chart(){
 
     this->axisY->setRange(0,elem_max->data);
     chart->update();
-    }
+}
 
 
 Historical_data::~Historical_data(){

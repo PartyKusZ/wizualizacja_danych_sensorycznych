@@ -6,15 +6,8 @@
  * @param data data recived form serial port
  */
 
-Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db"){
+Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db",silos_1,silos_2){
     this->setupUi(this); // nadanie Ui dla głownego okna aplikacji
-
-    // for(int i=0; i < 20; ++i){
-    //     database.insert_silo_1({i,i+3,i+1,i+8,i+2});
-    // }
-    // for(int i=0; i < 12; ++i){
-    //     database.insert_silo_2({i,i+3,i+1,i+8,i+2});
-    // }
 
     this->state_of_alarms = new State_of_alarms; // utworzenie instancji klasy State_of_alarms odpowiedzialnej za przechowywanie inforamcji o alarmach 
 
