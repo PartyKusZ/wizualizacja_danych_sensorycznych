@@ -8,8 +8,7 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     this->series  = new QLineSeries();
     this->chart->addSeries(series);
 
-    this->axisX = new QDateTimeAxis();
-    this->axisX->setFormat("hh:mm:ss"); // Ustaw format na odpowiedni dla twoich danych
+    this->axisX = new QCategoryAxis(); // Zmieniamy na QCategoryAxis
     this->axisY = new QValueAxis();
     chart->setAxisX(axisX, series);
     chart->setAxisY(axisY, series);
@@ -27,6 +26,8 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     //qdate_to_db_format(this->ui.dateEdit->date());
     
 }
+
+
 
 std::string Historical_data::qdate_to_db_format(const QDate &date){
     std::string d;
@@ -73,11 +74,12 @@ void Historical_data::show_chart(){
     }
     
     for(int i = 0; i < this->db_data.size(); ++i){
-        QDateTime datetime = QDateTime::fromString(QString::fromStdString(this->db_data[i].time), "hh:mm:ss"); // Użyj odpowiedniego formatu
-        series->append(datetime.toMSecsSinceEpoch(), this->db_data[i].data);
+        series->append(i, this->db_data[i].data); // Dodajemy indeks zamiast czasu
+        if(i % 30 == 0) { // Dodajemy etykietę tylko co 20 danych
+            axisX->append(QString::fromStdString(this->db_data[i].time), i); // Dodajemy etykietę czasu do indeksu
+        }
     }
-    this->axisX->setMin(QDateTime::fromString(QString::fromStdString(this->db_data.front().time), "hh:mm:ss"));
-    this->axisX->setMax(QDateTime::fromString(QString::fromStdString(this->db_data.back().time), "hh:mm:ss"));
+    axisX->setRange(0, this->db_data.size() - 1); // Ustawiamy wartości początkowe i końcowe dla osi X
 
     auto elem_max = std::max_element(db_data.begin(), db_data.end(), [](const Db_data& a, const Db_data& b) {
         return a.data < b.data;

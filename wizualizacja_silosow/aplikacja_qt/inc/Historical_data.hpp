@@ -26,7 +26,7 @@ class Historical_data: public QObject{
         QChart *chart;
         QLineSeries *series;
 
-        QDateTimeAxis *axisX;
+        QCategoryAxis *axisX;
         QValueAxis *axisY;
 
         std::string qdate_to_db_format(const QDate &date);
