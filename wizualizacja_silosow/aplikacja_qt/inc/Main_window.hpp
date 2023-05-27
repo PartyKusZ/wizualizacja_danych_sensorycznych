@@ -14,6 +14,8 @@
 #include "Temp_backend.hpp"
 #include "Hum_backend.hpp"
 #include "Vol_backend.hpp"
+#include "Database.hpp"
+#include "Historical_data.hpp"
 #include "ui_Alarms_window.h"
 
 /**
@@ -43,6 +45,9 @@ class Main_window : public QWidget, public Ui::Main_window{
     Temp_backend *temp_backend;
     Hum_backend *hum_backend;
     Vol_backend *vol_backend;
+    Historical_data *historical_data;
+
+    Database database;
 
   public:
       

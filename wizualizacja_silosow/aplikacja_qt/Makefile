@@ -60,6 +60,7 @@ SOURCES       = src/Alarms_window.cpp \
 		src/Data.cpp \
 		src/Database.cpp \
 		src/FastCRCsw.cpp \
+		src/Historical_data.cpp \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
@@ -82,6 +83,8 @@ SOURCES       = src/Alarms_window.cpp \
 		moc/moc_Alarms_window_temp.cpp \
 		moc/moc_Alarms_window_vol.cpp \
 		moc/moc_All_param_backend.cpp \
+		moc/moc_Database.cpp \
+		moc/moc_Historical_data.cpp \
 		moc/moc_Hum_backend.cpp \
 		moc/moc_Main_window.cpp \
 		moc/moc_Temp_backend.cpp \
@@ -94,6 +97,7 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/Data.o \
 		obj/Database.o \
 		obj/FastCRCsw.o \
+		obj/Historical_data.o \
 		obj/Hum_backend.o \
 		obj/main.o \
 		obj/Main_window.o \
@@ -117,6 +121,8 @@ OBJECTS       = obj/Alarms_window.o \
 		obj/moc_Alarms_window_temp.o \
 		obj/moc_Alarms_window_vol.o \
 		obj/moc_All_param_backend.o \
+		obj/moc_Database.o \
+		obj/moc_Historical_data.o \
 		obj/moc_Hum_backend.o \
 		obj/moc_Main_window.o \
 		obj/moc_Temp_backend.o \
@@ -215,6 +221,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		inc/Db_data.hpp \
 		inc/FastCRC.hpp \
 		inc/FastCRC_tables.hpp \
+		inc/Historical_data.hpp \
 		inc/Hum_backend.hpp \
 		inc/Main_window.hpp \
 		inc/Port_error.hpp \
@@ -238,6 +245,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		src/Data.cpp \
 		src/Database.cpp \
 		src/FastCRCsw.cpp \
+		src/Historical_data.cpp \
 		src/Hum_backend.cpp \
 		src/main.cpp \
 		src/Main_window.cpp \
@@ -455,8 +463,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/Database.hpp inc/Db_data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Port_error.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/Database.cpp src/FastCRCsw.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Port_error.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/Database.hpp inc/Db_data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Historical_data.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Port_error.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/Database.cpp src/FastCRCsw.cpp src/Historical_data.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Port_error.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui $(DISTDIR)/
 
 
@@ -501,9 +509,9 @@ compiler_moc_predefs_clean:
 moc/moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -O2 -Wall -W -dM -E -o moc/moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
+compiler_moc_header_make_all: moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Database.cpp moc/moc_Historical_data.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
+	-$(DEL_FILE) moc/moc_Alarms_window.cpp moc/moc_Alarms_window_hum.cpp moc/moc_Alarms_window_temp.cpp moc/moc_Alarms_window_vol.cpp moc/moc_All_param_backend.cpp moc/moc_Database.cpp moc/moc_Historical_data.cpp moc/moc_Hum_backend.cpp moc/moc_Main_window.cpp moc/moc_Temp_backend.cpp moc/moc_Vol_backend.cpp
 moc/moc_Alarms_window.cpp: inc/Alarms_window.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
@@ -542,6 +550,20 @@ moc/moc_All_param_backend.cpp: inc/All_param_backend.hpp \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/All_param_backend.hpp -o moc/moc_All_param_backend.cpp
 
+moc/moc_Database.cpp: inc/Database.hpp \
+		inc/Db_data.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Database.hpp -o moc/moc_Database.cpp
+
+moc/moc_Historical_data.cpp: inc/Historical_data.hpp \
+		inc/Db_data.hpp \
+		ui/ui_Main_window.h \
+		inc/Database.hpp \
+		moc/moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Historical_data.hpp -o moc/moc_Historical_data.cpp
+
 moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
 		inc/Alarms_window_hum.hpp \
@@ -565,6 +587,9 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Vol_backend.hpp \
 		inc/Alarms_window_vol.hpp \
+		inc/Database.hpp \
+		inc/Db_data.hpp \
+		inc/Historical_data.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/Main_window.hpp -o moc/moc_Main_window.cpp
@@ -669,6 +694,12 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 		inc/FastCRC_tables.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/FastCRCsw.o src/FastCRCsw.cpp
 
+obj/Historical_data.o: src/Historical_data.cpp inc/Historical_data.hpp \
+		inc/Db_data.hpp \
+		ui/ui_Main_window.h \
+		inc/Database.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Historical_data.o src/Historical_data.cpp
+
 obj/Hum_backend.o: src/Hum_backend.cpp inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
 		inc/Alarms_window_hum.hpp \
@@ -690,11 +721,12 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Vol_backend.hpp \
 		inc/Alarms_window_vol.hpp \
+		inc/Database.hpp \
+		inc/Db_data.hpp \
+		inc/Historical_data.hpp \
 		inc/Serial_port.hpp \
 		inc/FastCRC.hpp \
-		inc/Port_error.hpp \
-		inc/Database.hpp \
-		inc/Db_data.hpp
+		inc/Port_error.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
@@ -709,7 +741,10 @@ obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		inc/Hum_backend.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Vol_backend.hpp \
-		inc/Alarms_window_vol.hpp
+		inc/Alarms_window_vol.hpp \
+		inc/Database.hpp \
+		inc/Db_data.hpp \
+		inc/Historical_data.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Main_window.o src/Main_window.cpp
 
 obj/Port_error.o: src/Port_error.cpp inc/Port_error.hpp \
@@ -804,6 +839,12 @@ obj/moc_Alarms_window_vol.o: moc/moc_Alarms_window_vol.cpp
 
 obj/moc_All_param_backend.o: moc/moc_All_param_backend.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_All_param_backend.o moc/moc_All_param_backend.cpp
+
+obj/moc_Database.o: moc/moc_Database.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Database.o moc/moc_Database.cpp
+
+obj/moc_Historical_data.o: moc/moc_Historical_data.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Historical_data.o moc/moc_Historical_data.cpp
 
 obj/moc_Hum_backend.o: moc/moc_Hum_backend.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_Hum_backend.o moc/moc_Hum_backend.cpp

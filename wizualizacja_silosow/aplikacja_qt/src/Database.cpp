@@ -1,14 +1,23 @@
 #include "Database.hpp"
 
-Database::Database(const std::string db_name){
+Database::Database(const std::string db_name,std::array<int,5> &_silos_1,std::array<int,5> &_silos_2): QObject(), silos_1(_silos_1),silos_2(_silos_2){
     int status = sqlite3_open(db_name.c_str(),&db);
     if(status){
         std::cerr << "Can't open database: "<<sqlite3_errmsg(db)<< std::endl;
     }   
     status = sqlite3_exec(db, CREATE_SILO_1, NULL, NULL, &error_msg);
     status = sqlite3_exec(db, CREATE_SILO_2, NULL, NULL, &error_msg);
+
+    this->timer.setInterval(3000);
+    this->connect(&this->timer,&QTimer::timeout,this,&Database::update);
+    this->timer.start();
     
     
+}
+
+void Database::update(){
+    this->insert_silo_1(silos_1);
+    this->insert_silo_2(silos_2);
 }
 
 std::pair<std::string,std::string>  Database::get_time_date(){
@@ -24,7 +33,7 @@ std::pair<std::string,std::string>  Database::get_time_date(){
 
     // Wykorzystaj funkcję put_time do wpisania daty i godziny do strumieni
     dateStream << std::put_time(std::localtime(&currentTime), "%Y-%m-%d");
-    timeStream << std::put_time(std::localtime(&currentTime), "%H:%M:%S");
+    timeStream << std::put_time(std::localtime(&currentTime), "%H:%M");
 
     // Przekształć strumienie do stringów
     std::string date = dateStream.str();
@@ -86,6 +95,7 @@ void Database::insert_silo_2(std::array<int,5> silos_2){
 
 
 std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, std::string date_end){
+    data.clear();
     std::string SELECT = SELECT_;
     SELECT = std::regex_replace(SELECT,regexes[1],"silo_1");
     SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);
@@ -106,7 +116,7 @@ std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, st
 }
 
 std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, std::string date_end){
-
+    data.clear();
     std::string SELECT = SELECT_;
     SELECT = std::regex_replace(SELECT,regexes[1],"silo_2");
     SELECT = std::regex_replace(SELECT,regexes[0],this->col_names[col]);
@@ -117,6 +127,13 @@ std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, st
     std::cout<<SELECT<<std::endl;
     sqlite3_exec(db, SELECT.c_str(), sqlite_callback, &data, &error_msg);   
     
+    for (auto &&i : data)
+    {
+        std::cout<< i.data << " " ;
+        std::cout<< i.time << " " ;
+        std::cout<< i.date << " " ;
+        std::cout<<std::endl;
+    }  
      
     return this->data;
 }
