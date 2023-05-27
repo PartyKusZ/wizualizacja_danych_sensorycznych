@@ -9,18 +9,22 @@
 #include "ui_Main_window.h"
 #include "Database.hpp"
 #include <iostream>
+
+/**
+ * @brief class of card handling historical data
+ * 
+ */
 class Historical_data: public QObject{
 
     Q_OBJECT
 
     private:
-        int parameter = 0;
-        std::string date_start;
-        std::string date_stop;
-        std::vector<Db_data> db_data;
-        Ui::Main_window &ui;
-        Database &db;
-        QCalendarWidget *calendar_1;
+        std::string date_start; //!< beginning of the time period 
+        std::string date_stop; //!< end of the time period 
+        std::vector<Db_data> db_data; //!< data received from the database
+        Ui::Main_window &ui; //!< Ui
+        Database &db;//!< database
+        QCalendarWidget *calendar_1; 
         QCalendarWidget *calendar_2;
 
         QChart *chart;

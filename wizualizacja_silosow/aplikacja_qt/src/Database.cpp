@@ -1,4 +1,11 @@
 #include "Database.hpp"
+/**
+ * @brief Construct a new Database:: Database object
+ * @details opens a connection to the database, creates tables if they do not exist, starts a timer that determines the frequency of writing to the database. 
+ * @param db_name 
+ * @param _silos_1 
+ * @param _silos_2 
+ */
 
 Database::Database(const std::string db_name,std::array<int,5> &_silos_1,std::array<int,5> &_silos_2): QObject(), silos_1(_silos_1),silos_2(_silos_2){
     int status = sqlite3_open(db_name.c_str(),&db);
@@ -14,11 +21,21 @@ Database::Database(const std::string db_name,std::array<int,5> &_silos_1,std::ar
     
     
 }
+/**
+ * @brief writes to the base after the timer signal is held
+ * 
+ */
 
 void Database::update(){
     this->insert_silo_1(silos_1);
     this->insert_silo_2(silos_2);
 }
+
+/**
+ * @brief Returns the current time and date on the basis of data from the computer, necessary for storing in the database. 
+ * 
+ * @return std::pair<std::string,std::string> pair: time and date
+ */
 
 std::pair<std::string,std::string>  Database::get_time_date(){
 
@@ -47,6 +64,15 @@ std::pair<std::string,std::string>  Database::get_time_date(){
 
 }
 
+    /**
+     * @brief callback for the SQLite API, used to retrieve data from the database 
+     * 
+     * @param data object to which the data will be saved 
+     * @param argc This is the number of columns in the result row
+     * @param argv data from each column
+     * @param azColName clos names
+     * @return int status
+     */
 
   int Database::sqlite_callback(void* data, int argc, char** argv, char** azColName){
 
@@ -59,6 +85,11 @@ std::pair<std::string,std::string>  Database::get_time_date(){
     return 0;
 }
 
+/**
+ * @brief method that performs a write to the silo_1 table.
+ * @details the query is completed by looking up regular expressions in the template query and replacing them with the correct one
+ * @param silos_1 current data from silos_1
+ */
 
 void Database::insert_silo_1(std::array<int,5> silos_1){
     std::string INSERT = INSERT_;
@@ -76,7 +107,12 @@ void Database::insert_silo_1(std::array<int,5> silos_1){
     sqlite3_exec(db, INSERT.c_str(), NULL, NULL, &error_msg);
         
 }
-
+/**
+ * @brief method that performs a write to the silo_2 table.
+ * @details the query is completed by looking up regular expressions in the template query and replacing them with the correct one
+ * 
+ * @param silos_1 current data from silos_2
+ */
 void Database::insert_silo_2(std::array<int,5> silos_2){
     std::string INSERT = INSERT_;
     INSERT = std::regex_replace(INSERT,regexes[0],"silo_2");
@@ -93,7 +129,14 @@ void Database::insert_silo_2(std::array<int,5> silos_2){
     sqlite3_exec(db, INSERT.c_str(), NULL, NULL, &error_msg);
 }
 
-
+/**
+ * @brief a method that performs a query that returns selected data from the database 
+ * @details the query is completed by looking up regular expressions in the template query and replacing them with the correct one
+ * @param col 
+ * @param date_begin 
+ * @param date_end 
+ * @return std::vector<Db_data> 
+ */
 std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, std::string date_end){
     data.clear();
     std::string SELECT = SELECT_;
@@ -114,7 +157,14 @@ std::vector<Db_data> Database::select_silos_1(int col,std::string date_begin, st
     // }  
     return this->data;
 }
-
+/**
+ * @brief a method that performs a query that returns selected data from the database 
+ * @details the query is completed by looking up regular expressions in the template query and replacing them with the correct one
+ * @param col 
+ * @param date_begin 
+ * @param date_end 
+ * @return std::vector<Db_data> 
+ */
 std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, std::string date_end){
     data.clear();
     std::string SELECT = SELECT_;
@@ -127,13 +177,13 @@ std::vector<Db_data> Database::select_silos_2(int col,std::string date_begin, st
     std::cout<<SELECT<<std::endl;
     sqlite3_exec(db, SELECT.c_str(), sqlite_callback, &data, &error_msg);   
     
-    for (auto &&i : data)
-    {
-        std::cout<< i.data << " " ;
-        std::cout<< i.time << " " ;
-        std::cout<< i.date << " " ;
-        std::cout<<std::endl;
-    }  
+    // for (auto &&i : data)
+    // {
+    //     std::cout<< i.data << " " ;
+    //     std::cout<< i.time << " " ;
+    //     std::cout<< i.date << " " ;
+    //     std::cout<<std::endl;
+    // }  
      
     return this->data;
 }

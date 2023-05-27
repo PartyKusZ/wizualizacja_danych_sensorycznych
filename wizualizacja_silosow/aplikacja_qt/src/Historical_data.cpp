@@ -1,5 +1,12 @@
 #include "Historical_data.hpp"
 
+/**
+ * @brief Construct a new Historical_data::Historical_data object
+ * @details sets appropriate parameters for the ui elements and connects their signals and slots 
+ * @param ui_ Ui
+ * @param db_ database 
+ */
+
 Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), db(db_){
     this->calendar_1 = new QCalendarWidget();
     this->calendar_2 = new QCalendarWidget();
@@ -27,7 +34,12 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     
 }
 
-
+/**
+ * @brief changes the date representation from Qt style to the style used in the database
+ * 
+ * @param date 
+ * @return std::string database-style date
+ */
 
 std::string Historical_data::qdate_to_db_format(const QDate &date){
     std::string d;
@@ -50,15 +62,28 @@ std::string Historical_data::qdate_to_db_format(const QDate &date){
     
 }
 
-
+    /**
+     * @brief supports the emelent ui for date editing
+     * 
+     * @param date 
+     */
 void Historical_data::set_data_1(const QDate &date){
     this->ui.dateEdit->setDate(date);
 }
 
-
+/**
+ * @brief supports the emelent ui for date editing
+ * 
+ * @param date 
+ */
 void Historical_data::set_data_2(const QDate &date){
     this->ui.dateEdit_2->setDate(date);
 }
+
+/**
+ * @brief method retrieves data from the database and places them on the chart
+ * 
+ */
 
 void Historical_data::show_chart(){
   
@@ -93,7 +118,10 @@ void Historical_data::show_chart(){
     chart->update();
 }
 
-
+/**
+ * @brief Destroy the Historical_data::Historical_data object
+ * 
+ */
 Historical_data::~Historical_data(){
     delete this->calendar_1;
     delete this->calendar_2;
