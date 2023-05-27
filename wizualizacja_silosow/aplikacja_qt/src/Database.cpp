@@ -33,7 +33,7 @@ std::pair<std::string,std::string>  Database::get_time_date(){
 
     // Wykorzystaj funkcję put_time do wpisania daty i godziny do strumieni
     dateStream << std::put_time(std::localtime(&currentTime), "%Y-%m-%d");
-    timeStream << std::put_time(std::localtime(&currentTime), "%H:%M:%S");
+    timeStream << std::put_time(std::localtime(&currentTime), "%H:%M");
 
     // Przekształć strumienie do stringów
     std::string date = dateStream.str();

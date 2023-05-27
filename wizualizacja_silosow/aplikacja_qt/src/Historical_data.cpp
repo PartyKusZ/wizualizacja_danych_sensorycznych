@@ -73,13 +73,17 @@ void Historical_data::show_chart(){
         this->db_data = db.select_silos_2(this->ui.comboBox->currentIndex(),qdate_to_db_format(this->ui.dateEdit->date()),qdate_to_db_format(this->ui.dateEdit_2->date()));  
     }
     
+    std::string lastDateSeen;
     for(int i = 0; i < this->db_data.size(); ++i){
         series->append(i, this->db_data[i].data); // Dodajemy indeks zamiast czasu
-        if(i % 30 == 0) { // Dodajemy etykietę tylko co 20 danych
-            axisX->append(QString::fromStdString(this->db_data[i].time), i); // Dodajemy etykietę czasu do indeksu
+        if(i % 30 == 0 || (i > 0 && this->db_data[i].date != lastDateSeen)) { // Dodajemy etykietę tylko co 30 danych lub gdy data się zmienia
+            std::string label = (i > 0 && this->db_data[i].date != lastDateSeen) ? this->db_data[i].date : this->db_data[i].time;
+            axisX->append(QString::fromStdString(label), i); // Dodajemy etykietę czasu lub daty do indeksu
         }
+        lastDateSeen = this->db_data[i].date;
     }
     axisX->setRange(0, this->db_data.size() - 1); // Ustawiamy wartości początkowe i końcowe dla osi X
+    axisX->setLabelsAngle(25);
 
     auto elem_max = std::max_element(db_data.begin(), db_data.end(), [](const Db_data& a, const Db_data& b) {
         return a.data < b.data;
