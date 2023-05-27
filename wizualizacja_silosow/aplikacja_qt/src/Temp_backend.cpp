@@ -19,8 +19,8 @@ Temp_backend::Temp_backend(std::array<int,5> &_silos_1,
                            silos_2(_silos_2),
                            ui(_ui),
                            state_of_alarms(_state_of_alarms){
-    this->alarms_window_1 = new Alarms_window_temp(_state_of_alarms,SILO_1,"Alarmy temperatury - silos 1");
-    this->alarms_window_2 = new Alarms_window_temp(_state_of_alarms,SILO_2,"Alarmy temperatury - silos 2");
+    this->alarms_window_1 = new Alarms_window_temp(_state_of_alarms,SILO_1,tr("Alarmy temperatury - silos 1"));
+    this->alarms_window_2 = new Alarms_window_temp(_state_of_alarms,SILO_2,tr("Alarmy temperatury - silos 2"));
 
 
     this->ui.temp_silos_1->set_state_of_alarms(state_of_alarms->get_temp_alarm_silos_1(),state_of_alarms->get_critical_temp_alarm_silos_1()); // ustawienie wartości alarmów temperatury dla rysowania gradientów w klasie Temp_draw silos 1
@@ -61,28 +61,28 @@ void Temp_backend::set_info_alarms_silos(){
 
 
     if(silos_1[1] < state_of_alarms->get_temp_alarm_silos_1() || silos_1[2] < state_of_alarms->get_temp_alarm_silos_1()){
-        ui.temp_info_alarms_temp_1->setText("Temperatury w normie");
+        ui.temp_info_alarms_temp_1->setText(tr("Temperatury w normie"));
         ui.temp_ico_temp_1->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_1[1] > state_of_alarms->get_temp_alarm_silos_1() || silos_1[2] > state_of_alarms->get_temp_alarm_silos_1()){
-        ui.temp_info_alarms_temp_1->setText("Przekroczono wartość ostrzegawczą");
+        ui.temp_info_alarms_temp_1->setText(tr("Przekroczono wartość ostrzegawczą"));
         ui.temp_ico_temp_1->setPixmap(QPixmap(":/ikona_warning.png"));
     }
      if(silos_1[1] > state_of_alarms->get_critical_temp_alarm_silos_1() || silos_1[2] > state_of_alarms->get_critical_temp_alarm_silos_1()){
-        ui.temp_info_alarms_temp_1->setText("Przekroczono wartość krytyczną");
+        ui.temp_info_alarms_temp_1->setText(tr("Przekroczono wartość krytyczną"));
         ui.temp_ico_temp_1->setPixmap(QPixmap(":/ikona_stop.png"));
     }
 
     if(silos_2[1] < state_of_alarms->get_temp_alarm_silos_2() || silos_2[2] < state_of_alarms->get_temp_alarm_silos_2()){
-        ui.temp_info_alarms_temp_2->setText("Temperatury w normie");
+        ui.temp_info_alarms_temp_2->setText(tr("Temperatury w normie"));
         ui.temp_ico_temp_2->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_2[1] > state_of_alarms->get_temp_alarm_silos_2() || silos_2[2] > state_of_alarms->get_temp_alarm_silos_2()){
-        ui.temp_info_alarms_temp_2->setText("Przekroczono wartość ostrzegawczą");
+        ui.temp_info_alarms_temp_2->setText(tr("Przekroczono wartość ostrzegawczą"));
         ui.temp_ico_temp_2->setPixmap(QPixmap(":/ikona_warning.png"));
     }
      if(silos_2[1] > state_of_alarms->get_critical_temp_alarm_silos_2() || silos_2[2] > state_of_alarms->get_critical_temp_alarm_silos_2()){
-        ui.temp_info_alarms_temp_2->setText("Przekroczono wartość krytyczną");
+        ui.temp_info_alarms_temp_2->setText(tr("Przekroczono wartość krytyczną"));
         ui.temp_ico_temp_2->setPixmap(QPixmap(":/ikona_stop.png"));
     }
 }

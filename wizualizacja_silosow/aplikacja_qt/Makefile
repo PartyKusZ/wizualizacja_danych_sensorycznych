@@ -500,7 +500,9 @@ res/res_output/qrc_res.cpp: res/res.qrc \
 		res/krople.png \
 		res/ikona_stop.png \
 		res/termometr.png \
-		res/ikona_warning_tło.png
+		res/poland.png \
+		res/ikona_warning_tło.png \
+		res/united-kingdom.png
 	/usr/lib/qt5/bin/rcc -name res res/res.qrc -o res/res_output/qrc_res.cpp
 
 compiler_moc_predefs_make_all: moc/moc_predefs.h
@@ -546,6 +548,15 @@ moc/moc_Alarms_window_vol.cpp: inc/Alarms_window_vol.hpp \
 moc/moc_All_param_backend.cpp: inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc -I/home/kubus/Pulpit/SEM6/wizualizacja_danych_sensorycznych/wizualizacja_silosow/aplikacja_qt/inc/custom_widgets_designer -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include inc/All_param_backend.hpp -o moc/moc_All_param_backend.cpp
@@ -559,6 +570,16 @@ moc/moc_Database.cpp: inc/Database.hpp \
 moc/moc_Historical_data.cpp: inc/Historical_data.hpp \
 		inc/Db_data.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Database.hpp \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -566,9 +587,18 @@ moc/moc_Historical_data.cpp: inc/Historical_data.hpp \
 
 moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -576,8 +606,17 @@ moc/moc_Hum_backend.cpp: inc/Hum_backend.hpp \
 
 moc/moc_Main_window.cpp: inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -596,7 +635,16 @@ moc/moc_Main_window.cpp: inc/Main_window.hpp \
 
 moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
@@ -606,9 +654,18 @@ moc/moc_Temp_backend.cpp: inc/Temp_backend.hpp \
 
 moc/moc_Vol_backend.cpp: inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h \
 		moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -680,7 +737,16 @@ obj/Alarms_window_vol.o: src/Alarms_window_vol.cpp inc/Alarms_window_vol.hpp \
 
 obj/All_param_backend.o: src/All_param_backend.cpp inc/All_param_backend.hpp \
 		inc/State_of_alarms.hpp \
-		ui/ui_Main_window.h
+		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/All_param_backend.o src/All_param_backend.cpp
 
 obj/Data.o: src/Data.cpp inc/Data.hpp
@@ -697,21 +763,49 @@ obj/FastCRCsw.o: src/FastCRCsw.cpp inc/FastCRC.hpp \
 obj/Historical_data.o: src/Historical_data.cpp inc/Historical_data.hpp \
 		inc/Db_data.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Database.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Historical_data.o src/Historical_data.cpp
 
 obj/Hum_backend.o: src/Hum_backend.cpp inc/Hum_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_hum.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Hum_backend.o src/Hum_backend.cpp
 
 obj/main.o: src/main.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -731,8 +825,17 @@ obj/main.o: src/main.cpp inc/Main_window.hpp \
 
 obj/Main_window.o: src/Main_window.cpp inc/Main_window.hpp \
 		ui/ui_Main_window.h \
-		inc/Data.hpp \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
+		inc/Data.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h \
 		inc/All_param_backend.hpp \
@@ -763,7 +866,16 @@ obj/State_of_alarms.o: src/State_of_alarms.cpp inc/State_of_alarms.hpp
 
 obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
 		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_temp.hpp \
 		inc/Alarms_window.hpp \
 		ui/ui_Alarms_window.h
@@ -771,9 +883,18 @@ obj/Temp_backend.o: src/Temp_backend.cpp inc/Temp_backend.hpp \
 
 obj/Vol_backend.o: src/Vol_backend.cpp inc/Vol_backend.hpp \
 		ui/ui_Main_window.h \
+		inc/custom_widgets_designer/All_param_silos.hpp \
+		inc/custom_widgets_designer/All_param_draw.hpp \
+		inc/custom_widgets_designer/Silos_position.hpp \
+		inc/custom_widgets_designer/Hum_silos.hpp \
+		inc/custom_widgets_designer/Hum_draw.hpp \
+		inc/State_of_alarms.hpp \
+		inc/custom_widgets_designer/Temp_silos.hpp \
+		inc/custom_widgets_designer/Temp_draw.hpp \
+		inc/custom_widgets_designer/Vol_silos.hpp \
+		inc/custom_widgets_designer/Vol_draw.hpp \
 		inc/Alarms_window_vol.hpp \
 		inc/Alarms_window.hpp \
-		inc/State_of_alarms.hpp \
 		ui/ui_Alarms_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Vol_backend.o src/Vol_backend.cpp
 
