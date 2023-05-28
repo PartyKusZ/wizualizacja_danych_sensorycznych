@@ -4,7 +4,7 @@ TARGET = wizualizacja
 
 QT += widgets 
 QT += charts
-
+TRANSLATIONS += res/en_2.ts
 # sprawdzanie czy katalogi src i inc istnieją 
 src_dir_exists = $$system(test -d src)
 inc_dir_exists = $$system(test -d inc)

@@ -6,7 +6,10 @@
  * @param data data recived form serial port
  */
 
-Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db",silos_1,silos_2){
+Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db",silos_1,silos_2), translator(new QTranslator){   
+    // translator->load(":en_2.qm");
+    // qApp->installTranslator(translator);
+    //this->retranslateUi(this);
     this->setupUi(this); // nadanie Ui dla głownego okna aplikacji
 
     this->state_of_alarms = new State_of_alarms; // utworzenie instancji klasy State_of_alarms odpowiedzialnej za przechowywanie inforamcji o alarmach 
@@ -30,10 +33,17 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
     this->connect(&timer,&QTimer::timeout,this->hum_backend,&Hum_backend::set_hum_silos); // ustawia dane do teskstowego zapreazentowania w zakładce Temp i ustawia dane potrzebne do rysowania gradientu.
     this->connect(&timer,&QTimer::timeout,this->vol_backend,&Vol_backend::set_info_alarms_silos);
     this->connect(&timer,&QTimer::timeout,this->vol_backend,&Vol_backend::set_vol_silos);
+    this->connect(this->radioButton_3,&QRadioButton::toggled,this,&Main_window::lang_pl);
+    this->connect(this->radioButton_4,&QRadioButton::toggled,this,&Main_window::lang_en);
 
    
     this->timer.start(); // uruchamia timer nadający "rytm" apliakcji
+      
+    //  qApp->removeTranslator(translator);
+    //  this->retranslateUi(this);
+    
 
+    
    
 }   
 
@@ -55,7 +65,15 @@ void Main_window::silos_data_update(){
  
 }
 
-
+void Main_window::lang_pl(){
+    qApp->removeTranslator(translator);
+    this->retranslateUi(this);
+}
+void Main_window::lang_en(){
+    translator->load(":en_2.qm");
+    qApp->installTranslator(translator);
+    this->retranslateUi(this);
+}
 
 /**
  * @brief Destroy the Main_window::Main_window object
@@ -66,4 +84,5 @@ Main_window::~Main_window(){
     delete this->all_param_backend;
     delete this->temp_backend;
     delete this->vol_backend;
+    delete this->translator;
 }

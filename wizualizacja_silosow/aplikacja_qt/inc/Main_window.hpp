@@ -49,6 +49,8 @@ class Main_window : public QWidget, public Ui::Main_window{
 
     Database database;
 
+    QTranslator *translator;
+
   public:
       
     explicit Main_window(QWidget *parent = nullptr, Data *_data = nullptr);
@@ -56,7 +58,8 @@ class Main_window : public QWidget, public Ui::Main_window{
 
   public slots:
     void silos_data_update();
-    
+    void lang_pl();
+    void lang_en();    
 
 
 };

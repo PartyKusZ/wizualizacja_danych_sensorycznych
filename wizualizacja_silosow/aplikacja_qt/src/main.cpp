@@ -21,7 +21,14 @@ int main(int argc, char *argv[]){
     }
     Data data;
     std::thread data_reciver(&Serial_port::get_data,serial_port,&data);
+
+    // QTranslator translator;
+    // translator.load(":en_2.qm");
+    // qApp->installTranslator(&translator);
     Main_window main_window(nullptr,&data);
+
+    
+   
     main_window.show();
     return app.exec();
 }

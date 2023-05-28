@@ -18,8 +18,8 @@ Hum_backend::Hum_backend(std::array<int,5> &_silos_1,
                          silos_2(_silos_2),
                          ui(_ui),
                          state_of_alarms(_state_of_alarms){
-    this->alarms_window_1 = new Alarms_window_hum(_state_of_alarms,SILO_1,"Alarmy wilgotności - silos 1");
-    this->alarms_window_2 = new Alarms_window_hum(_state_of_alarms,SILO_2,"Alarmy wilgotności - silos 2");
+    this->alarms_window_1 = new Alarms_window_hum(_state_of_alarms,SILO_1,tr("Alarmy wilgotności - silos 1"));
+    this->alarms_window_2 = new Alarms_window_hum(_state_of_alarms,SILO_2,tr("Alarmy wilgotności - silos 2"));
 
 
     this->ui.hum_silos_1->set_state_of_alarms(state_of_alarms->get_hum_alarm_silos_1(),state_of_alarms->get_critical_hum_alarm_silos_1()); // ustawienie wartości alarmów humeratury dla rysowania gradientów w klasie hum_draw silos 1
@@ -60,28 +60,28 @@ void Hum_backend::set_info_alarms_silos(){
 
 
     if(silos_1[3] < state_of_alarms->get_hum_alarm_silos_1() || silos_1[4] < state_of_alarms->get_hum_alarm_silos_1()){
-        ui.hum_info_alarms_hum_1->setText("Wilgotność w normie");
+        ui.hum_info_alarms_hum_1->setText(tr("Wilgotność w normie"));
         ui.hum_ico_hum_1->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_1[3] > state_of_alarms->get_hum_alarm_silos_1() || silos_1[4] > state_of_alarms->get_hum_alarm_silos_1()){
-        ui.hum_info_alarms_hum_1->setText("Przekroczono wartość ostrzegawczą");
+        ui.hum_info_alarms_hum_1->setText(tr("Przekroczono wartość ostrzegawczą"));
         ui.hum_ico_hum_1->setPixmap(QPixmap(":/ikona_warning.png"));
     }
      if(silos_1[3] > state_of_alarms->get_critical_hum_alarm_silos_1() || silos_1[4] > state_of_alarms->get_critical_hum_alarm_silos_1()){
-        ui.hum_info_alarms_hum_1->setText("Przekroczono wartość krytyczną");
+        ui.hum_info_alarms_hum_1->setText(tr("Przekroczono wartość krytyczną"));
         ui.hum_ico_hum_1->setPixmap(QPixmap(":/ikona_stop.png"));
     }
 
     if(silos_2[3] < state_of_alarms->get_hum_alarm_silos_2() || silos_2[4] < state_of_alarms->get_hum_alarm_silos_2()){
-        ui.hum_info_alarms_hum_2->setText("Wilgotność w normie");
+        ui.hum_info_alarms_hum_2->setText(tr("Wilgotność w normie"));
         ui.hum_ico_hum_2->setPixmap(QPixmap(":/ok.png"));
     }
     if(silos_2[3] > state_of_alarms->get_hum_alarm_silos_2() || silos_2[4] > state_of_alarms->get_hum_alarm_silos_2()){
-        ui.hum_info_alarms_hum_2->setText("Przekroczono wartość ostrzegawczą");
+        ui.hum_info_alarms_hum_2->setText(tr("Przekroczono wartość ostrzegawczą"));
         ui.hum_ico_hum_2->setPixmap(QPixmap(":/ikona_warning.png"));
     }
      if(silos_2[3] > state_of_alarms->get_critical_hum_alarm_silos_2() || silos_2[4] > state_of_alarms->get_critical_hum_alarm_silos_2()){
-        ui.hum_info_alarms_hum_2->setText("Przekroczono wartość krytyczną");
+        ui.hum_info_alarms_hum_2->setText(tr("Przekroczono wartość krytyczną"));
         ui.hum_ico_hum_2->setPixmap(QPixmap(":/ikona_stop.png"));
     }
 }
