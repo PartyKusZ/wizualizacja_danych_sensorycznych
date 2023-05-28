@@ -15,7 +15,7 @@ Database::Database(const std::string db_name,std::array<int,5> &_silos_1,std::ar
     status = sqlite3_exec(db, CREATE_SILO_1, NULL, NULL, &error_msg);
     status = sqlite3_exec(db, CREATE_SILO_2, NULL, NULL, &error_msg);
 
-    this->timer.setInterval(3000);
+    this->timer.setInterval(900000);
     this->connect(&this->timer,&QTimer::timeout,this,&Database::update);
     this->timer.start();
     
