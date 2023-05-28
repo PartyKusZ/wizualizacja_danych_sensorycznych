@@ -84,6 +84,9 @@ QTabBar::tab:selected {
    </item>
    <item row="1" column="0" colspan="5">
     <widget class="QTabWidget" name="tabs">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>

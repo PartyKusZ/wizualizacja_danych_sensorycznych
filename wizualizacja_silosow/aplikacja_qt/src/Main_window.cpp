@@ -7,6 +7,7 @@
  */
 
 Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_window(), QWidget(parent), database("test.db",silos_1,silos_2){
+   
     this->setupUi(this); // nadanie Ui dla głownego okna aplikacji
 
     this->state_of_alarms = new State_of_alarms; // utworzenie instancji klasy State_of_alarms odpowiedzialnej za przechowywanie inforamcji o alarmach 
@@ -34,6 +35,8 @@ Main_window::Main_window(QWidget *parent,Data *_data): data(_data), Ui::Main_win
    
     this->timer.start(); // uruchamia timer nadający "rytm" apliakcji
 
+    
+    
    
 }   
 

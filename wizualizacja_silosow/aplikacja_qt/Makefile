@@ -466,7 +466,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents inc/Alarms_window.hpp inc/Alarms_window_hum.hpp inc/Alarms_window_temp.hpp inc/Alarms_window_vol.hpp inc/All_param_backend.hpp inc/Data.hpp inc/Database.hpp inc/Db_data.hpp inc/FastCRC.hpp inc/FastCRC_tables.hpp inc/Historical_data.hpp inc/Hum_backend.hpp inc/Main_window.hpp inc/Port_error.hpp inc/Serial_port.hpp inc/State_of_alarms.hpp inc/Temp_backend.hpp inc/Vol_backend.hpp inc/custom_widgets_designer/All_param_draw.hpp inc/custom_widgets_designer/All_param_silos.hpp inc/custom_widgets_designer/Hum_draw.hpp inc/custom_widgets_designer/Hum_silos.hpp inc/custom_widgets_designer/Silos_position.hpp inc/custom_widgets_designer/Temp_draw.hpp inc/custom_widgets_designer/Temp_silos.hpp inc/custom_widgets_designer/Vol_draw.hpp inc/custom_widgets_designer/Vol_silos.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents src/Alarms_window.cpp src/Alarms_window_hum.cpp src/Alarms_window_temp.cpp src/Alarms_window_vol.cpp src/All_param_backend.cpp src/Data.cpp src/Database.cpp src/FastCRCsw.cpp src/Historical_data.cpp src/Hum_backend.cpp src/main.cpp src/Main_window.cpp src/Port_error.cpp src/Serial_port.cpp src/State_of_alarms.cpp src/Temp_backend.cpp src/Vol_backend.cpp src/custom_widgets_designer/All_param_draw.cpp src/custom_widgets_designer/All_param_silos.cpp src/custom_widgets_designer/Hum_draw.cpp src/custom_widgets_designer/Hum_silos.cpp src/custom_widgets_designer/Silos_position.cpp src/custom_widgets_designer/Temp_draw.cpp src/custom_widgets_designer/Temp_silos.cpp src/custom_widgets_designer/Vol_draw.cpp src/custom_widgets_designer/Vol_silos.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/Alarms_window.ui ui/Main_window.ui $(DISTDIR)/
-	$(COPY_FILE) --parents myproject_en.ts $(DISTDIR)/
+	$(COPY_FILE) --parents res/en_2.ts $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -502,6 +502,7 @@ res/res_output/qrc_res.cpp: res/res.qrc \
 		res/ikona_stop.png \
 		res/termometr.png \
 		res/poland.png \
+		res/en_2.qm \
 		res/ikona_warning_tło.png \
 		res/united-kingdom.png
 	/usr/lib/qt5/bin/rcc -name res res/res.qrc -o res/res_output/qrc_res.cpp

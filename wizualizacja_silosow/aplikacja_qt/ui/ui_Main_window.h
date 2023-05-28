@@ -226,6 +226,7 @@ public:
 
         tabs = new QTabWidget(Main_window);
         tabs->setObjectName(QString::fromUtf8("tabs"));
+        tabs->setEnabled(true);
         tabs->setStyleSheet(QString::fromUtf8(""));
         tabs->setUsesScrollButtons(false);
         tabs->setTabBarAutoHide(false);
