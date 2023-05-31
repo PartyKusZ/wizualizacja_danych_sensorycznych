@@ -43,6 +43,14 @@
     </message>
 </context>
 <context>
+    <name>Historical_data</name>
+    <message>
+        <location filename="../src/Historical_data.cpp" line="23"/>
+        <source>Wykres</source>
+        <translation>Chart</translation>
+    </message>
+</context>
+<context>
     <name>Hum_backend</name>
     <message>
         <location filename="../src/Hum_backend.cpp" line="21"/>
@@ -241,6 +249,11 @@
         <location filename="../ui/Main_window.ui" line="2266"/>
         <source>Pokaż kalendarz</source>
         <translation>Show calendar</translation>
+    </message>
+    <message>
+        <location filename="../src/Main_window.cpp" line="75"/>
+        <source>Wykres</source>
+        <translation>Chart</translation>
     </message>
 </context>
 <context>

@@ -20,8 +20,8 @@ Historical_data::Historical_data(Ui::Main_window &ui_, Database &db_): ui(ui_), 
     chart->setAxisX(axisX, series);
     chart->setAxisY(axisY, series);
     
-
-    this->chart->setTitle("Prosty Wykres");
+    this->chart_title = tr("Wykres");
+    this->chart_title_translate(this->chart_title);
     this->ui.chartview->setChart(chart);
     this->ui.chartview->setRenderHint(QPainter::Antialiasing);
 
@@ -61,6 +61,16 @@ std::string Historical_data::qdate_to_db_format(const QDate &date){
     return std::to_string(year) + "-" + m +"-" + d;
     
 }
+
+
+void Historical_data::chart_title_translate(const QString &title){
+
+    this->chart_title = QApplication::translate("Historical_data",title.toStdString().c_str(),nullptr);
+    this->chart->setTitle(this->chart_title);
+    qDebug() << this->chart_title;
+}
+
+
 
     /**
      * @brief supports the emelent ui for date editing

@@ -35,11 +35,16 @@ class Historical_data: public QObject{
 
         std::string qdate_to_db_format(const QDate &date);
 
+        QString chart_title;
+
+
 
 
     public:
         Historical_data(Ui::Main_window &ui_, Database &db_);
-        
+
+        void chart_title_translate(const QString &title);
+
         ~Historical_data();
 
     public slots:

@@ -67,11 +67,13 @@ void Main_window::silos_data_update(){
 
 void Main_window::lang_pl(){
     qApp->removeTranslator(translator);
+    this->historical_data->chart_title_translate(QString(tr("Wykres")));
     this->retranslateUi(this);
 }
 void Main_window::lang_en(){
     translator->load(":en_2.qm");
     qApp->installTranslator(translator);
+    this->historical_data->chart_title_translate(QString(tr("Wykres")));
     this->retranslateUi(this);
 }
 
