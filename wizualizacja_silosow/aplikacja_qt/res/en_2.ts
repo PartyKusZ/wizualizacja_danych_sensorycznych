@@ -332,17 +332,17 @@
     <message>
         <location filename="../ui/Alarms_window.ui" line="14"/>
         <source>Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarm</translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="48"/>
         <source>Poziom ostrzeżenia:</source>
-        <translation type="unfinished"></translation>
+        <translation>Warning level</translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="129"/>
         <source>Poziom krytyczny:</source>
-        <translation type="unfinished"></translation>
+        <translation>Critical level</translation>
     </message>
 </context>
 </TS>
