@@ -43,6 +43,14 @@
     </message>
 </context>
 <context>
+    <name>Historical_data</name>
+    <message>
+        <location filename="../src/Historical_data.cpp" line="23"/>
+        <source>Wykres</source>
+        <translation>Chart</translation>
+    </message>
+</context>
+<context>
     <name>Hum_backend</name>
     <message>
         <location filename="../src/Hum_backend.cpp" line="21"/>
@@ -242,6 +250,12 @@
         <source>Pokaż kalendarz</source>
         <translation>Show calendar</translation>
     </message>
+    <message>
+        <location filename="../src/Main_window.cpp" line="70"/>
+        <location filename="../src/Main_window.cpp" line="82"/>
+        <source>Wykres</source>
+        <translation>Chart</translation>
+    </message>
 </context>
 <context>
     <name>Temp_backend</name>
@@ -308,19 +322,27 @@
 <context>
     <name>alarms_window</name>
     <message>
+        <source>Poziom ostrzeżenia [°C]:</source>
+        <translation type="vanished">Warning level [°C]:</translation>
+    </message>
+    <message>
+        <source>Poziom krytyczny [°C]:</source>
+        <translation type="vanished">Critical level [°C]:</translation>
+    </message>
+    <message>
         <location filename="../ui/Alarms_window.ui" line="14"/>
-        <source>ustaw nazwe w kodzie</source>
-        <translation></translation>
+        <source>Alarm</source>
+        <translation>Alarm</translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="48"/>
-        <source>Poziom ostrzeżenia [°C]:</source>
-        <translation>Warning level [°C]:</translation>
+        <source>Poziom ostrzeżenia:</source>
+        <translation>Warning level</translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="129"/>
-        <source>Poziom krytyczny [°C]:</source>
-        <translation>Critical level [°C]:</translation>
+        <source>Poziom krytyczny:</source>
+        <translation>Critical level</translation>
     </message>
 </context>
 </TS>

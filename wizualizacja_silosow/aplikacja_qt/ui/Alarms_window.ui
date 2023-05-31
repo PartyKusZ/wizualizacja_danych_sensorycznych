@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ustaw nazwe w kodzie</string>
+   <string>Alarm</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#alarms_window {
@@ -45,7 +45,7 @@ color: #ffffff;
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Poziom ostrzeżenia [°C]:</string>
+      <string>Poziom ostrzeżenia:</string>
      </property>
     </widget>
    </item>
@@ -126,7 +126,7 @@ color: #ffffff;
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Poziom krytyczny [°C]:</string>
+      <string>Poziom krytyczny:</string>
      </property>
     </widget>
    </item>

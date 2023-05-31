@@ -130,9 +130,9 @@ public:
 
     void retranslateUi(QWidget *alarms_window)
     {
-        alarms_window->setWindowTitle(QApplication::translate("alarms_window", "ustaw nazwe w kodzie", nullptr));
-        label->setText(QApplication::translate("alarms_window", "Poziom ostrze\305\274enia [\302\260C]:", nullptr));
-        label_2->setText(QApplication::translate("alarms_window", "Poziom krytyczny [\302\260C]:", nullptr));
+        alarms_window->setWindowTitle(QApplication::translate("alarms_window", "Alarm", nullptr));
+        label->setText(QApplication::translate("alarms_window", "Poziom ostrze\305\274enia:", nullptr));
+        label_2->setText(QApplication::translate("alarms_window", "Poziom krytyczny:", nullptr));
     } // retranslateUi
 
 };

@@ -24,6 +24,9 @@ class Alarms_window: public QWidget, protected Ui::alarms_window{
          * 
          */
         virtual void set_up() = 0;
+        void lang_pl();
+        void lang_en(); 
+
         virtual ~Alarms_window();
 
     public slots:
