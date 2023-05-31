@@ -69,12 +69,25 @@ void Main_window::lang_pl(){
     qApp->removeTranslator(translator);
     this->historical_data->chart_title_translate(QString(tr("Wykres")));
     this->retranslateUi(this);
+    this->hum_backend->alarms_window_1->lang_pl();
+    this->hum_backend->alarms_window_2->lang_pl();
+    this->vol_backend->alarms_window_1->lang_pl();
+    this->vol_backend->alarms_window_2->lang_pl();
+    this->temp_backend->alarms_window_1->lang_pl();
+    this->temp_backend->alarms_window_2->lang_pl();
 }
 void Main_window::lang_en(){
     translator->load(":en_2.qm");
     qApp->installTranslator(translator);
     this->historical_data->chart_title_translate(QString(tr("Wykres")));
     this->retranslateUi(this);
+    this->hum_backend->alarms_window_1->lang_en();
+    this->hum_backend->alarms_window_2->lang_en();
+    this->vol_backend->alarms_window_1->lang_en();
+    this->vol_backend->alarms_window_2->lang_en();
+    this->temp_backend->alarms_window_1->lang_en();
+    this->temp_backend->alarms_window_2->lang_en();
+
 }
 
 /**

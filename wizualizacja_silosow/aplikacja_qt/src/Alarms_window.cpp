@@ -13,11 +13,18 @@
 Alarms_window::Alarms_window(QWidget *parent, State_of_alarms *_state_of_alarms, int _silo_number,QString _window_title): QWidget(parent), Ui::alarms_window(), state_of_alarms(_state_of_alarms),silo_number(_silo_number), window_title(_window_title){
 
     this->setupUi(this);
-    this->setWindowTitle(window_title);
+    this->setWindowTitle(tr(window_title.toStdString().c_str()));
 
    
 }
 
+
+void Alarms_window::lang_pl(){
+    this->retranslateUi(this);
+}
+void Alarms_window::lang_en(){
+    this->retranslateUi(this);
+}
 
 
 /**

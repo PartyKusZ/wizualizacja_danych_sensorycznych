@@ -251,7 +251,8 @@
         <translation>Show calendar</translation>
     </message>
     <message>
-        <location filename="../src/Main_window.cpp" line="75"/>
+        <location filename="../src/Main_window.cpp" line="70"/>
+        <location filename="../src/Main_window.cpp" line="82"/>
         <source>Wykres</source>
         <translation>Chart</translation>
     </message>
@@ -321,19 +322,27 @@
 <context>
     <name>alarms_window</name>
     <message>
+        <source>Poziom ostrzeżenia [°C]:</source>
+        <translation type="vanished">Warning level [°C]:</translation>
+    </message>
+    <message>
+        <source>Poziom krytyczny [°C]:</source>
+        <translation type="vanished">Critical level [°C]:</translation>
+    </message>
+    <message>
         <location filename="../ui/Alarms_window.ui" line="14"/>
-        <source>ustaw nazwe w kodzie</source>
-        <translation></translation>
+        <source>Alarm</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="48"/>
-        <source>Poziom ostrzeżenia [°C]:</source>
-        <translation>Warning level [°C]:</translation>
+        <source>Poziom ostrzeżenia:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/Alarms_window.ui" line="129"/>
-        <source>Poziom krytyczny [°C]:</source>
-        <translation>Critical level [°C]:</translation>
+        <source>Poziom krytyczny:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
