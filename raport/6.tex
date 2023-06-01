@@ -4,13 +4,13 @@
             \item zaimplementowano odczyt danych z portu szeregowego, poprzez uruchomienie go w osobnym wątku. 
                 Obiekt będący kontenerem na dane przekazywany jest przez wskaźnik do obiektu \textit{main\_window}, dzięki
                 czemu dane są dostępne dla pozostałych komponentów aplikacji.
-            \item zaprojektowano interfejs widoku ,,Temperatura'' (Grafika \ref{fig: temp 10 05}),
-            \item zaprojektowano interfejs okienka służącego ustawianiu wartości alarmów (Grafika \ref{fig: alarms window 10 05}),
+            \item zaprojektowano interfejs widoku ,,Temperatura'' (Rysunek \ref{fig: temp 10 05}),
+            \item zaprojektowano interfejs okienka służącego ustawianiu wartości alarmów (Rysunek \ref{fig: alarms window 10 05}),
             \item połączono sloty odpowiedzialne za aktualizacje właściwych im danych dotyczących elementów interfejsu, takich jak:
                 \begin{itemize}
                     \item graficzna i tekstowa  prezentacja wypełnienia silosu (widok ,,Wszystkie parametry''),
                     \item graficzna i tekstowa prezentacja temperatury (widoki ,,Wszystkie parametry'' i ,,Temperatura''),
-                    \item Prezentacja informacji o alarmach  (widoki ,,Wszystkie parametry'' i ,,Temperatura'') (Grafika \ref{fig: all param 10 05},\ref{fig: all param_2 10 05}),
+                    \item Prezentacja informacji o alarmach  (widoki ,,Wszystkie parametry'' i ,,Temperatura'') (Rysunek \ref{fig: all param 10 05},\ref{fig: all param_2 10 05}),
                 \end{itemize}
             \item przebudowano strukturę aplikacji, odciążono obiekt \textit{main\_window}, w którym znajdowały się 
                 wszystkie sloty wykorzystywane przez aplikację. Utworzono klasy ,,backendowe'' w których usystematyzowano
