@@ -21,4 +21,5 @@
 \contentsline {subsection}{\numberline {6.1}Aplikacja}{13}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Prezentacja wyników pracy - 01.06.2023r.}{16}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Aplikacja}{16}{subsection.7.1}%
-\contentsline {section}{\numberline {8}Podsumowanie}{20}{section.8}%
+\contentsline {subsection}{\numberline {7.2}Gotowy system}{20}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Podsumowanie}{21}{section.8}%
